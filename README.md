@@ -1,22 +1,26 @@
 # 商品编码核验工具 v1.7
 
-日常只输入平台商品文件，默认使用项目中长期保存的ERP组合装和单品库，直接输出“需处理”和“全部结果”两个工作表。Python 3.10及以上独立运行，不依赖Codex、WorkBuddy、Node.js或在线服务。
+用户在对话中上传店铺商品Excel或CSV，Agent使用项目中长期保存的ERP组合装和单品库自动核验，在同一对话交付含“需处理”和“全部结果”两表的Excel附件。Python 3.10及以上独立运行，不依赖指定Agent或在线核验服务。
 
 ## 日常使用
 
-首次安装依赖：
+安装Skill后，用户只需上传店铺商品文件并说“请核对商家编码”。Agent负责取得附件、准备环境、执行核验、检查结果并返回可下载的Excel；用户无需安装依赖、运行命令或把文件拖到脚本上。交付后直接参考Excel核对即可。
+
+## Agent内部执行
+
+以下命令由Agent执行，或供用户明确选择手动运行时参考。首次由Agent选择可用的Python环境并安装依赖：
 
 ```text
 python -m pip install -r requirements.txt
 ```
 
-在项目目录核对一个平台文件：
+Agent在项目目录用本次会话附件的实际路径核验，输出到可供当前对话交付的目录：
 
 ```text
-python scripts/verify_codes.py --platform-file "你的平台商品导出.xlsx" --output "reports/核验结果.xlsx"
+python scripts/verify_codes.py --platform-file "本次附件的实际路径.xlsx" --output "reports/核验结果.xlsx"
 ```
 
-可重复指定`--platform-file`同时核对多个店铺。文件名无法辨认平台时，可用`--platform 快手`或`--platform 天猫`明确；字段语义有歧义时先核对映射。用户通过助手使用时只需上传平台文件，不必自己输入命令。
+可重复指定`--platform-file`同时核对多个店铺。文件名无法辨认平台时，可用`--platform 快手`或`--platform 天猫`明确；字段语义有歧义时先核对映射。Agent须读取输出核实行数、原编码、状态及候选，再通过会话附件或有效文件链接交付；本地路径文字不代替文件交付。首次准备和交付故障处理见[共享使用](references/共享使用.md)。
 
 交付Excel后流程结束，由用户直接参考交付物核对。不要求回传人工确认，也不把修改平台或再次导出作为使用步骤。
 
@@ -66,4 +70,4 @@ python -m unittest discover -s tests -v
 
 ## 同事和其他助手使用
 
-仓库名称`Lqx-NHERP1.6v`沿用用户命名，当前程序版本仍为v1.7。下载或克隆仓库后，保持整个目录结构，按上面的命令安装依赖和运行。通过其他助手使用时，请让助手先读取`SKILL.md`，再执行已有Python入口；具体运行条件和使用话术见[共享使用](references/共享使用.md)。仅有聊天或网页阅读能力的助手不能直接运行本地工具。
+公开仓库：[Lqx-NHERP1.6v-public](https://github.com/z3205177-png/Lqx-NHERP1.6v-public)，当前审核引擎仍为v1.7。由Agent下载或安装完整目录，读取`SKILL.md`并按需准备Python环境。日常用户上传平台文件，由Agent在当前对话返回Excel；具体运行条件和使用话术见[共享使用](references/共享使用.md)。仅有聊天或网页阅读能力的助手不能执行核验；目标Agent还须支持上传附件的读取和生成文件的返回。
