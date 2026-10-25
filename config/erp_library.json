@@ -1,0 +1,33 @@
+{
+  "version": "erp-20261025-v1",
+  "registered_at": "2026-10-25",
+  "update_policy": "only_on_explicit_user_request",
+  "erp": {
+    "combo": {
+      "path": "data/组合装.csv",
+      "sha256": "899415c19a4a6aa1dccf312fb0658762940ddafbacec44e4dfc24d35ed73febc",
+      "rows": 3194
+    },
+    "single": {
+      "path": "data/单品.csv",
+      "sha256": "33b440b1749e137517e3526be45b6149403d9aa6e990c00467f05256a2af223b",
+      "rows": 2750
+    }
+  },
+  "historical_platform_samples": [
+    {
+      "path": "data/快手小店商品导出-2026-10-24+17_39.xlsx",
+      "sha256": "bf80be3fe150e1fbaf020489cad45abcda18334ac8dea0e3cd2786eefab53f96"
+    },
+    {
+      "path": "data/天猫旗舰店.xlsx",
+      "sha256": "fb1482eec8ec0ad263732e63c002683cdbc942826e84ff0d0b02bca98ab14705"
+    },
+    {
+      "path": "data/快手 + 天猫首轮测试结果.xlsx",
+      "sha256": "eb52aec8325bdc688cd6e2a29e453c6a6994968c32b9d469371b5255d5b1234c"
+    }
+  ],
+  "confirmed_rules": "config/platform_aliases.json",
+  "confirmed_sku_mappings": "config/confirmed_mappings.json"
+}

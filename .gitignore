@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+backups/
+reports/
+outputs/
+work/
+核验依据/
+*.xlsx
+*.xls
+*.zip
