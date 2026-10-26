@@ -35,7 +35,10 @@ class RegisteredLibraryTests(unittest.TestCase):
 
     def test_default_uses_registered_pair(self):
         combo,single,meta=library.resolve_erp_inputs(manifest_path=self.manifest)
-        self.assertEqual((combo,single),(str(self.combo),str(self.single)))
+        self.assertTrue(Path(combo).is_absolute())
+        self.assertTrue(Path(single).is_absolute())
+        self.assertTrue(Path(combo).samefile(self.combo))
+        self.assertTrue(Path(single).samefile(self.single))
         self.assertEqual(meta['version'],'test-v1')
 
     def test_library_is_relative_to_project_not_current_directory(self):

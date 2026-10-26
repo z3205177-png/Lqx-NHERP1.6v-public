@@ -1325,7 +1325,10 @@ def main() -> int:
         result, meta = verify_platform_file(path, erp_records, erp_by_code, store_override=store_override, sheet_override=sheet_override, platform_override=args.platform[i] if args.platform else None, confirmed_entries=confirmed_entries)
         all_results.append(result)
         metas.append(meta)
-    results = pd.concat(all_results, ignore_index=True).fillna('') if all_results else pd.DataFrame()
+    # Result columns combine numeric counts and text; missing fields use an empty
+    # string. Choose a compatible dtype before filling, without hiding warnings.
+    results = pd.concat(all_results, ignore_index=True).astype(object) if all_results else pd.DataFrame()
+    results = results.where(results.notna(), '')
     write_simple_report(args.output, results)
     audit_path.parent.mkdir(parents=True,exist_ok=True)
     audit_path.write_text(json.dumps({'version':VERSION,'erp_library':library_info,

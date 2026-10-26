@@ -1,0 +1,4 @@
+# Registered ERP hashes describe the exact CSV bytes. Never convert line endings.
+*.csv -text
+*.xlsx binary
+*.xls binary
