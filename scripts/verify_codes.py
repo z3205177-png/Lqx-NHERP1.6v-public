@@ -26,6 +26,7 @@ from typing import Any
 import pandas as pd
 from rapidfuzz import fuzz
 import confirmed_mappings as confirmations
+import sku_audit_reviews as sku_reviews
 from erp_library import resolve_erp_inputs, DEFAULT_MANIFEST
 from simple_report import write_simple_report
 
@@ -1058,13 +1059,14 @@ def build_erp_records(erp_df: pd.DataFrame) -> tuple[list[dict[str, Any]], dict[
     return records, by_code
 
 
-def verify_platform_file(path: str, erp_records: list[dict[str, Any]], erp_by_code: dict[str, list[dict[str, Any]]], store_override: str | None = None, sheet_override: str | None = None, platform_override: str | None = None, confirmed_entries: dict | None = None) -> tuple[pd.DataFrame, dict[str, Any]]:
+def verify_platform_file(path: str, erp_records: list[dict[str, Any]], erp_by_code: dict[str, list[dict[str, Any]]], store_override: str | None = None, sheet_override: str | None = None, platform_override: str | None = None, confirmed_entries: dict | None = None, review_entries: dict | None = None) -> tuple[pd.DataFrame, dict[str, Any]]:
     platform = platform_override or infer_platform(path)
     profile = PLATFORM_PROFILES.get(platform, {})
     df, sheet, header_row = load_platform(path, explicit_sheet=sheet_override or profile.get("sheet"))
     cols = choose_platform_columns(df, platform)
     store = store_override or infer_store(path)
     confirmed_entries = confirmations.load_mappings() if confirmed_entries is None else confirmed_entries
+    review_entries = sku_reviews.load_reviews() if review_entries is None else review_entries
     sku_column = cols.get("sku_id")
     duplicate_ids = set()
     if sku_column:
@@ -1093,6 +1095,7 @@ def verify_platform_file(path: str, erp_records: list[dict[str, Any]], erp_by_co
             pf["component_basis"] = component_rule["basis"]
         pf["confirmation"], pf["confirmation_issue"] = confirmations.lookup_confirmation({**context, "原编码": current_code}, erp_records, confirmed_entries)
         result = audit_current_code(current_code, pf, erp_by_code, erp_records)
+        result, reviewed_suggestion = sku_reviews.apply_review(context, current_code, result, erp_by_code, review_entries)
         out_rows.append({"店铺": store, "平台": platform, "商品 ID": product_id, "SKU ID": sku_id,
                          "SKU": sku_name, "原编码": current_code, "应改为编码": result["应改为编码"],
                          "核验状态": result["核验状态"], "匹配依据": result["匹配依据"],
@@ -1102,7 +1105,7 @@ def verify_platform_file(path: str, erp_records: list[dict[str, Any]], erp_by_co
                          "组成确认依据": pf.get("component_basis", ""),
                          **{k: val for k, val in result.items() if k not in {"应改为编码", "核验状态", "匹配依据", "ERP数据来源", "核验说明"}},
                          "源文件": str(Path(path).resolve()), "源工作表": sheet, "源行号": idx + header_row + 2})
-        out_rows[-1].update(suggest_code_candidates(pf, result, erp_records, erp_by_code))
+        out_rows[-1].update(reviewed_suggestion if reviewed_suggestion is not None else suggest_code_candidates(pf, result, erp_records, erp_by_code))
         raw_rows.append({"来源文件": str(Path(path).resolve()), "来源工作表": sheet,
                          "来源行号": idx + header_row + 2, "原始字段JSON": json.dumps(row.to_dict(), ensure_ascii=False)})
     meta = {"store": store, "platform": platform, "source_file": str(Path(path).resolve()), "sheet": sheet,
