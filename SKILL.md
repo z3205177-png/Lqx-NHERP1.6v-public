@@ -3,7 +3,7 @@ name: ecommerce-sku-code-audit
 description: 用户在对话中上传店铺商品Excel或CSV并要求核对商家编码时，由Agent使用固定ERP库执行Python核验，在当前对话交付含推测编码和三个候选栏的Excel附件。
 ---
 
-# 商品编码核验 v1.7
+# Lqx-NHERP1.7v 商品编码核验
 
 用户在对话中提供平台商品文件，Agent负责环境准备、执行核验和文件交付。Python入口为[scripts/verify_codes.py](scripts/verify_codes.py)。首次安装或运行环境、附件交付有问题时，读[共享使用](references/共享使用.md)。
 

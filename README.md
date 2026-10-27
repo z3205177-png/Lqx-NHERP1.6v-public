@@ -1,4 +1,6 @@
-# 商品编码核验工具 v1.7
+# Lqx-NHERP1.7v
+
+商品编码核验工具 v1.7。
 
 用户在对话中上传店铺商品Excel或CSV，Agent使用项目中长期保存的ERP组合装和单品库自动核验，在同一对话交付含“需处理”和“全部结果”两表的Excel附件。Python 3.10及以上独立运行，不依赖指定Agent或在线核验服务。
 
@@ -74,4 +76,8 @@ python -m unittest discover -s tests -v
 
 ## 同事和其他助手使用
 
-公开仓库：[Lqx-NHERP1.6v-public](https://github.com/z3205177-png/Lqx-NHERP1.6v-public)，当前审核引擎仍为v1.7。由Agent下载或安装完整目录，读取`SKILL.md`并按需准备Python环境。日常用户上传平台文件，由Agent在当前对话返回Excel；具体运行条件和使用话术见[共享使用](references/共享使用.md)。仅有聊天或网页阅读能力的助手不能执行核验；目标Agent还须支持上传附件的读取和生成文件的返回。
+公开仓库：[Lqx-NHERP1.7v](https://github.com/z3205177-png/Lqx-NHERP1.7v)，当前审核引擎为v1.7。由Agent下载或安装完整目录，读取`SKILL.md`并按需准备Python环境。日常用户上传平台文件，由Agent在当前对话返回Excel；具体运行条件和使用话术见[共享使用](references/共享使用.md)。仅有聊天或网页阅读能力的助手不能执行核验；目标Agent还须支持上传附件的读取和生成文件的返回。
+
+其他电脑可对具备上述能力的Agent说：“帮我部署 https://github.com/z3205177-png/Lqx-NHERP1.7v 项目到此设备，使用main分支的最新版本。”
+
+2026-10-27更新验证：166项自动化测试通过；冻结的1531行逐行回归只出现已确认SKU的变化；另从人工修正报告的核验字段快照重放2183行，变化全部限于104条已复核SKU。快照重放不是重新从平台导出的原始文件，不据此报告真实准确率。
