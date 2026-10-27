@@ -1,0 +1,3184 @@
+{
+  "version": 1,
+  "description": "2026-10-27用户逐行反馈及状态口径确认。明确目标、暂定关系、明确冲突分别处理；不作为全局编码替换或单位换算。",
+  "reviews": {
+    "d07e7935756e69effbf995c4b73c291f7ebd2c26fd3fa5e3d3acf2c906badd7d": {
+      "context": {
+        "平台": "京东",
+        "商品 ID": "10034271216930",
+        "SKU ID": "10214699281528",
+        "商品标题": "暖火【艾草精华】暖贴艾灸肩颈贴草本蒸汽四区定位热敷贴暖宝宝神器 【常规装】艾草热敷肩颈暖贴 家庭常备装 10片装 【顺丰包邮】",
+        "SKU": "【常规装】艾草热敷肩颈暖贴 家庭常备装 10片装|【顺丰包邮】",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "3a1d90cb60605cff449881b40a8c6025265e1e9dc9f2a103fde1cb699c6916f8",
+      "source_code": "NH81602",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH81602": [],
+        "NH81510": [
+          "716c9895cdf41558fb54d5323bf1c8b6c62288960345e9963ba75276fd99341f"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NH81510；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "京东已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H5",
+        "sha256": "d8658cd1d21e7290a0fc93718c2719ab53788455b7e44034e78c9e13f03c45d1"
+      },
+      "target_code": "NH81510"
+    },
+    "fd15285d006e68fed8198e4f29865eca8a571cd1f22688e447eafb5ef0876083": {
+      "context": {
+        "平台": "京东",
+        "商品 ID": "10034253366107",
+        "SKU ID": "10214798598724",
+        "商品标题": "暖火【艾草精华】发热鞋垫男女款自发热暖足贴热敷保暖防寒透气防滑 【买三送一】艾草超值抢购款 40片装 女士适用36-39码",
+        "SKU": "【买三送一】艾草超值抢购款 40片装|女士适用36-39码",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "f256d45eeb0c727047c73c3986f16948aea71eec3c2192223d4ad0bcd57ed15a",
+      "source_code": "NHCP5201",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP5201": [],
+        "NHCP05201": [
+          "172a22762650b3ae838e82cdc97abfdaf3592f2fd44f28859e3c8962947b048c"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP05201；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "京东已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H6",
+        "sha256": "d8658cd1d21e7290a0fc93718c2719ab53788455b7e44034e78c9e13f03c45d1"
+      },
+      "target_code": "NHCP05201"
+    },
+    "530e4c6c6eca5ec4803e49b18394388738dc2e98cf2800ce041d3aaabe164d19": {
+      "context": {
+        "平台": "京东",
+        "商品 ID": "10034271216930",
+        "SKU ID": "10214699281527",
+        "商品标题": "暖火【艾草精华】暖贴艾灸肩颈贴草本蒸汽四区定位热敷贴暖宝宝神器 【买三送一】艾草热敷肩颈暖贴 低价囤货装 20片装 【顺丰包邮】",
+        "SKU": "【买三送一】艾草热敷肩颈暖贴 低价囤货装 20片装|【顺丰包邮】",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "51b7dbd4b609058dec4c805fc6601d6c79ed14230c9ddf3cc812eab52588f997",
+      "source_code": "NH81604",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH81520": [
+          "a8cc3ec5581b4d7f146c6778fb07041c9f2b18afd531d52416aa7e2e59378cc8"
+        ],
+        "NH81604": []
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NH81520；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "京东已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H7",
+        "sha256": "d8658cd1d21e7290a0fc93718c2719ab53788455b7e44034e78c9e13f03c45d1"
+      },
+      "target_code": "NH81520"
+    },
+    "d0f1d3448c842cb50a3424debec1b02ac3473bed722c69a9c8599d8bd5bd6c33": {
+      "context": {
+        "平台": "快手",
+        "商品 ID": "21205032677338",
+        "SKU ID": "100277872697338",
+        "商品标题": "【GC】Hellokitty艾草暖宝宝贴12小时持久自发热贴正品防寒益母草",
+        "SKU": "卡通三合一暖贴【艾草+生姜+益母草】,10片【试用装】",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "6a0786ab6ff5e3620b234672c136a70fdaa881022436f957f9c6a23788c3aed3",
+      "source_code": "KTCP02501",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "KTCP02501": [
+          "5591d11b29cf7c3743cbcad9be2826eb316d498609032a670340de791eca33eb"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：最小规格，判定为正确；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "快手已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H5",
+        "sha256": "bd9a7e9510ba3d1ccc24de294017cf1a6cf9b3999cce422022a8318c81433f82"
+      },
+      "target_code": "KTCP02501"
+    },
+    "e16b2baeeb3df157f70d8c492ed7fd23a585a9121fd7149359f9067980a565a9": {
+      "context": {
+        "平台": "快手",
+        "商品 ID": "26937005267338",
+        "SKU ID": "192420633131338",
+        "商品标题": "Hellokitty艾草暖宝宝贴宫暖身贴12小时姨妈专用生理期暖肚子暖贴",
+        "SKU": "卡通三合一暖贴【艾草+生姜+益母草】,10片【试用装】",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "77018c5dde7edb6e676c64b191cdb5d1c3af00c115ae125679fcc45f59003d69",
+      "source_code": "KTCP02501",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "KTCP02501": [
+          "5591d11b29cf7c3743cbcad9be2826eb316d498609032a670340de791eca33eb"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：最小规格，判定为正确；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "快手已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H6",
+        "sha256": "bd9a7e9510ba3d1ccc24de294017cf1a6cf9b3999cce422022a8318c81433f82"
+      },
+      "target_code": "KTCP02501"
+    },
+    "80e414403e9b245be659d2084d7c6b0786af03f87623963625148339e8debb01": {
+      "context": {
+        "平台": "快手",
+        "商品 ID": "26958228060338",
+        "SKU ID": "192687207365338",
+        "商品标题": "Hellokitty艾草暖宝宝贴宫暖身贴12小时姨妈专用生理期暖肚子暖贴",
+        "SKU": "卡通三合一暖贴【艾草+生姜+益母草】,10片【试用装】",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "71c79a5ed6aa3d9df75800cca82ce570e637dca4713c21e31b3e88912f26aaad",
+      "source_code": "KTCP02501",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "KTCP02501": [
+          "5591d11b29cf7c3743cbcad9be2826eb316d498609032a670340de791eca33eb"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：最小规格，判定为正确；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "快手已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H7",
+        "sha256": "bd9a7e9510ba3d1ccc24de294017cf1a6cf9b3999cce422022a8318c81433f82"
+      },
+      "target_code": "KTCP02501"
+    },
+    "da38a5e130991e69c3e057454facb3cb6f86e69a3d4f66d0ffff07608bc57e3b": {
+      "context": {
+        "平台": "快手",
+        "商品 ID": "26969104710338",
+        "SKU ID": "192826814765338",
+        "商品标题": "【回馈粉丝】Hellokitty艾草暖宝宝贴宫暖身贴12小时姨妈专用生理",
+        "SKU": "卡通三合一暖贴【艾草+生姜+益母草】,10片【试用装】",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "715cc988a87f5a5a56271687d120d566d60125f422f6e99efefaea9a952dccd6",
+      "source_code": "KTCP02501",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "KTCP02501": [
+          "5591d11b29cf7c3743cbcad9be2826eb316d498609032a670340de791eca33eb"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：最小规格，判定为正确；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "快手已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H8",
+        "sha256": "bd9a7e9510ba3d1ccc24de294017cf1a6cf9b3999cce422022a8318c81433f82"
+      },
+      "target_code": "KTCP02501"
+    },
+    "cae7a2bae000eb9561a54dbeea6e88e9750cc3f1588d753958320a99a293f53b": {
+      "context": {
+        "平台": "快手",
+        "商品 ID": "26988318913338",
+        "SKU ID": "193145114324338",
+        "商品标题": "Hellokitty艾草暖宝宝贴宫暖身贴12小时姨妈专用生理",
+        "SKU": "卡通三合一暖贴【艾草+生姜+益母草】,10片【试用装】",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "18df8026e9478bd903cb6db3d4e84341bfdb4eaa059b827d8af944f73a07ada5",
+      "source_code": "KTCP02501",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "KTCP02501": [
+          "5591d11b29cf7c3743cbcad9be2826eb316d498609032a670340de791eca33eb"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：最小规格，判定为正确；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "快手已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H9",
+        "sha256": "bd9a7e9510ba3d1ccc24de294017cf1a6cf9b3999cce422022a8318c81433f82"
+      },
+      "target_code": "KTCP02501"
+    },
+    "1d24423ea4f39c0a8c8e4c13fb7d6bc166a4cef444a4bfde4906902cebda4239": {
+      "context": {
+        "平台": "快手",
+        "商品 ID": "27067559064338",
+        "SKU ID": "194360900475338",
+        "商品标题": "Hellokitty艾草暖宝宝贴宫暖身贴12小时姨妈专用生理hs",
+        "SKU": "卡通三合一暖贴【艾草+生姜+益母草】,10片【试用装】",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "11080761054ac74b412f1e96f17ba0b4a7b868953c264fd074fae6a1066ccdb1",
+      "source_code": "KTCP02501",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "KTCP02501": [
+          "5591d11b29cf7c3743cbcad9be2826eb316d498609032a670340de791eca33eb"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：最小规格，判定为正确；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "快手已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H10",
+        "sha256": "bd9a7e9510ba3d1ccc24de294017cf1a6cf9b3999cce422022a8318c81433f82"
+      },
+      "target_code": "KTCP02501"
+    },
+    "2f6a18d1e34f09e9a274e5d6390e239e81ccf1c766d0c2f9b84ffd83d1ddde57": {
+      "context": {
+        "平台": "快手",
+        "商品 ID": "27079027517338",
+        "SKU ID": "194509911210338",
+        "商品标题": "Hellokitty艾草暖宝宝贴宫暖身贴12小时姨妈专用生理BD",
+        "SKU": "卡通三合一暖贴【艾草+生姜+益母草】,10片【试用装】",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "b0b13d65c073346c9d1d5b7caba01446bee43675bfcce2f09088931b5414e70b",
+      "source_code": "KTCP02501",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "KTCP02501": [
+          "5591d11b29cf7c3743cbcad9be2826eb316d498609032a670340de791eca33eb"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：最小规格，判定为正确；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "快手已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H11",
+        "sha256": "bd9a7e9510ba3d1ccc24de294017cf1a6cf9b3999cce422022a8318c81433f82"
+      },
+      "target_code": "KTCP02501"
+    },
+    "2a4189b68fb30c7cb6a056407ec260aef56ba0420b57f51cac64da3821ef7560": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "777174676749",
+        "SKU ID": "5311800304643",
+        "商品标题": "暖火膝盖蒸汽热敷贴护膝艾草发热贴关节保暖官方旗舰正品",
+        "SKU": "颜色分类:【U先】2片装;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "c947934974e57e1343444ee907c5271ce44fbc1131bd94042bb2c7db1b697ebe",
+      "source_code": "NH82102",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH82102": [
+          "4f59f6175fff75c5d20bdb592c07ff31a8c97c19563d4da3b0ac9eda0c101fe2"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NH82102；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H5",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NH82102"
+    },
+    "1b4d6643e394547a1e554675197f567764189d0b687db7a32ef4bb94f296dcd0": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "748473344678",
+        "SKU ID": "5937866585879",
+        "商品标题": "暖火艾草暖足贴自发热可行走暖脚宝发热贴脚底贴热敷贴足底暖贴",
+        "SKU": "片数:14双【共28片】热销装;颜色分类:【经典特惠款】女码丨适用于36-39码;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "12b89075bc9ff50766b1ecb4b0bcb8007b5fcd028a77494e781e2f5878a1220b",
+      "source_code": "NH00401028",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH00401028": [
+          "638c1575e4b0a855bb2ce572cd3875eacba4b619e15cf6d2641656d089314084"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NH00401028；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H6",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NH00401028"
+    },
+    "5d6ff83a76c973f71681c1c9b145ad46441c416fb53b4efb9c3db81b052d01d0": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "748473344678",
+        "SKU ID": "5937866585880",
+        "商品标题": "暖火艾草暖足贴自发热可行走暖脚宝发热贴脚底贴热敷贴足底暖贴",
+        "SKU": "片数:24双【共48片】更划算;颜色分类:【经典特惠款】女码丨适用于36-39码;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "e043cc70157205384b8fbd657c5b43a61349e6d42616e38da381b26be887e05a",
+      "source_code": "NH00401048",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH00401048": [
+          "7a01f06aee83c1f1e167c77ae81ca47c5b4f05ff50b83e0a9f83b2aabfad155d"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NH00401048；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H7",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NH00401048"
+    },
+    "ef05ee0acb807e3ef6fb6e79b14ffa6d27aa4ea6ef7b5eb0cf5fcf8cc4b8e36b": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "748473344678",
+        "SKU ID": "6119136462472",
+        "商品标题": "暖火艾草暖足贴自发热可行走暖脚宝发热贴脚底贴热敷贴足底暖贴",
+        "SKU": "片数:到手19双【共38片】更划算;颜色分类:卡通儿童款【适用于32-35码】正版授权;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "c55695e69cc7ac33cee7745d9d618b7438ea3c6370cb0f628007b6b08a56eac7",
+      "source_code": "NH134604",
+      "mode": "pending",
+      "erp_bindings": {
+        "NH134604": [
+          "09fc72bef5360f80cc6f777d78866efa6e99b106efc2b4ef44d2814fe43b1322"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户暂定以ERP整档发货，但明确要求待人工确认；未认定平台与ERP数量相等。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N8",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      }
+    },
+    "a5d08d254715214815a0a756b95b0917d8c714fd857c7a22abf0736bdfdae167": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "748473344678",
+        "SKU ID": "6119136462479",
+        "商品标题": "暖火艾草暖足贴自发热可行走暖脚宝发热贴脚底贴热敷贴足底暖贴",
+        "SKU": "片数:到手19双【共38片】更划算;颜色分类:卡通女生款【适用于36-39码】正版授权;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "97273e67bdb937b554f69366cdbc655d52f64e84c89d1a2e469c2a4ba56a6931",
+      "source_code": "NH134604",
+      "mode": "pending",
+      "erp_bindings": {
+        "NH134604": [
+          "09fc72bef5360f80cc6f777d78866efa6e99b106efc2b4ef44d2814fe43b1322"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户暂定以ERP整档发货，但明确要求待人工确认；未认定平台与ERP数量相等。女生款36—39码与ERP儿童款的对应关系也未确认。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N9",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      }
+    },
+    "c3ff25c457c0dbf81b45b6594555089b31400fa3bc3645cf91f99df50d6a7a0d": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "748473344678",
+        "SKU ID": "6119136462468",
+        "商品标题": "暖火艾草暖足贴自发热可行走暖脚宝发热贴脚底贴热敷贴足底暖贴",
+        "SKU": "片数:到手29双【共58片】超值划算;颜色分类:卡通儿童款【适用于32-35码】正版授权;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "998f944f82384e705264a12f246edb9b4b7f86a886de8c0f60e223dca51110df",
+      "source_code": "NH134606",
+      "mode": "pending",
+      "erp_bindings": {
+        "NH134606": [
+          "8395b6c2cde8cdef7fb333efef7aa90393a350524f0657a36aab66ae5f12cf9a"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户暂定以ERP整档发货，但明确要求待人工确认；未认定平台与ERP数量相等。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N10",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      }
+    },
+    "b6cc1c619e5cd95700a278e8ce44e08a8763eaad6a94dc66132eb05709d0f3dc": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "748473344678",
+        "SKU ID": "6119136462475",
+        "商品标题": "暖火艾草暖足贴自发热可行走暖脚宝发热贴脚底贴热敷贴足底暖贴",
+        "SKU": "片数:到手29双【共58片】超值划算;颜色分类:卡通女生款【适用于36-39码】正版授权;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "774bb713e56c1b7e429a44f2607a5d1c05454d48c3b33852eaf622cc30f8b7d0",
+      "source_code": "NH134606",
+      "mode": "pending",
+      "erp_bindings": {
+        "NH134606": [
+          "8395b6c2cde8cdef7fb333efef7aa90393a350524f0657a36aab66ae5f12cf9a"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户暂定以ERP整档发货，但明确要求待人工确认；未认定平台与ERP数量相等。女生款36—39码与ERP儿童款的对应关系也未确认。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N11",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      }
+    },
+    "ef60b8de40aab53f5f6aab5e26b1daaf99d71dc33d468021f625a868c7ade26f": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "748473344678",
+        "SKU ID": "5937866585876",
+        "商品标题": "暖火艾草暖足贴自发热可行走暖脚宝发热贴脚底贴热敷贴足底暖贴",
+        "SKU": "片数:到手4双【共8片】经济装;颜色分类:【经典特惠款】女码丨适用于36-39码;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "9ae454ed5097ffc58c57817b7550c689d963ca8c3fd10eec77317c5e712dff57",
+      "source_code": "NH0040108",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH0040108": [
+          "e7b9c7498f7cd8d19a2b9b57deac24a19e57128557220def0078b91c9c8df506"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NH0040108；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H12",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NH0040108"
+    },
+    "b75c2875fcf3aa0d3214505097d6aa6f8639d2ecb5978ccec7750c06ab1096ad": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "748473344678",
+        "SKU ID": "6101954667097",
+        "商品标题": "暖火艾草暖足贴自发热可行走暖脚宝发热贴脚底贴热敷贴足底暖贴",
+        "SKU": "片数:到手4双【共8片】经济装;颜色分类:【艾草升级款粉色】女码丨适用于36-39码;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "4e1d0a5e14ea77b9f80b5c55cf9111c551f404ee90b9aed0ba86d9f4d55fb3bf",
+      "source_code": "BB0040105",
+      "mode": "pending",
+      "erp_bindings": {
+        "BB0040105": [
+          "ddf55f9958148254d1af2a9a81f0e3aca41abe83acd1bf8b7b3680cfe494d251"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户暂定以ERP整档发货，但明确要求待人工确认；未认定平台与ERP数量相等。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N12",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      }
+    },
+    "98f0be93e3e5c4f2884c297df89db1f508418bad9bd29dfe16c0564425405a1f": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "748473344678",
+        "SKU ID": "6101954667107",
+        "商品标题": "暖火艾草暖足贴自发热可行走暖脚宝发热贴脚底贴热敷贴足底暖贴",
+        "SKU": "片数:到手4双【共8片】经济装;颜色分类:【艾草升级款粉色】男码丨适用于40-43码;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "bbe38d8a0bfc4b302cd297fe1dbfcb8c4770e9bb5a572ee127740345db5f4569",
+      "source_code": "NH11105",
+      "mode": "pending",
+      "erp_bindings": {
+        "NH11105": [
+          "5ae38dc289f28bd648d27e8257f1b275eb99f88e17a9bb802588160e137a54a7"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户暂定以ERP整档发货，但明确要求待人工确认；未认定平台与ERP数量相等。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N13",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      }
+    },
+    "cdf3196e195e0e4c470db0bac452db6c07849deee96b4761eeeaed72eaa5f331": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "748473344678",
+        "SKU ID": "6101954667092",
+        "商品标题": "暖火艾草暖足贴自发热可行走暖脚宝发热贴脚底贴热敷贴足底暖贴",
+        "SKU": "片数:到手4双【共8片】经济装;颜色分类:【艾草升级款黄色】女码丨适用于36-39码;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "7a77d6c4ccb32002200d2c68ff5bc3cc7885ff628e00575516532fa6670e4733",
+      "source_code": "NH141401",
+      "mode": "pending",
+      "erp_bindings": {
+        "NH141401": [
+          "868833017cab6d9b1359aab29758161df30f4924360e38db97a9666cb26bd0e6"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户暂定以ERP整档发货，但明确要求待人工确认；未认定平台与ERP数量相等。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N14",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      }
+    },
+    "50e0338ddc06adf1199a8e9f48d1e31865e44dfbcaf64d87e6393b539a710776": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "748473344678",
+        "SKU ID": "6101954667102",
+        "商品标题": "暖火艾草暖足贴自发热可行走暖脚宝发热贴脚底贴热敷贴足底暖贴",
+        "SKU": "片数:到手4双【共8片】经济装;颜色分类:【艾草升级款黄色】男码丨适用于40-43码;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "fd9a64afdfc996037e0078b96321ff4d35cb36ae57f6a7a668d80336a1023d8a",
+      "source_code": "NH134901",
+      "mode": "pending",
+      "erp_bindings": {
+        "NH134901": [
+          "dd17e488989439d3eb90995db3d451265540680595705e39f993681f5bfc5184"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户暂定以ERP整档发货，但明确要求待人工确认；未认定平台与ERP数量相等。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N15",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      }
+    },
+    "e0aabee602c48e2bc6019ebcb226880c728428341ff82bc06902a625da7d2fe7": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "748473344678",
+        "SKU ID": "6119136462470",
+        "商品标题": "暖火艾草暖足贴自发热可行走暖脚宝发热贴脚底贴热敷贴足底暖贴",
+        "SKU": "片数:到手4双【共8片】经济装;颜色分类:卡通儿童款【适用于32-35码】正版授权;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "69849f8d875e496e27881f247b28113ab186d04dd766e86c96b5a69abcae3d86",
+      "source_code": "NH134601",
+      "mode": "pending",
+      "erp_bindings": {
+        "NH134601": [
+          "fe4b736621fc24e93fd57003fc2be6b94ed22ed4f98f8dc05f66e69fac49a2b8"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户暂定以ERP整档发货，但明确要求待人工确认；未认定平台与ERP数量相等。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N16",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      }
+    },
+    "1f4e2f96c6f98975d0d3b0129af2f0f4c4ed47d30418127fcf3a2eadcbc5446b": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "748473344678",
+        "SKU ID": "6119136462477",
+        "商品标题": "暖火艾草暖足贴自发热可行走暖脚宝发热贴脚底贴热敷贴足底暖贴",
+        "SKU": "片数:到手4双【共8片】经济装;颜色分类:卡通女生款【适用于36-39码】正版授权;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "75a7af1a3a033091ffdb1d1fe58dd7c9126608bc012cc0278d7a83b901ba20b4",
+      "source_code": "NH134601",
+      "mode": "pending",
+      "erp_bindings": {
+        "NH134601": [
+          "fe4b736621fc24e93fd57003fc2be6b94ed22ed4f98f8dc05f66e69fac49a2b8"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户暂定以ERP整档发货，但明确要求待人工确认；未认定平台与ERP数量相等。女生款36—39码与ERP儿童款的对应关系也未确认。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N17",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      }
+    },
+    "b6f63d9dbdd439d540c2539a40cd850bd467d7174ed163ffbe193485aabe52c3": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "748473344678",
+        "SKU ID": "5937866585877",
+        "商品标题": "暖火艾草暖足贴自发热可行走暖脚宝发热贴脚底贴热敷贴足底暖贴",
+        "SKU": "片数:到手9双【共18片】热销装;颜色分类:【经典特惠款】女码丨适用于36-39码;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "82d0f37461cf3a07ea250d43b7c6a507b8efd05a72a06cc1e190410491f7d18e",
+      "source_code": "NH00401018",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH00401018": [
+          "f4ce1e59936ad650507f809cd242ebe848c9b90224d235257b77e580e22d527a"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NH00401018；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H19",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NH00401018"
+    },
+    "d7551691cf70efb57e2dd59b62eeceee12d8638ea4aa932f3a8a9b1a48154808": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "748473344678",
+        "SKU ID": "6101954667103",
+        "商品标题": "暖火艾草暖足贴自发热可行走暖脚宝发热贴脚底贴热敷贴足底暖贴",
+        "SKU": "片数:到手9双【共18片】热销装;颜色分类:【艾草升级款粉色】男码丨适用于40-43码;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "1ec9967f1eb2f4448b32cda6ee0ff472daab297e071faad64c2ec521586bfffe",
+      "source_code": "NHCP06001",
+      "mode": "pending",
+      "erp_bindings": {
+        "NHCP06001": [
+          "cdb639f799caf4937591ddefcc23e556cfde94af9f8a52f8b20f7e1830b08a76"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户暂定以ERP整档发货，但明确要求待人工确认；未认定平台与ERP数量相等。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N18",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      }
+    },
+    "949aa1a94fd79316ffc5b4668d39a2e3ed8f30f51717136089687a04c66f4b08": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "748473344678",
+        "SKU ID": "6101954667088",
+        "商品标题": "暖火艾草暖足贴自发热可行走暖脚宝发热贴脚底贴热敷贴足底暖贴",
+        "SKU": "片数:到手9双【共18片】热销装;颜色分类:【艾草升级款黄色】女码丨适用于36-39码;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "9a07155f2d0d79f25b9d231ddca26c12edf1551b93e1ccd20fdea40a3382a722",
+      "source_code": "NHCP05001",
+      "mode": "pending",
+      "erp_bindings": {
+        "NHCP05001": [
+          "80631383c16d51d81716e09c724f8f7af8c635c67347b405bba582414df99721"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户暂定以ERP整档发货，但明确要求待人工确认；未认定平台与ERP数量相等。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N19",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      }
+    },
+    "719787803754710503a55f0110aa026b2b682c9231a37ea24f385813fd966820": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "748473344678",
+        "SKU ID": "6101954667098",
+        "商品标题": "暖火艾草暖足贴自发热可行走暖脚宝发热贴脚底贴热敷贴足底暖贴",
+        "SKU": "片数:到手9双【共18片】热销装;颜色分类:【艾草升级款黄色】男码丨适用于40-43码;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "0c036cbb9f448cc263d691f0c97a9f384224dc6a852cb3e1b854d987d4adcb1d",
+      "source_code": "NHCP06401",
+      "mode": "pending",
+      "erp_bindings": {
+        "NHCP06401": [
+          "5f2e37df30b46039d4cc6e902c88b40252915b72eac40136f966b740652fc6f6"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户暂定以ERP整档发货，但明确要求待人工确认；未认定平台与ERP数量相等。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N20",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      }
+    },
+    "b82a936a8d6e11cc0c05df4945fd9d5c0e8500b37cee31d851b9eb762402fbb4": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "748473344678",
+        "SKU ID": "6119136462471",
+        "商品标题": "暖火艾草暖足贴自发热可行走暖脚宝发热贴脚底贴热敷贴足底暖贴",
+        "SKU": "片数:到手9双【共18片】热销装;颜色分类:卡通儿童款【适用于32-35码】正版授权;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "9f740be0dc4417232c0f54dca8118500a2911e32370d45c2a4f0fcc0a5ea5b21",
+      "source_code": "NH134610",
+      "mode": "pending",
+      "erp_bindings": {
+        "NH134610": [
+          "bb3438f689a04bf0cfdd9a77112b889dc7151c19c1b1ef1b6deff5023dd11eb8"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户暂定以ERP整档发货，但明确要求待人工确认；未认定平台与ERP数量相等。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N21",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      }
+    },
+    "910c90898d328fb7ea107dc773c5d57fc81a4324a260dd2c55f295bafe667aef": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "748473344678",
+        "SKU ID": "6119136462478",
+        "商品标题": "暖火艾草暖足贴自发热可行走暖脚宝发热贴脚底贴热敷贴足底暖贴",
+        "SKU": "片数:到手9双【共18片】热销装;颜色分类:卡通女生款【适用于36-39码】正版授权;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "5af8a00773f5adbdb07d98f5f16faf4334754a9c784561fb4d9a2a21d416a60e",
+      "source_code": "NH134610",
+      "mode": "pending",
+      "erp_bindings": {
+        "NH134610": [
+          "bb3438f689a04bf0cfdd9a77112b889dc7151c19c1b1ef1b6deff5023dd11eb8"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户暂定以ERP整档发货，但明确要求待人工确认；未认定平台与ERP数量相等。女生款36—39码与ERP儿童款的对应关系也未确认。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N22",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      }
+    },
+    "09057f3be4510e6eb35923b8d1377c03e95a53ad9600af7797fcacd30f333fda": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "807181045486",
+        "SKU ID": "5710438744679",
+        "商品标题": "暖火丁腈家务洗碗手套厨房清洁橡胶加厚耐用乳胶食品级官方旗舰店",
+        "SKU": "尺码:L;颜色分类:40只【加厚丁腈9英寸】家庭装;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "3a67148bea802f26389c88665e5d207a747de170139a1daf55260ab9ff1e6312",
+      "source_code": "NH14730101080",
+      "mode": "conflict",
+      "erp_bindings": {
+        "NH14730101080": [
+          "859d5931aade802bca43c574d0f9f50fc96e781c9fdcfd7799b8ffb3dab3fe87"
+        ],
+        "NH147101011480": [
+          "e7217e5293b058b1e2295c105773aaaf51007336e200a4634611caa9a7d1e3ae"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "以ERP为对照，保留当前原码L/M/S尺码冲突；平台9英寸与人工参考ERP12寸仍不一致，需人工核实，未确认长度等价。人工参考：NH147101011480（一次性丁腈手套粉色 12寸 L码 40只）；未确认为正确目标。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N23",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      },
+      "reference_code": "NH147101011480"
+    },
+    "294eaf9c4c635ec695f6a2b213b2136aa56b0de8ff30cc2d27b739cfb7b9b818": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "807181045486",
+        "SKU ID": "5710438744678",
+        "商品标题": "暖火丁腈家务洗碗手套厨房清洁橡胶加厚耐用乳胶食品级官方旗舰店",
+        "SKU": "尺码:M;颜色分类:40只【加厚丁腈9英寸】家庭装;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "abe9b4ac6bcf665f46175775ac5a4528f856badb258df106e518c9b7020b115e",
+      "source_code": "NH14720101079",
+      "mode": "conflict",
+      "erp_bindings": {
+        "NH14720101079": [
+          "d4bb17b001310ae847b7d2bcddfe7fdd46b7be36e7f13cd4e118867491d50f5d"
+        ],
+        "NH147001011479": [
+          "3bb7036dc7766ff087ee9389fe9598143bcd2bfa775011ee96055923c1308269"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "以ERP为对照，保留当前原码L/M/S尺码冲突；平台9英寸与人工参考ERP12寸仍不一致，需人工核实，未确认长度等价。人工参考：NH147001011479（一次性丁腈手套粉色 12寸 M码 40只）；未确认为正确目标。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N24",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      },
+      "reference_code": "NH147001011479"
+    },
+    "e87725fd199d6db1bc754e7e08a7c5813e94ae0689d26370e9c7fa7191c79419": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "807181045486",
+        "SKU ID": "5710438744677",
+        "商品标题": "暖火丁腈家务洗碗手套厨房清洁橡胶加厚耐用乳胶食品级官方旗舰店",
+        "SKU": "尺码:S;颜色分类:40只【加厚丁腈9英寸】家庭装;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "f97e07bc6467d924a5f1f69742a88781a046e1d2a6efb10cb0c0e3d7ef09c2d5",
+      "source_code": "NH14740101081",
+      "mode": "conflict",
+      "erp_bindings": {
+        "NH14740101081": [
+          "b18070afd13e6f869555f2b8482d729b2caf34b0dbc32fe97474838016ae1e1d"
+        ],
+        "NH146901011478": [
+          "6a7fecab8197f41bf63784315f48453c89ee003a7fc45295b812a706b6cf5dba"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "以ERP为对照，保留当前原码L/M/S尺码冲突；平台9英寸与人工参考ERP12寸仍不一致，需人工核实，未确认长度等价。人工参考：NH146901011478（一次性丁腈手套粉色 12寸 S码 40只）；未确认为正确目标。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N25",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      },
+      "reference_code": "NH146901011478"
+    },
+    "eaa328ec2a981f2aaa38e2d1570d7333cd5657fa1cc8791f67b12aac6a07e17d": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "740957658603",
+        "SKU ID": "5112297433825",
+        "商品标题": "暖火自发热鞋垫女冬季可行走脚底加热暖贴宝宝暖脚足贴艾草脚垫男",
+        "SKU": "鞋码:均码;颜色分类:30送10片★卡通款【适用32-35码】;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "693ba9a4d9ef0549d97ecc361ecf1a3ca929784cb468589b384d5b1236340952",
+      "source_code": "NHCP08601",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP08601": [
+          "9dbb81247632ad92674b2113325c894dd7a41a44fcddfce7d75e88d2e22f7397"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP08601；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H28",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP08601"
+    },
+    "0a12515babb03c3dceaf5f7bbd7b775d376f6661c74804ff0b4929c4a5d3512f": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "740957658603",
+        "SKU ID": "5112297433824",
+        "商品标题": "暖火自发热鞋垫女冬季可行走脚底加热暖贴宝宝暖脚足贴艾草脚垫男",
+        "SKU": "鞋码:均码;颜色分类:30送10片★特惠款【适用36-39码】;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "2d3d53ee31600d910cc452ebe41fe801feb9d5cb957bb4d02e8edd459188fd5c",
+      "source_code": "NHCP07001",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP07001": [
+          "d920fd59318e58e25bfe8c53afe019f2439ce77f488f8f3f612792c7a2e059a9"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP07001；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H29",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP07001"
+    },
+    "004311bad0fef203f1acd651c69d1aad4d6b42563e8196604c142050545732f4": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "740957658603",
+        "SKU ID": "5112297433826",
+        "商品标题": "暖火自发热鞋垫女冬季可行走脚底加热暖贴宝宝暖脚足贴艾草脚垫男",
+        "SKU": "鞋码:均码;颜色分类:30送10片★艾草款【适用36-39码】;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "3d3d63184b819cf44a4e571402d77d6c5f005390a60bd46a85389799f9241bef",
+      "source_code": "NHCP05201",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP05201": [
+          "172a22762650b3ae838e82cdc97abfdaf3592f2fd44f28859e3c8962947b048c"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP05201；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H30",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP05201"
+    },
+    "62a03e7cad4b51965277b4bc3edb7d741ac6b838796b1d6bb14d523bb7d08c5a": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "740957658603",
+        "SKU ID": "5112297433827",
+        "商品标题": "暖火自发热鞋垫女冬季可行走脚底加热暖贴宝宝暖脚足贴艾草脚垫男",
+        "SKU": "鞋码:均码;颜色分类:30送10片★艾草款【适用40-43码】;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "45df4ae08ee11b7f443ccacdfaa456c387761f1ad90d486f8065d762e48a45d2",
+      "source_code": "NHCP06501",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP06501": [
+          "35b0468dca3e2585dd8eef83b031ccd18c67e1c38cc49adee59a718af85b21eb"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP06501；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H31",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP06501"
+    },
+    "868446c20aab355414c200260a63f5ae0a56077f237082cc209403f5b13d7f80": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "1001303112190",
+        "SKU ID": "5985888012610",
+        "商品标题": "暖火草本暖宝宝热贴艾草暖身贴保暖发热贴大姨妈宫暖肚子贴热敷贴",
+        "SKU": "颜色分类:20送10片【艾草保暖 热敷驱寒】.;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "d43922f5ca7ab371f4ef7adec8626ac473c05a6a908ad64a2d02e881379e214c",
+      "source_code": "NHCP02601",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP02601": [
+          "e109dd1c43390dc15d31115f655d92fbfeb8c252149d5d7b03759e4b0318ccf3"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP02601；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H32",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP02601"
+    },
+    "2f2f8081ae310a724643ee915205e9d5a0f2cfc8f14d5af4d96ac5fe45d59101": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "656751646552",
+        "SKU ID": "5148943311777",
+        "商品标题": "暖火艾草暖膝贴膝盖热敷关节发热贴膝盖保暖贴护膝帖中老年宝宝贴",
+        "SKU": "片数:10片;颜色分类:国潮暖膝贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "2b905be97a6c0eb1828ff2034d30f592ae31b7f0a72fabaa3b2c7a78f34dabd0",
+      "source_code": "NH82202",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH82202": [
+          "8e585f7470ae1c8156a9875c1853919c506c6506d836f9ecb08b0589094d4675"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NH82202（5片*2）；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H33",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NH82202"
+    },
+    "5d61760635760c4a14f9b98a801eefdebc844f99dc1e6e92944d91d1f6042445": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "770166768730",
+        "SKU ID": "5283023665224",
+        "商品标题": "暖火蒸汽颈椎热敷贴护颈部暖贴艾草暖颈贴披肩艾灸脖子肩颈热敷包",
+        "SKU": "颜色分类:【精致养护】二盒（10片）送精油;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "c68dbabe037f99b6e7e9c5d544f75ab45cdc202c72ba557a28f855959f3c6691",
+      "source_code": "NH82002128401",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH82002128401": [
+          "706ed2943bcc539a14782783dcc0518494526371ebb0b4fa58e699ccbf2cbbd0"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NH82002128401（也是*2）；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H34",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NH82002128401"
+    },
+    "31f588548f369d58c18f2d178d9ab52c61d53ea227bded753d26870c32fefb89": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "770247725087",
+        "SKU ID": "5452033051239",
+        "商品标题": "暖火膝盖蒸汽热敷贴护膝发热贴关节保暖贴宝宝艾草自发热暖膝热贴",
+        "SKU": "颜色分类:两盒送精油（10片）【标准养护装】;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "2f166c5700f22027d724437eac4dd7e521514e541c74e0709335d8e2278b84ee",
+      "source_code": "NH822011284",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH822011284": [
+          "0ff3483d75307b82e23ecf538f5b2847526868b105bbf6f633eccdec31d1adfe"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NH822011284（*2问题）；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H35",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NH822011284"
+    },
+    "8f719f7ede7e162ff3cb32b769b3a810ea6b1e05992214d3bb4494ae4ba548b4": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "765028191371",
+        "SKU ID": "5431412990836",
+        "商品标题": "暖火发热鞋垫自发热加热暖脚宝女男暖宝宝贴脚底可行走儿童暖足贴",
+        "SKU": "鞋码:均码;颜色分类:40送20片★儿童款【适用32-35码】;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "7fcde4f82873fa636a40385ca77fbfc897fbf39239d418620ef9c0cb06622e38",
+      "source_code": "NH696030",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH696030": [
+          "a4288e379bfd2d7cdced4a72ba8aa2536225e3acb80876656cfada2d029814d9"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NH696030（40+20=60片=30对）；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H36",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NH696030"
+    },
+    "be0982bc40f6f2300543e1351bc799958b53323b004189b63b9d3c50f3943530": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "740957658603",
+        "SKU ID": "6312027311428",
+        "商品标题": "暖火自发热鞋垫女冬季可行走脚底加热暖贴宝宝暖脚足贴艾草脚垫男",
+        "SKU": "鞋码:均码;颜色分类:40送20片★卡通款【适用32-35码】.;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "477df6831b442f296a20c5901ac1ddbb5d9f97b50aa81a5cf484f46514e7d45e",
+      "source_code": "NH696030",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH696030": [
+          "a4288e379bfd2d7cdced4a72ba8aa2536225e3acb80876656cfada2d029814d9"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NH696030（40+20=60片=30对）；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H37",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NH696030"
+    },
+    "1dc469a1e51302f08ca5531d1fdd651c67616099a6530bfc5affd15feae4ac07": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "740957658603",
+        "SKU ID": "5112297433830",
+        "商品标题": "暖火自发热鞋垫女冬季可行走脚底加热暖贴宝宝暖脚足贴艾草脚垫男",
+        "SKU": "鞋码:均码;颜色分类:40送20片★特惠款【适用36-39码】;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "fe4eb63f07bb14f3e90670f03f9010d529d5bc91a7e132d6481281fd04ab45aa",
+      "source_code": "NHCP07101",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP07101": [
+          "6d3bfab69708e9f20885b9b748a5adbe0a44acf1bd109673a223eab29df0e715"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP07101（40+20=60片=30对）；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H38",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP07101"
+    },
+    "d36f2a0857ca341b8ad4aa17ece28d88a26eb4176540cde021294af5739d0a16": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "765028191371",
+        "SKU ID": "5431412990835",
+        "商品标题": "暖火发热鞋垫自发热加热暖脚宝女男暖宝宝贴脚底可行走儿童暖足贴",
+        "SKU": "鞋码:均码;颜色分类:40送20片★男码【适用40-45码】;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "b36008a296cbbfa9e0e6792e5f87b9b376abb848e83fb91e93e9a1a84a284da9",
+      "source_code": "NHCP06601",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP06601": [
+          "d85e3d3bc9ba6365d3e69e91d9018659bbc69ac38910fabb7687ddbb254d6efc"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP06601（40+20=60片=30对）；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H39",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP06601"
+    },
+    "909233185e73a3b51ec00712026f1ecc481977be60381657c897fb3326e8742a": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "740957658603",
+        "SKU ID": "6312027311426",
+        "商品标题": "暖火自发热鞋垫女冬季可行走脚底加热暖贴宝宝暖脚足贴艾草脚垫男",
+        "SKU": "鞋码:均码;颜色分类:40送20片★艾草款【适用36-39码】.;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "7ed9c82d94cd68d999b190f182f7217f670ec5b0ac61e4f8418f1395fdfcfac3",
+      "source_code": "NHCP06701",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP06701": [
+          "02b73de1659bf69e70a29386f908f5525b66f58add42d3636140e714cedb505e"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：（40+20=60片=30对）；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H40",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP06701"
+    },
+    "77e28c3b2e901c1a2484a43b1d20c428e245aa9d70b13c9975732bdc0568d918": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "740957658603",
+        "SKU ID": "6312027311427",
+        "商品标题": "暖火自发热鞋垫女冬季可行走脚底加热暖贴宝宝暖脚足贴艾草脚垫男",
+        "SKU": "鞋码:均码;颜色分类:40送20片★艾草款【适用40-43码】.;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "b61cfdbb9b9497695bc95a179ce65853d077a1945a5ddfd7e286b9ee474963da",
+      "source_code": "NHCP06601",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP06601": [
+          "d85e3d3bc9ba6365d3e69e91d9018659bbc69ac38910fabb7687ddbb254d6efc"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：（40+20=60片=30对）；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H41",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP06601"
+    },
+    "0019c790d880d6cdfd9ec6d671ff397b6286b05e3ea114eb9e478cfabffac30d": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "1009883985131",
+        "SKU ID": "6175073578988",
+        "商品标题": "儿童发热鞋垫自发热暖脚宝女男暖宝宝贴免充电冬季学生脚底暖足贴",
+        "SKU": "鞋码:均码;颜色分类:KT儿童款【适用32-35码】★40送20片;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "24976af1e32f5783a8a22f66899b1c8e4e51a7ac960f80b89351437a5e0a5711",
+      "source_code": "NH65360",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH65360": [
+          "b3aa50a7548176e509a359fe64c1e489f84c441b6ed763a709c9780ff9214958"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：（40+20=60片=30对）；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H42",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NH65360"
+    },
+    "247e74cb6e3177d133915c11888cf45e3695aab76835ee1f7a9dc1fc3b31a3b7": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "1009883985131",
+        "SKU ID": "6175073578989",
+        "商品标题": "儿童发热鞋垫自发热暖脚宝女男暖宝宝贴免充电冬季学生脚底暖足贴",
+        "SKU": "鞋码:均码;颜色分类:KT女码【适用36-39码】★40送20片;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "ca8a94e5f3f7148a49cb49761d62d495f528b3cc19dee0e9a52364cbe06a4d18",
+      "source_code": "NH385030",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH385030": [
+          "9908cef3c5715569d68f8d1318166a5436d58cfe8c30b3562121e44a9f348a9b"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：（40+20=60片=30对）；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H43",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NH385030"
+    },
+    "edaba89762a8abc133b9fa5da8184d54a6afdef34fa063c67b48013540487a7a": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "1009883985131",
+        "SKU ID": "6175073578993",
+        "商品标题": "儿童发热鞋垫自发热暖脚宝女男暖宝宝贴免充电冬季学生脚底暖足贴",
+        "SKU": "鞋码:均码;颜色分类:升级可穿戴式暖足宝★40送20片;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "2fa14142a7461b6beedb0b2e77c90b56768bc99f8da30bdc2c5d178d7fd40c42",
+      "source_code": "NHCP13501010",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP13501010": [
+          "c6cafbbac5fb32e587ddfb84159b2b55ca7cd16f4af64b4eb9c7c2a1dc80067b"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：（40+20=60片=30对）；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H44",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP13501010"
+    },
+    "c76a9f36e12160e2df7ec7b8bc122c8ba4fde19553ab90ea4c2cd02d176b3cae": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "1009883985131",
+        "SKU ID": "6175073578991",
+        "商品标题": "儿童发热鞋垫自发热暖脚宝女男暖宝宝贴免充电冬季学生脚底暖足贴",
+        "SKU": "鞋码:均码;颜色分类:哪吒儿童款【适用32-35码】★40送20片;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "5afea0aed500741d5b8167740831b3e1c4aa952a20ba295365a6d01cf802007e",
+      "source_code": "NH696030",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH696030": [
+          "a4288e379bfd2d7cdced4a72ba8aa2536225e3acb80876656cfada2d029814d9"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：（40+20=60片=30对）；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H45",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NH696030"
+    },
+    "db5976b149262bb6ddb1bbb7702966e90f10f9bbda518875b5b7f6107d70fbd8": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "1009883985131",
+        "SKU ID": "6175073578992",
+        "商品标题": "儿童发热鞋垫自发热暖脚宝女男暖宝宝贴免充电冬季学生脚底暖足贴",
+        "SKU": "鞋码:均码;颜色分类:艾草男码【适用40-45码】★40送20片;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "98fbff84a808f8ca1bf5e2c75d4ba91b65262fe8428ff652d932471893c174a6",
+      "source_code": "NHCP06601",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP06601": [
+          "d85e3d3bc9ba6365d3e69e91d9018659bbc69ac38910fabb7687ddbb254d6efc"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：（40+20=60片=30对）；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H46",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP06601"
+    },
+    "25ca940eeecf93ee907c9adf94beffc5dab36975e5829748f987306a84071e6a": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "1001021879490",
+        "SKU ID": "6116667216631",
+        "商品标题": "卡通发热暖贴自发热学生暖宝宝贴防寒女保暖冬季热敷贴官方旗舰店",
+        "SKU": "颜色分类:【20片卡通暖身贴】长效发热;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "a1db7af4dfe7d6bdd52193ae6d3fff8c4bd7b4e29eb99110ee5167310698180e",
+      "source_code": "NHCP25101",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP25101": [
+          "9f8480f772fff32e60e94d60066c6ea72e6086e560f10f4c2e0dbacf6b5b400f"
+        ],
+        "TPCP00201020": [
+          "4f4e37ac55c02a12dd4431b0a58a0ed5dbe2e387ab39d64047f49cf3f356fa19"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户已明确填写本SKU最终编码：TPCP00201020；原文：以ERP的为准，为ERP不符的标出来，让人工确认。仅适用本SKU；原错误编码不因此通过。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N26",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      },
+      "target_code": "TPCP00201020"
+    },
+    "082856324b3d6c6513e5b2b913a24e3e154bed1a1e046c71d9c9bfbc07d9c264": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "1001303112190",
+        "SKU ID": "5985888012611",
+        "商品标题": "暖火草本暖宝宝热贴艾草暖身贴保暖发热贴大姨妈宫暖肚子贴热敷贴",
+        "SKU": "颜色分类:30送20片【艾草保暖 热敷驱寒】.;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "abd84e4445ffdd457b686aca70a94b1e6e62a76f1cb4cf748d3e9da3a4072426",
+      "source_code": "NHCP02701",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP02701": [
+          "ca396804589f6e6e95a06fdfa63150262a2d6e88a76b72d1806b6b2ecc4fb9a4"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户已明确填写本SKU最终编码：NHCP02701；原文：改正备注，保留原码。仅适用本SKU；原错误编码不因此通过。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N27",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      },
+      "target_code": "NHCP02701"
+    },
+    "9425515586b4023fb94be184eca1c2b32eb9a612349fe1fc5bed16b85ab472c5": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "846791115383",
+        "SKU ID": "6159659559257",
+        "商品标题": "暖宝宝暖贴冬天可爱卡通女生用宫暖大姨妈贴热敷保暖冬季自发热贴",
+        "SKU": "片数:20片;颜色分类:KT卡通艾草暖贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "927d4b1fec640ef33f953dbe4335a7c06983de3b5a781614f89ad12efa1e9c96",
+      "source_code": "KTCP0250106",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH38720": [
+          "fc9bacfc79413f8095d9261eb214f164f669254db7932cd7c4bd954b020a09f4"
+        ],
+        "KTCP0250106": [
+          "9ecd0e9b547f50eca873eae8b8b74e01ddb501e24042e46968a0b76f405d09d7"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户已明确填写本SKU最终编码：NH38720；原文：备注错误。仅适用本SKU；原错误编码不因此通过。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N28",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      },
+      "target_code": "NH38720"
+    },
+    "6bcedfc910e86bf42e6352cc86a5ebd228bc9aa247edbb33894adee2060a01e5": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "742307239576",
+        "SKU ID": "5139870088262",
+        "商品标题": "暖火暖贴宝宝贴大姨妈宫暖身贴自发热贴大号贴保暖宝贴热敷贴",
+        "SKU": "片数:25片;颜色分类:宫暖调理组合【艾草/益母草/热姜贴】;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "c254af60a28a24816875b512e12d1b0823b86fb482c3c014c8038934644b4ebc",
+      "source_code": "NH159100021010210",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP0201025": [
+          "1d0fa96ed871d8d11da087a860e2c86601452225a24483f28ea29b41f72cbe78"
+        ],
+        "NH159100021010210": [
+          "a863b5834c4c7986bca7216736d804142265e04e957ddbee7634cb9cdaf8cc60"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP0201025；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H50",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP0201025"
+    },
+    "a209fcabce03603b45a74874af116a91b7d00dea804709fb6938306e58f29f2f": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "740957658603",
+        "SKU ID": "6312027311429",
+        "商品标题": "暖火自发热鞋垫女冬季可行走脚底加热暖贴宝宝暖脚足贴艾草脚垫男",
+        "SKU": "鞋码:均码;颜色分类:60送40片★特惠款【适用36-39码】.;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "d09ca4476f599461031cc3ef2e1cbb04dcfcba5ecf42ff21e26c8a74c14184f3",
+      "source_code": "NHCP07201",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP07201": [
+          "5dac86b100a3f9cc4dd2c81e3ba4b2855e4c3b0c56b0808269b1227bc8af4451"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：60+40=100片=50对；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H51",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP07201"
+    },
+    "9e17b91010301a264f80a6a401b97da217ee13d8ae233d69397d029a5f7d57ad": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "740957658603",
+        "SKU ID": "6312027311430",
+        "商品标题": "暖火自发热鞋垫女冬季可行走脚底加热暖贴宝宝暖脚足贴艾草脚垫男",
+        "SKU": "鞋码:均码;颜色分类:60送40片★艾草款【适用36-39码】.;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "5681a61ea7acc9e2c821cc4bbc377fcb83ac224aaecc022a2ce48bbe267aee4b",
+      "source_code": "NHCP05301",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP05301": [
+          "10e1b15879fb8ae54d8dbbd090538da76ce9be21c80dbc6a925aa0bd69b9713d"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：60+40=100片=50对；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H52",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP05301"
+    },
+    "7b3d91629236cf3d97e480b100f2b96852a75842ab6c8f804ea1279e5bc78f77": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "740957658603",
+        "SKU ID": "5112297433839",
+        "商品标题": "暖火自发热鞋垫女冬季可行走脚底加热暖贴宝宝暖脚足贴艾草脚垫男",
+        "SKU": "鞋码:均码;颜色分类:60送40片★艾草款【适用40-43码】;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "025af189a970250a486eb5010d29aa5b14ac953137540b6eb7b377030183b8d2",
+      "source_code": "NHCP21001",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP21001": [
+          "2d1f8b939514a0f3472173522fb65daca075227ee055fb1df754be8861c74981"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：60+40=100片=50对；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H53",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP21001"
+    },
+    "2a580e05edcbb02da8d88f4b6872cb64c29d095ccd96febf1a60851f9284d5d9": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "1001021879490",
+        "SKU ID": "5991672393334",
+        "商品标题": "卡通发热暖贴自发热学生暖宝宝贴防寒女保暖冬季热敷贴官方旗舰店",
+        "SKU": "颜色分类:【40片卡通暖身贴】长效发热;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "860989ded89b94c5ddd9ea0bc023a3c074c124b4eecab714e0b0ed8259c585f5",
+      "source_code": "NHCP25401",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP25401": [
+          "c4c77a48f9cc8204201a9b11d19b1ad36227b9825f9a9f2bc27cb49992a11c95"
+        ],
+        "NHCP00701": [
+          "4847c31e748b5587a08e1da3fbe177541e2ed4a1da7b52fa16cfdc77989f7063"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP00701；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H54",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP00701"
+    },
+    "7c6d735e8021cd03f4f3762d62379c1ec19b96f6ac248af0b442225b505dde57": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "1001303112190",
+        "SKU ID": "6147647344869",
+        "商品标题": "暖火草本暖宝宝热贴艾草暖身贴保暖发热贴大姨妈宫暖肚子贴热敷贴",
+        "SKU": "颜色分类:50送50片【艾草保暖 热敷驱寒】.;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "c1132ae1fbbae4af9e87e2bccea051df81c9a87e585baeb7e94e26ae8584c693",
+      "source_code": "NHCP02801",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP02801": [
+          "90dff3bbefb5a669f1209ad47b0a7a03c087500eca606c0b34f5b343bab98dcf"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：50片送50片=100片；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H55",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP02801"
+    },
+    "5cb05a2693f2ee1c95379a88acaecbcaa26b2507ab82b4cc7294ca78f4bf22aa": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "846791115383",
+        "SKU ID": "6159659559258",
+        "商品标题": "暖宝宝暖贴冬天可爱卡通女生用宫暖大姨妈贴热敷保暖冬季自发热贴",
+        "SKU": "片数:60片;颜色分类:KT卡通艾草暖贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "b756ce0ff217844e9de80b7aab8f814af1ffb3c30b83e48dda7f824e2b2a23f8",
+      "source_code": "KTCP0250102",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "KTCP0250102": [
+          "d406190a1390bcac80f60a5422322c32178518b50fd46add0e75e70c0a4dde47"
+        ],
+        "KTCP0250106": [
+          "9ecd0e9b547f50eca873eae8b8b74e01ddb501e24042e46968a0b76f405d09d7"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：KTCP0250106\nKT艾草暖贴10片*6包（新）；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H56",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "KTCP0250106"
+    },
+    "ad49fa9be92d075dd1590b70d525fab9d2d295f436192d2561179a8b55d4042c": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "747908147839",
+        "SKU ID": "5987726957875",
+        "商品标题": "暖火艾草自发热鞋垫加热暖脚宝女脚底可行走暖贴暖足贴宝宝暖脚贴",
+        "SKU": "颜色分类:【12小时艾草款】男码粉色40以上,50片-共25双;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "0b974ffbaec69e142bb80b5be79d877965c0c4b9ac68f35b04ea07afdfc4bc32",
+      "source_code": "NHCP18501",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP18501": [
+          "4e6a765c7adbe2820aec12cc9609882bb616521d8ae628b5e9ff079422f52bec"
+        ],
+        "NHCP18601": [
+          "ab8f19913d4858c65a08e4918197cbda72bda178d60d416e383f734d564b88a5"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP18601；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H57",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP18601"
+    },
+    "9253fa3dce6508248d16cdaf3d8f010aa29059a348769ab1b67a310e883481ff": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "540439692562",
+        "SKU ID": "3841773864017",
+        "商品标题": "艾草暖贴宝宝热贴宫暖宝女益母草保暖防寒12小时冬季自发热帖正品",
+        "SKU": "片数:100片;颜色分类:【店长推荐套餐】热姜贴+艾草贴+益母草贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "bdba542dfe1be4ffb770797fb407d51e01670dd63e435f7e7c85407bbb802b42",
+      "source_code": "NHCP25201",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP25201": [
+          "bd1261969c94cf01d3f125d49c1781b58810342ec8f32c07f446b3de1e455068"
+        ],
+        "NH1367010100": [
+          "9cebcb33ca51251a40cc31c5c009ca5ce61623f5409d6e3f1b7f21ec1a4253c3"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NH1367010100；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H58",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NH1367010100"
+    },
+    "ee3f76a4e8b905cd60290bcd9acb36a0d74f0ab7d40a8026b35b5814360bbfea": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "742307239576",
+        "SKU ID": "5288279578201",
+        "商品标题": "暖火暖贴宝宝贴大姨妈宫暖身贴自发热贴大号贴保暖宝贴热敷贴",
+        "SKU": "片数:20片;颜色分类:艾草暖贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "ceade57a07e11e249517f056375738e95ba15e5a02761b1555b48d86f01f181c",
+      "source_code": "NH102020",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH102020": [],
+        "NHCP01101": [
+          "aebb58ec2e5893296a7fbe711d773ffa4f65344df3d9ca00bf5194745ec2a9f7"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP01101；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H60",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP01101"
+    },
+    "be3cded7d2923b1a46d9796819677a1fbc9a1a0644abc85c1b4980bcedc44221": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "521359507405",
+        "SKU ID": "4481835712664",
+        "商品标题": "暖火暖宝宝暖贴加强热敷贴女2023新款12小时大姨妈宫暖自发热贴",
+        "SKU": "片数:30片;颜色分类:增强型暖贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "e813d05eeb81b15b31251ee2f7af459e5ef69803611fda6f6c907096acfd698e",
+      "source_code": "NH00730H",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH00730H": [],
+        "NHCP03201": [
+          "0941b9ef63eed996201f6cac15c291b4f7718e4f791521cada4f88f1abd8874c"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP03201；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H61",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP03201"
+    },
+    "d9eabe7d0f0b51dbc6badef6ddcfda2d791632b5df53f8312995fb4c3e4456f2": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "742307239576",
+        "SKU ID": "5288279578224",
+        "商品标题": "暖火暖贴宝宝贴大姨妈宫暖身贴自发热贴大号贴保暖宝贴热敷贴",
+        "SKU": "片数:30片;颜色分类:生姜暖贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "77bc576174ec3e9b040c5564bfec82140d7c06b40f218a672b0955a35acfa76c",
+      "source_code": "NH15930",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP02101": [
+          "bf27e63dcd504e7897b28438d0d4a9dac0b4814510092c02383c02c6d21cf7f1"
+        ],
+        "NH15930": []
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP02101；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H62",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP02101"
+    },
+    "299adc61ba860d4eb7f2648a2ff8e132c75c20cf28ab26cd4e34fa3039a9724e": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "742307239576",
+        "SKU ID": "5288279578205",
+        "商品标题": "暖火暖贴宝宝贴大姨妈宫暖身贴自发热贴大号贴保暖宝贴热敷贴",
+        "SKU": "片数:60片;颜色分类:艾草暖贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "2930126eb6d33ecec7eab621c71d6098cd6a2518e36666ac0de590a535803c39",
+      "source_code": "NH10260",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP17301": [
+          "bbc8d4c481446fe0b3321a97cebafeb03c684eb695bb825695b250ed9d5b9860"
+        ],
+        "NH10260": []
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP17301；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H63",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP17301"
+    },
+    "a679af20224fa7a4c80b5c99beb75e204fd993b156e9f9c4f14d0f0358ee2c51": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "762185692544",
+        "SKU ID": "5253967721196",
+        "商品标题": "暖火艾草暖贴暖宝宝贴冬天女生用热帖宫暖12小时发热贴腹部热敷贴",
+        "SKU": "颜色分类:艾草暖贴10片【艾草热敷】;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "991e22d4276b0767186476482d3d2fe01794b5444fa6625cb1c8ae42a2803b91",
+      "source_code": "NH1331",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH1331": [],
+        "NHCP01001": [
+          "0cd5bf690822629dd5b2d9a640df61a6c4868516a6441ffcb4a7382b8d4c7bfb"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP01001；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H64",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP01001"
+    },
+    "e2a6a63700c06f388848d189620715b5264b06a19a678108f5ff1904c7d72641": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "630647117803",
+        "SKU ID": "4730504422780",
+        "商品标题": "暖贴宝宝贴女调理热帖自发热经期宫暖保暖身贴卡通冬季发热生姜贴",
+        "SKU": "片数:30片;颜色分类:艾草热敷贴【不含赠品】;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "30b3fda5d82436c00a8941e9f6f645fc5a5126a289a85063d39da7362ced73f3",
+      "source_code": "KTCP04501",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "KTCP0240106": [
+          "12a19d27fc146a7cd7e453a8373384857505b1882602c96a2257256d0f4c7ade"
+        ],
+        "KTCP04501": []
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：KTCP0240106\nKT艾草暖贴5片*6包（新）；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H65",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "KTCP0240106"
+    },
+    "5d8768283c2369650a87f059bd033cda3b634be0e1151fb802ba493bcaeb500f": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "769077810027",
+        "SKU ID": "5446846091277",
+        "商品标题": "HelloKitty暖宝宝贴女生用自发热贴暖身宫暖可爱卡通学生暖肚子贴",
+        "SKU": "颜色分类:1包8片【体验装】卡通暖贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "ba9636e535b34a46bb4ac3adc941dc259bab5cf1f2f09d233185735b478b0c73",
+      "source_code": "NH66601",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH66601": [],
+        "KTCP00101": [
+          "7f911858e0d6cac6b831bdb357f9ee85c333fbd0582aefdf3df3ac6259925f19"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：KTCP00101；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H66",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "KTCP00101"
+    },
+    "0fe3300437b374d7c1b160992e89cff6cf706f3c8cad4d6bb185952d5cbcaa94": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "742307239576",
+        "SKU ID": "5288279578231",
+        "商品标题": "暖火暖贴宝宝贴大姨妈宫暖身贴自发热贴大号贴保暖宝贴热敷贴",
+        "SKU": "片数:100片;颜色分类:生姜暖贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "5f845ab3522fdc46f98a46406dc821249a56c035b4d679fabd1fc68c10ac2fdb",
+      "source_code": "NH1590100",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP02301": [
+          "66b80685041f47d2cdbf2feae9dd976d85194bc3065b7ca0d85a3a43457e3a0b"
+        ],
+        "NH1590100": []
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP02301\n暖贴生姜100片；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H68",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP02301"
+    },
+    "099795df4073b8118bfe64d668aa30f40dd5d0729e8f737087fa9a8c777db551": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "742307239576",
+        "SKU ID": "5288279578191",
+        "商品标题": "暖火暖贴宝宝贴大姨妈宫暖身贴自发热贴大号贴保暖宝贴热敷贴",
+        "SKU": "片数:30片;颜色分类:通用暖贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "146b225091b468138c70d1af0c4cb2f66388cc44755eaa5fb46b33a447fc1594",
+      "source_code": "NH00130",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH00130": [],
+        "NHCP00801": [
+          "f1ebd12ee4cdaac1ad49236aadd7b8fd41b288a5e618f22a0b404a1db2285cc6"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP00801\n暖贴通用30片；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H69",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP00801"
+    },
+    "6e0d32efcac63b652aaf0de286191a837ac7321675eae95e98e0bcc80c146dec": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "742307239576",
+        "SKU ID": "5288279578193",
+        "商品标题": "暖火暖贴宝宝贴大姨妈宫暖身贴自发热贴大号贴保暖宝贴热敷贴",
+        "SKU": "片数:50片;颜色分类:通用暖贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "421bd3b57c4f0b4af44d58ae6112727210efe80f331ca1845ddba9be862c4af6",
+      "source_code": "NH141202",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP00401": [
+          "5301f62490e707e909bfeed3620cb453e950086b5213ee27372db76ed4b48f33"
+        ],
+        "NH141202": []
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP00401\n暖贴通用50片；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H70",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP00401"
+    },
+    "07d3b102b16b0c0458eb332fd7d152c1bd220c2a2d42733b0ba62b33e25877aa": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "742307239576",
+        "SKU ID": "5288279578196",
+        "商品标题": "暖火暖贴宝宝贴大姨妈宫暖身贴自发热贴大号贴保暖宝贴热敷贴",
+        "SKU": "片数:80片;颜色分类:通用暖贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "f8696120ba0d8ac6f45efc5b651347ee7ad5f47f121017ceeb385034386844c7",
+      "source_code": "NH00180",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP0010108": [
+          "31434bf643894e4ef7cdc614c00898f1b522f2320c4fb3c19c994ae546970769"
+        ],
+        "NH00180": []
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP0010108\n暖火通用暖贴80片；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H71",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP0010108"
+    },
+    "42215b07060e226b6a9e9f891373a7a938342706057b6d1da17e58eb795fce29": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "765138048663",
+        "SKU ID": "5264276428225",
+        "商品标题": "暖火高温暖贴户外防寒自发热东北哈尔滨旅游保暖贴冬季暖帖热敷贴",
+        "SKU": "颜色分类:30片【手机加热贴】防冻关机;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "c4c6709b3c7ecdd8141e17fb0e28322cf0be660a91e161a3539b1ea647b71580",
+      "source_code": "NH145703",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH145703": [],
+        "NHCP10001": [
+          "982ba24619897d649480cfd32479947728cee0457167ee3d893e773687f8de5c"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP10001\n手机暖贴花色30片；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H72",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP10001"
+    },
+    "bad25d550528675bdc6980d058f646ef8355703118a44e16c9440a32c09341d4": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "995557938168",
+        "SKU ID": "5976735129972",
+        "商品标题": "手机暖宝宝东北旅游防寒手机发热贴自发热防冻贴旅行防关机保暖贴",
+        "SKU": "颜色分类:【户外防寒】高温暖贴40片;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "53039dc817bfda7796f1d2fd924360baa450154b615e93c81624ae83dad8b102",
+      "source_code": "NH144404",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP09301": [
+          "0f3726db9b640561547b6803cc416dc0efa2b00144d1fee900c471d604318bca"
+        ],
+        "NH144404": []
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP09301\n暖贴高温40片；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H73",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP09301"
+    },
+    "a3169458da3e3b25a82fddf4a30a7167a37c791b5623d9def5c2e8bd068b66dd": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "696771202664",
+        "SKU ID": "5110541502519",
+        "商品标题": "发热鞋垫暖足贴脚垫自发热暖足宝冬季男暖宝宝贴暖足保暖鞋垫冬",
+        "SKU": "颜色分类:【艾草升级款】女码-60片|适用于36-39码;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "18e0efaae180563fa5940f25b247f6babbd90ba0bb065411431c770dfaff71b6",
+      "source_code": "NH135701",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH135701": [],
+        "NHCP05701": [
+          "afdf3fb930c2933764b7b0f7ee312cc1642f1ce7d42af3e33ac290c1c40a93bf"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP05701\n鞋垫粉艾草女码30对；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H74",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP05701"
+    },
+    "1f65ea70d3cf0c9dad7098fd337f3f63d862c9134dd244d699960fe48a3bd462": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "696771202664",
+        "SKU ID": "5110541502520",
+        "商品标题": "发热鞋垫暖足贴脚垫自发热暖足宝冬季男暖宝宝贴暖足保暖鞋垫冬",
+        "SKU": "颜色分类:【艾草升级款】男码-60片|适用于40码及以上;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "a0a733042c7e55a44b7ba7a9af6c90e4fd8ba454cc1e0d1959d8c5dabc218502",
+      "source_code": "NH11130",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP06201": [
+          "fe91fec6d6cecf8c34c830e8841aaadd6aadf9a21fad07a52b1f1a7a03acd77c"
+        ],
+        "NH11130": []
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP06201\n鞋垫粉艾草男码30对；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H75",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP06201"
+    },
+    "6ed62cb467da29bcddaeae6671ccb7324b1371cd5061ab07b62556217f5fc869": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "995557938168",
+        "SKU ID": "5976735129973",
+        "商品标题": "手机暖宝宝东北旅游防寒手机发热贴自发热防冻贴旅行防关机保暖贴",
+        "SKU": "颜色分类:【防冻关机】手机暖贴20片;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "7cc210e5572affe72452ceab53a2d65836fc30156eca23164691f07873e13339",
+      "source_code": "NH145702",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH145102": [
+          "574785f99927188b5982780f22a8fc9dee9435a75d3456b4587151241ffb061d"
+        ],
+        "NH145702": []
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NH145102\n暖火手机宝（白色布）20片袋装；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H76",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NH145102"
+    },
+    "ed77136f4fcb8cad88e74b17633cebc6a3993265df5b826efb25428922ef5d81": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "742307239576",
+        "SKU ID": "5288279578220",
+        "商品标题": "暖火暖贴宝宝贴大姨妈宫暖身贴自发热贴大号贴保暖宝贴热敷贴",
+        "SKU": "片数:100片;颜色分类:益母草暖贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "03d025ee37b4adc922254d7ad43f0544721bf9fa965a4f32b22ca2a04b9ea2b4",
+      "source_code": "NH002100",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP01901": [
+          "46d87b9f2461a79d1f919cef42d270c89739a0f68e018a435fd080937db896a4"
+        ],
+        "NH002100": []
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP01901\n暖贴益母草100片；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H77",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP01901"
+    },
+    "947bcbf8f1c1a7133e6a5a2ee0042e95d9150a095f5c91b76cfb737096a31c9e": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "742307239576",
+        "SKU ID": "5288279578229",
+        "商品标题": "暖火暖贴宝宝贴大姨妈宫暖身贴自发热贴大号贴保暖宝贴热敷贴",
+        "SKU": "片数:80片;颜色分类:生姜暖贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "389b1c3a7b3add33a0903fba675f36502fa89488d43e76e50542a4cdddba4d18",
+      "source_code": "NH15980",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP02001080": [
+          "42a32e9e2943befa6cfded21fa86b125f58b099831a7e4a1856220a380ccbe16"
+        ],
+        "NH15980": []
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP02001080\n暖火生姜暖贴80片；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H78",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP02001080"
+    },
+    "01e0cb61614dbf9a01ab652f06ca4c33f381ec9f555652189ef76fa8d850ec40": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "765028191371",
+        "SKU ID": "5431412990834",
+        "商品标题": "暖火发热鞋垫自发热加热暖脚宝女男暖宝宝贴脚底可行走儿童暖足贴",
+        "SKU": "鞋码:均码;颜色分类:40送20片★女码【适用36-39码】;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "c47561f3b956627db64fcba77e8be8f8d60ff1e0e85e1953722391629f9327d2",
+      "source_code": "NH697060",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH697060": [],
+        "NHCP19801": [
+          "b86bc51b581943bd3563374c1f9c70fed2f1790544512a153728a6cdb887b955"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP19801；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H79",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP19801"
+    },
+    "fa553925e62da9b2c35498e66b640bdd47e31761e14ee39171292b66d5bc2477": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "685814857813",
+        "SKU ID": "5068614046742",
+        "商品标题": "暖火发热鞋垫女艾草自发热加热鞋垫12小时可行走男暖足贴暖脚底宝",
+        "SKU": "颜色分类:100片 哪吒女款【36~39码】;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "1e8a5b15783cea9c0dd402e185d663bc9b6ec9749b87b7813fd6e6ef717e4285",
+      "source_code": "NH697050",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP19901": [
+          "3c97079667048ef16a5e585cbc0055d6bb18b3f072dfd1565084c895bfaf74a7"
+        ],
+        "NH697050": []
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户已明确填写本SKU最终编码：NHCP19901；原文：确认。仅适用本SKU；原错误编码不因此通过。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N29",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      },
+      "target_code": "NHCP19901"
+    },
+    "0ca729893858d1b72ca03dd14ece02dcc4cb2522846d6199dfa095ee95b11cb4": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "685814857813",
+        "SKU ID": "5068614046737",
+        "商品标题": "暖火发热鞋垫女艾草自发热加热鞋垫12小时可行走男暖足贴暖脚底宝",
+        "SKU": "颜色分类:20片 哪吒女款【36~39码】;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "6d9ea172084a1f42340cb7dbe6eea65247913ca3ad564fcce24026e8b03e3067",
+      "source_code": "NH697010",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH697010": [],
+        "NHCP26701": [
+          "7064ed8a361fdaea3e70b75f6624697037a7fd4935f7d5906fbf3ffd47de67b5"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户已明确填写本SKU最终编码：NHCP26701；原文：确认。仅适用本SKU；原错误编码不因此通过。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N30",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      },
+      "target_code": "NHCP26701"
+    },
+    "754990233517bc1813b154af9e1e602a660f4fa9c7242815b1f38dec95788a5c": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "765138048663",
+        "SKU ID": "5264276428223",
+        "商品标题": "暖火高温暖贴户外防寒自发热东北哈尔滨旅游保暖贴冬季暖帖热敷贴",
+        "SKU": "颜色分类:30片【野外高温暖贴】平均58度;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "2446d66905fb61407e668caf4d59636ec8a4016f7f00732d11dc9925042d28de",
+      "source_code": "NH144403",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP09201": [
+          "e3733db9ec7b52fdb1f70613e0fa5bf49d25cd06601c54cd986922d46f49dfbd"
+        ],
+        "NH144403": []
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP09201\n暖贴高温30片；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H82",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP09201"
+    },
+    "099465676f48ca6b94620fcaf65a65a1412f0de4097ab5f15046967b1044b3e8": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "762382765311",
+        "SKU ID": "5433733579529",
+        "商品标题": "高温暖贴暖宝宝东北哈尔滨旅游冬天防寒自发热保暖身贴官方旗舰店",
+        "SKU": "颜色分类:买20片送10片【高温暖贴】平均58度;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "178765191d340f0fb5ced6fbdbcedaa1912017c117d79db2b64337a64da6302d",
+      "source_code": "NH144403",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP09201": [
+          "e3733db9ec7b52fdb1f70613e0fa5bf49d25cd06601c54cd986922d46f49dfbd"
+        ],
+        "NH144403": []
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP09201\n暖贴高温30片；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H83",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP09201"
+    },
+    "620a34774d7834ab8aa03d710eb99e9e400383dfb3e0806954b2cff3770209af": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "763616603674",
+        "SKU ID": "5852142607240",
+        "商品标题": "暖火手机暖宝宝防冻防关机加热贴东北暖宝宝冬天东北旅游户外防寒",
+        "SKU": "颜色分类:高温暖身贴买20片送10片;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "d03debf277517a05785227a65802f1a60ab8418868b9e95fb7fa612bb3ce2c75",
+      "source_code": "NH144403",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP09201": [
+          "e3733db9ec7b52fdb1f70613e0fa5bf49d25cd06601c54cd986922d46f49dfbd"
+        ],
+        "NH144403": []
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP09201\n暖贴高温30片；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H84",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP09201"
+    },
+    "0423cb7e1a9bcba1cded1c2a6bd9e56c06209a6c2d3fa9eeece1b303b3e8aa6c": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "742307239576",
+        "SKU ID": "5288279578192",
+        "商品标题": "暖火暖贴宝宝贴大姨妈宫暖身贴自发热贴大号贴保暖宝贴热敷贴",
+        "SKU": "片数:40片;颜色分类:通用暖贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "9a727e0cc39c006c582a5f17c07ae3e112fee012aa01af9050be58574ee09459",
+      "source_code": "NH140402",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH130901": [
+          "aee69cd2acf9cf22b7eab808d77efd9e49ad7703ae02d5c42929865065fc82c4"
+        ],
+        "NH140402": []
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NH130901\n暖贴通用40片；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H85",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NH130901"
+    },
+    "81bf8d7b5b87c5dc572f262d16cbdd7dea21bb4fe9ce0f5b54f3e7e07f3962d3": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "742307239576",
+        "SKU ID": "5288279578194",
+        "商品标题": "暖火暖贴宝宝贴大姨妈宫暖身贴自发热贴大号贴保暖宝贴热敷贴",
+        "SKU": "片数:60片;颜色分类:通用暖贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "f56b54999008d57756648ce7b8e83b1ec3bfca1ea06dd6df87b03c84d09e8385",
+      "source_code": "NH123603",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH123603": [],
+        "NH131001": [
+          "ade3a67e5105a2a8ed2acedf491dcda36e044c06c9afe6e59761610ef1fc1934"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NH131001\n暖贴通用60片；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H86",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NH131001"
+    },
+    "8a811f98a73405e939f5684aade3b435a421c8437b4c804574b6302e81069005": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "685814857813",
+        "SKU ID": "4895106256501",
+        "商品标题": "暖火发热鞋垫女艾草自发热加热鞋垫12小时可行走男暖足贴暖脚底宝",
+        "SKU": "颜色分类:6片3付哪吒女款【36~39码】;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "2ac96eba51b3b43845473acbcc9befeee1bbb96065110a515b2b3ade5179f448",
+      "source_code": "NH69703",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH69703": [],
+        "NHCP10801": [
+          "c496d633c34638448a229a7860faaa2c8a3a16d279059dc75cc482737de5daff"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP10801\n鞋垫哪吒女码3对；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H87",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP10801"
+    },
+    "ff070ba03ae11873be1c7055aec3c347af1be165c1a30cad3d35a0c3f0acac08": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "742307239576",
+        "SKU ID": "5288279578207",
+        "商品标题": "暖火暖贴宝宝贴大姨妈宫暖身贴自发热贴大号贴保暖宝贴热敷贴",
+        "SKU": "片数:80片;颜色分类:艾草暖贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "c994f344f3ea801d26ac888567de27ccb58e582a63e39b1f7676b93f6cb3fe97",
+      "source_code": "NH1020180",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP01001080": [
+          "79418f76eb73ae03b19cffe4838ec9b8046621dc8eea363302cc76a9c654b92e"
+        ],
+        "NH1020180": []
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP01001080\n暖火艾草暖贴80片；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H88",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP01001080"
+    },
+    "e3dc26209aa26e72f1b2af4e1c61e853addfd312567194794ea4a12a95787fc6": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "762382765311",
+        "SKU ID": "5433733579532",
+        "商品标题": "高温暖贴暖宝宝东北哈尔滨旅游冬天防寒自发热保暖身贴官方旗舰店",
+        "SKU": "颜色分类:买20片送10片【手机加热贴】快速发热;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "e966d3290dcd93f7a995defbb4c343455311ea1e1379412551250f3e3d10c185",
+      "source_code": "NH145703",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH145703": [],
+        "NHCP10001": [
+          "982ba24619897d649480cfd32479947728cee0457167ee3d893e773687f8de5c"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP10001；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H89",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP10001"
+    },
+    "4adca0fb315fa407a1c188fa862c46e31822635a485e8791bf37342a1237a614": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "763616603674",
+        "SKU ID": "5430109618329",
+        "商品标题": "暖火手机暖宝宝防冻防关机加热贴东北暖宝宝冬天东北旅游户外防寒",
+        "SKU": "颜色分类:买20片送10片【手机发热宝】;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "8cf6e079a1e39ca9649752277fe213b0cd0e55469b10e4bb831a74b08c6b3d30",
+      "source_code": "NH145703",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH145703": [],
+        "NHCP10001": [
+          "982ba24619897d649480cfd32479947728cee0457167ee3d893e773687f8de5c"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP10001；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H90",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP10001"
+    },
+    "503d2f87079412865b204091ba943e68c5be757cd507e5d2459a9faf43828299": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "742307239576",
+        "SKU ID": "5288279578214",
+        "商品标题": "暖火暖贴宝宝贴大姨妈宫暖身贴自发热贴大号贴保暖宝贴热敷贴",
+        "SKU": "片数:40片;颜色分类:益母草暖贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "3f7f2d7c3688a282c36447abfdfa10c09ddfdd13dcd78041a774cf597e204c5d",
+      "source_code": "NH002040",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH002040": [],
+        "NHCP19401": [
+          "0fdd682d02074775334bf84c591a378d73d241bd277fccd64954e9ddced6015c"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户已明确填写本SKU最终编码：NHCP19401；原文：确认。仅适用本SKU；原错误编码不因此通过。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N31",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      },
+      "target_code": "NHCP19401"
+    },
+    "b49491d6323bae0020c040d65fe0b0ff93abc6a257b5c16e7f74a85c57271664": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "742307239576",
+        "SKU ID": "5288279578215",
+        "商品标题": "暖火暖贴宝宝贴大姨妈宫暖身贴自发热贴大号贴保暖宝贴热敷贴",
+        "SKU": "片数:50片;颜色分类:益母草暖贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "76f8973b564c2007023f562af2f6fd9d8ca088f060f3e5c1cace046931835c77",
+      "source_code": "NH00250",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH00250": [],
+        "NHCP01801": [
+          "f6816e99c637995671962b84216a32b0a559ed3baf50cf9fc2014c851bbeeecc"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP01801；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H92",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP01801"
+    },
+    "1a96cbdbfbb32b13000284257339d47473ef699e114cbd44b69b46df4cae7ea8": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "742307239576",
+        "SKU ID": "5288279578209",
+        "商品标题": "暖火暖贴宝宝贴大姨妈宫暖身贴自发热贴大号贴保暖宝贴热敷贴",
+        "SKU": "片数:100片;颜色分类:艾草暖贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "48f25a5efd29f2dffc1708b1b18aed9760cd3b999fa2069d529ccc6abdffb8f4",
+      "source_code": "NH102100",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP01401": [
+          "d2b263fc3fce336e1fcb387421f5d9e3c8aa6d39a91bb8d5a46d9fe6241642db"
+        ],
+        "NH102100": []
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP01401；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H93",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP01401"
+    },
+    "088d4076c6b2935d5e2edd1982436def00797bef973b7a96c482ce31dab5d8e8": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "742307239576",
+        "SKU ID": "5288279578223",
+        "商品标题": "暖火暖贴宝宝贴大姨妈宫暖身贴自发热贴大号贴保暖宝贴热敷贴",
+        "SKU": "片数:20片;颜色分类:生姜暖贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "39adc24d5f346e96a031746a0a2c32c0bc62611293d810dc6e950ea3d94d777f",
+      "source_code": "NH1590120",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH159020": [
+          "123c2079ec4a5e5b8f0b30f1dc66de623f65aae6af52f61b33d1dc66130577db"
+        ],
+        "NH1590120": []
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NH159020\n暖火生姜暖贴20片；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H94",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NH159020"
+    },
+    "d10af95d9b9f3d49d05824e041560ea5522e78d7da637d985b41695defa3b54b": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "742307239576",
+        "SKU ID": "5288279578212",
+        "商品标题": "暖火暖贴宝宝贴大姨妈宫暖身贴自发热贴大号贴保暖宝贴热敷贴",
+        "SKU": "片数:20片;颜色分类:益母草暖贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "ac5a5f33c065df6486880492a1746079a287da428dd1abb76d44e1f6bd1ad790",
+      "source_code": "NH002020",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP01601": [
+          "20ef4b213d910f3f6791dd566c29e1ef32e34e9f44a6c6368986ab30df1f670c"
+        ],
+        "NH002020": []
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户已明确填写本SKU最终编码：NHCP01601；原文：确认。仅适用本SKU；原错误编码不因此通过。",
+      "source": {
+        "file": "SKU判定条件待确认_25条.xlsx",
+        "sheet": "待你确认",
+        "cell": "N32",
+        "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
+      },
+      "target_code": "NHCP01601"
+    },
+    "14cfdf4c4741038a05ecc45f6a16c4a885dc787ea443fd5ee2de0976c2b8322c": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "742307239576",
+        "SKU ID": "5288279578203",
+        "商品标题": "暖火暖贴宝宝贴大姨妈宫暖身贴自发热贴大号贴保暖宝贴热敷贴",
+        "SKU": "片数:40片;颜色分类:艾草暖贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "624a357bd636db5c07ec66e6d58f0304b4e41d5554b597862af900a98e6edcc9",
+      "source_code": "NH10240",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH10240": [],
+        "NHCP11701": [
+          "a918d7a5b54bb8019747c3e7039bd93abc95b5fee6df43633d2ebc436493c5d8"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP11701；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H96",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP11701"
+    },
+    "5da36eaa4182b01a30a6db3614fe6171d8fae756dbbe142a2d7dcb1511d8bc2a": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "742307239576",
+        "SKU ID": "5288279578216",
+        "商品标题": "暖火暖贴宝宝贴大姨妈宫暖身贴自发热贴大号贴保暖宝贴热敷贴",
+        "SKU": "片数:60片;颜色分类:益母草暖贴;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "41157ffcbf4fd403db4894cbcf3a611cd96b6082e4178c04e52007d484413e2a",
+      "source_code": "NH00260",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH00260": [],
+        "NHCP18401": [
+          "72c5bd955faafbe3b0a4122e538ba7f85ea6a72e48f01562f1dd6be5d4c3252b"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP18401；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H97",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP18401"
+    },
+    "263c9b8568c1de272e9f40f255c2688dfc24cc4290289bacdf757b54add6d1e5": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "888384264809",
+        "SKU ID": "5760236344716",
+        "商品标题": "一次性手套pvc食品加长加厚家务专用防水防油污透明耐用厨房手套",
+        "SKU": "尺码:L;颜色分类:50只蓝色体验装【加厚高弹pvc】;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "fc6c5070d920959fb8433ac2be64813be887ff735e78eea8e552b141fd3a5b7e",
+      "source_code": "NH1462",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH1462": [],
+        "NH146201": [
+          "e4e07af35a5f53dcdc0def337373b1bdcbec42136684a75ebc7f2eec04db1c6b"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NH146201；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H98",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NH146201"
+    },
+    "0945f7ac5d0434dac19aaa32f0ac7e97ce44bc181514ccdc09f7095e163a1ac0": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "888384264809",
+        "SKU ID": "5760236344715",
+        "商品标题": "一次性手套pvc食品加长加厚家务专用防水防油污透明耐用厨房手套",
+        "SKU": "尺码:M;颜色分类:50只蓝色体验装【加厚高弹pvc】;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "4b03c4cd26d1f4bee1c6d10133bbdd3b74deaca2b8c84749dc9e94e3a6a6cd27",
+      "source_code": "NH1461",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NH1461": [],
+        "NH146101": [
+          "aa4ff76912687cde10cef94776c04ae2dd50e4fce0324fbaccb7be5437a44a0a"
+        ]
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NH146101；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H99",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NH146101"
+    },
+    "0a2ca798137f55ebbdbc50e4fa37f8f4587a2089b0adcbca6b59d53c7ce8414f": {
+      "context": {
+        "平台": "天猫",
+        "商品 ID": "777179410401",
+        "SKU ID": "5481908158788",
+        "商品标题": "暖火艾灸贴肩颈热敷艾草暖贴自发热蒸汽颈椎官方旗舰正品",
+        "SKU": "颜色分类:【U先】3片装;",
+        "ERP货品编号": "",
+        "ERP规格编码": "",
+        "独立规格数量": ""
+      },
+      "content_fingerprint": "69d8f012ef6b236968ad55e2972d2e71e28d280664e014e0ee6ba4d1b4aa97a7",
+      "source_code": "NH34103",
+      "mode": "confirmed",
+      "erp_bindings": {
+        "NHCP10301": [
+          "31ba647eb054d6678dbea5d280e7b3bfb8e9ab39a864f007c440da1f0b4463d9"
+        ],
+        "NH34103": []
+      },
+      "reviewed_by": "本会话用户",
+      "reviewed_at": "2026-10-27",
+      "basis": "用户逐行确认：NHCP10301；仅适用本平台商品ID、SKU ID及未变的商品标题和规格。",
+      "source": {
+        "file": "天猫已修正.xlsx",
+        "sheet": "需处理",
+        "cell": "H100",
+        "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
+      },
+      "target_code": "NHCP10301"
+    }
+  }
+}
