@@ -93,10 +93,14 @@ class CurrentCodeAuditTests(unittest.TestCase):
 
     def test_overall_total_is_not_attached_to_the_nearest_named_gift(self):
         result = self.audit('买20片送10片【到手30片】;艾草暖膝贴【买即送护膝2只】', '暖膝贴30片送护膝1对', '暖膝贴')
-        self.assertEqual(result['核验状态'], '核对通过')
+        # 2026-10-28: unresolved bundle units require confirmation; a pair of
+        # knee supports is not covered by the foot-patch pair/piece permission.
+        self.assertEqual(result['核验状态'], '待人工确认')
+        self.assertIn('组成单位不可比较',result['核验说明'])
 
     def test_per_box_quantity_without_box_count_is_not_total(self):
-        self.assertEqual(self.audit('四合一眼罩【10片/盒】', '四合一眼罩40片盒装', '眼罩')['核验状态'], '核对通过')
+        # 2026-10-28: an explicit package rate without a total is pending.
+        self.assertEqual(self.audit('四合一眼罩【10片/盒】', '四合一眼罩40片盒装', '眼罩')['核验状态'], '待人工确认')
 
     def test_single_product_quantity_vs_bundle_component(self):
         self.assertEqual(self.audit('暖贴60片', '暖贴40片+足贴20片')['核验状态'], '异常（商品/规格不一致）')

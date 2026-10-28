@@ -19,7 +19,9 @@ import re
 import sys
 import unicodedata
 from collections import Counter, defaultdict
+from copy import deepcopy
 from decimal import Decimal
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
@@ -27,6 +29,8 @@ import pandas as pd
 from rapidfuzz import fuzz
 import confirmed_mappings as confirmations
 import sku_audit_reviews as sku_reviews
+from quantity_syntax import packaging_products, without_rates, additive_quantities, unresolved_gifts
+from manual_weight import apply_weight_guard
 from erp_library import resolve_erp_inputs, DEFAULT_MANIFEST
 from simple_report import write_simple_report
 
@@ -255,14 +259,16 @@ def load_erp(combo_path: str, single_path: str) -> pd.DataFrame:
 
 
 COUNT_UNITS = r"片|对|包|袋|只|双|个|件|盒|副|套"
+STRONG_PACKAGING_TERMS = ('外袋','内袋','卷材','纸板','纸箱','外箱','包装箱','包装材料','暖贴包装')
+SOFT_PACKAGING_TERMS = ('彩盒','彩箱','纸盒','内盒','包装袋')
 
 
-def quantity_details(value: str) -> tuple[tuple[int, str] | None, list[str]]:
+def _scalar_quantity_details(value: str) -> tuple[tuple[int, str] | None, list[str]]:
     s = unicodedata.normalize("NFKC", literal_text(value)).lower()
     issues = []
     totals = list(dict.fromkeys((int(n), u) for n, u in re.findall(rf"(?:到手|共|合计|总计)\s*(\d+)\s*({COUNT_UNITS})", s)))
-    packs = re.findall(rf"(\d+)\s*({COUNT_UNITS})\s*(?:盒装|袋装|装)?\s*[×*x]\s*(\d+)\s*(?:包|袋|盒)?", s)
-    pack_totals = [(int(n) * int(multiplier), unit) for n, unit, multiplier in packs]
+    pack_totals, pack_issues = packaging_products(s, COUNT_UNITS)
+    issues.extend(pack_issues)
     ingredients = {x for x in ("艾草", "益母草", "生姜") if x in s}
     each = re.search(rf"各\s*(\d+)\s*({COUNT_UNITS})", s)
     each_total = (int(each.group(1)) * 3, each.group(2)) if each and len(ingredients) == 3 else None
@@ -270,9 +276,15 @@ def quantity_details(value: str) -> tuple[tuple[int, str] | None, list[str]]:
         issues.append("各数量的商品组成不明确")
     formula_counts = re.findall(r"(?:艾草|益母草|生姜)\s*(\d+)(?:片)?", s)
     formula_total = (sum(map(int, formula_counts)), "片") if len(formula_counts) == 3 else None
-    direct = list(dict.fromkeys((int(n), u) for n, u in re.findall(rf"(\d+)\s*({COUNT_UNITS})", s)))
-    gift = re.search(rf"(?:买|单拍)?\s*(\d+)\s*片?\s*送\s*(\d+)\s*(片|对|只|个)", s)
-    gift_total = (int(gift.group(1)) + int(gift.group(2)), gift.group(3)) if gift and "同款" in s else None
+    direct = list(dict.fromkeys((int(n), u) for n, u in re.findall(rf"(\d+)\s*({COUNT_UNITS})", without_rates(s))))
+    gift = re.search(rf"(?:买|单拍)?\s*(\d+)\s*({COUNT_UNITS})?\s*(?:送|赠)\s*(\d+)\s*({COUNT_UNITS})?", s)
+    gift_total = None
+    if gift:
+        first_unit, second_unit = gift[2], gift[4]
+        unit = second_unit or first_unit
+        different_product = re.match(r'足贴|鞋垫|暖贴|眼罩|护膝|护腰|暖手|精油|收纳',s[gift.end():].lstrip())
+        if unit and (not first_unit or not second_unit or first_unit == second_unit) and not different_product:
+            gift_total = (int(gift[1]) + int(gift[3]), unit)
     if len(totals) > 1:
         issues.append("明示总数量相互冲突")
     quantity = totals[0] if totals else each_total or (pack_totals[0] if len(pack_totals) == 1 else None) or gift_total
@@ -284,7 +296,7 @@ def quantity_details(value: str) -> tuple[tuple[int, str] | None, list[str]]:
     if quantity is None and re.search(rf"1\s*(?:包|盒|袋)\s*\d+\s*(片|对|只|个)", s):
         units = [(n, u) for n, u in direct if u not in {"包", "盒", "袋"}]
         quantity = units[0] if len(units) == 1 else None
-    for other in pack_totals + ([each_total] if each_total else []) + ([formula_total] if formula_total else []):
+    for other in pack_totals + ([each_total] if each_total else []) + ([formula_total] if formula_total else []) + ([gift_total] if gift_total else []):
         if quantity and other[1] == quantity[1] and other[0] != quantity[0]:
             issues.append("总数与包装倍数或配方组成不一致")
     if re.search(r"送|赠", s) and "同款" not in s:
@@ -293,7 +305,52 @@ def quantity_details(value: str) -> tuple[tuple[int, str] | None, list[str]]:
         issues.append("套装组成未建立结构化对应关系")
     if quantity is None:
         issues.append("数量未明确或多个数量表达无法确定总数")
+    if pack_issues:
+        quantity = None
     return quantity, list(dict.fromkeys(issues))
+
+
+def quantity_structure(value: str) -> dict[str, Any]:
+    detail = deepcopy(_cached_quantity_structure(literal_text(value), parsing_rule_signature()))
+    text = unicodedata.normalize('NFKC', literal_text(value))
+    if '三合一' in text or all(name in text for name in ('艾草','生姜','益母草')):
+        detail['recipe_details'] = [{'formula':name,'quantity':(int(n),'片')}
+            for name,n in re.findall(r'(艾草|生姜|益母草)\s*(\d+)(?:片)?',text)]
+        detail['comparison_scope'] = 'total_only'
+    return detail
+
+
+def parsing_rule_signature():
+    return (tuple(sorted((k, tuple(v)) for k,v in BUSINESS_RULES.get('family_terms', {}).items())),
+            tuple(BUSINESS_RULES.get('pair_piece_families', [])))
+
+
+@lru_cache(maxsize=32768)
+def _cached_quantity_structure(value, rule_signature):
+    text = unicodedata.normalize('NFKC', literal_text(value)).lower()
+    parsed = additive_quantities(text, _scalar_quantity_details, extract_families,
+        extract_variant_groups, COUNT_UNITS, BUSINESS_RULES.get('pair_piece_families', []))
+    if parsed is not None:
+        parsed['raw'] = literal_text(value)
+        return parsed
+    qty, issues = _scalar_quantity_details(value)
+    gift_issues = unresolved_gifts(text, COUNT_UNITS, extract_families, _scalar_quantity_details)
+    issues = list(dict.fromkeys([*issues, *gift_issues]))
+    incomplete = bool(gift_issues) or any('包装倍数' in issue for issue in issues)
+    if qty is None and re.search(r'\d+\s*(?:片|对|只|个)\s*[/／]\s*(?:盒|包|袋)',text):
+        incomplete = True
+        issues = [*issues, '每包数量已知但包装数或总数未明确']
+    if '三合一' in text and qty is None:
+        incomplete = True
+        issues = [*issues, '三合一总数量未明确']
+    return {'raw': literal_text(value), 'qty': None if incomplete else qty, 'parsed_total':qty,
+            'parts': [], 'issues': issues,
+            'incomplete': incomplete, 'additive': False}
+
+
+def quantity_details(value: str) -> tuple[tuple[int, str] | None, list[str]]:
+    parsed = quantity_structure(value)
+    return parsed['qty'], parsed['issues']
 
 
 def extract_quantity(text: str, families: set[str] | None = None) -> tuple[int, str] | None:
@@ -301,30 +358,34 @@ def extract_quantity(text: str, families: set[str] | None = None) -> tuple[int, 
 
 
 def extract_families(text: str) -> set[str]:
-    s = norm_text(text)
-    if not s:
+    segments = [norm_text(piece) for piece in re.split(r"[\s\u3000,，。;；:：!！?？、/\\|_+*×()（）\[\]【】{}<>《》\-—·“”‘’'\"`~]+", literal_text(text))]
+    segments = [piece for piece in segments if piece]
+    if not segments:
         return set()
+    contains = lambda word: any(norm_text(word) in piece for piece in segments)
     # Packaging material takes precedence over the product that the packaging is for.
-    if any(x in s for x in ("外袋", "内袋", "卷材", "彩盒", "包装袋", "纸箱", "外箱", "包装箱", "纸盒", "内盒", "彩箱", "纸板", "包装材料", "暖贴包装", "暖贴内袋", "暖贴外袋")):
+    if any(contains(x) for x in STRONG_PACKAGING_TERMS):
         return {"包装材料"}
     families = set()
     for family, terms in BUSINESS_RULES.get("family_terms", {}).items():
-        if any(norm_text(term) in s for term in terms):
+        if any(contains(term) for term in terms):
             families.add(family)
-    if any(x in s for x in ("除湿袋", "干燥剂", "吸湿", "防潮盒")):
+    if any(contains(x) for x in ("除湿袋", "干燥剂", "吸湿", "防潮盒")):
         families.add("除湿用品")
-    if "手套" in s:
+    if contains("手套"):
         families.add("手套")
-    if "眼罩" in s:
+    if contains("眼罩"):
         families.add("眼罩")
-    if "鞋垫" in s:
+    if contains("鞋垫"):
         families.add("发热鞋垫")
-    if any(x in s for x in ("暖手宝", "暖手贴")):
+    if any(contains(x) for x in ("暖手宝", "暖手贴")):
         families.add("暖手用品")
-    if any(x in s for x in ("暖足贴", "足贴")):
+    if any(contains(x) for x in ("暖足贴", "足贴")):
         families.add("足贴")
-    if any(x in s for x in ("暖贴", "暖宝宝", "暖身贴", "宫暖贴", "热敷贴", "温暖贴")):
+    if any(contains(x) for x in ("暖贴", "暖宝宝", "暖身贴", "宫暖贴", "热敷贴", "温暖贴")):
         families.add("暖贴")
+    if not families and any(contains(x) for x in SOFT_PACKAGING_TERMS):
+        return {'包装材料'}
     return families
 
 
@@ -375,8 +436,18 @@ def build_features(title: str, sku_name: str, erp_name: str = "", erp_category: 
     specific = literal_text(erp_name if is_erp else sku_name)
     title = literal_text(title)
     combined = specific if is_erp else f"{title} {specific}"
-    families = extract_families(specific) or extract_families(erp_category if is_erp else title)
-    quantity, issues = quantity_details(specific)
+    families = extract_families(specific)
+    family_source = 'sku' if families else 'unknown'
+    if not families:
+        fallback = extract_families(erp_category if is_erp else title)
+        # A selected SKU has priority. SEO titles listing multiple categories
+        # are candidate evidence, not proof of a category contradiction.
+        shoe_like_spec = re.search(r'\d{2}\s*[-~至]\s*\d{2}\s*码|男码|女码|儿童码',specific)
+        if is_erp or (len(fallback) == 1 and not (fallback == {'足贴'} and shoe_like_spec)):
+            families = fallback
+            family_source = 'erp_category' if is_erp else 'title'
+    detail = quantity_structure(specific)
+    quantity, issues = detail['qty'], detail['issues']
     # SKU attributes take precedence. Title-only attributes generate candidates;
     # they do not fill missing SKU specifications for automatic decisions.
     variants = extract_variant_groups(specific)
@@ -384,6 +455,11 @@ def build_features(title: str, sku_name: str, erp_name: str = "", erp_category: 
             "qty": quantity, "qty_issues": issues, "variants": variants,
             "brand_warmhuo": "暖火" in combined, "is_erp": is_erp,
             "erp_item_id": "", "spec_code": ""}
+    result['title_text'] = title
+    result['family_source'] = family_source
+    result['quantity_structure'] = detail
+    result['packaging_issue'] = ('彩盒等包装名称需确认是成品还是包装材料'
+        if any(w in specific for w in SOFT_PACKAGING_TERMS) and not any(w in specific for w in STRONG_PACKAGING_TERMS) else '')
     result["evidence"] = structured_evidence(specific, title if not is_erp else "", erp_category, result)
     return result
 
@@ -620,6 +696,8 @@ def classify_row(current_code: str, pf: dict[str, Any], erp_by_code: dict[str, l
         result[f"ERP候选{suffix}分数"] = candidate["score"] if candidate else ""
         result[f"ERP候选{suffix}冲突"] = "；".join(candidate["conflicts"] + candidate["record"]["features"].get("qty_issues", [])) if candidate else ""
     blockers = []
+    if pf.get('packaging_issue') or any(r['features'].get('packaging_issue') for r in current):
+        blockers.append('成品或包装材料身份尚未确认')
     if len(current) > 1:
         blockers.append("ERP合并后当前编码对应多条记录")
     if pf.get("duplicate_sku"):
@@ -705,6 +783,27 @@ def classify_row(current_code: str, pf: dict[str, Any], erp_by_code: dict[str, l
 
 def audit_components(text: str) -> dict[str, dict[str, Any]]:
     """Only compare named components, never treat every plus sign as a bundle."""
+    return deepcopy(_cached_audit_components(text, parsing_rule_signature()))
+
+
+@lru_cache(maxsize=32768)
+def _cached_audit_components(text, rule_signature):
+    parsed = quantity_structure(text)
+    if parsed['additive']:
+        components = {}
+        kinds = Counter(p['key'].split('(')[0] for p in parsed['parts'])
+        for part in parsed['parts']:
+            base_kind = part['key'].split('(')[0]
+            key = base_kind if kinds[base_kind] == 1 else part['key']
+            feature = build_features('', part['text'])
+            feature['families'] = set(part['families'])
+            if feature['qty'] and feature['qty'][1] == '对' and feature['families'] & set(BUSINESS_RULES.get('pair_piece_families', [])):
+                feature['qty'] = (feature['qty'][0] * 2, '片')
+            if key in components and feature['qty'] and components[key]['qty'] and feature['qty'][1] == components[key]['qty'][1]:
+                components[key] = {**components[key], 'qty': (components[key]['qty'][0] + feature['qty'][0], feature['qty'][1])}
+            elif key not in components:
+                components[key] = feature
+        return components
     components = {}
     def same_product_gift(match):
         suffix = text[match.end():]
@@ -736,10 +835,10 @@ def audit_quantity(features: dict[str, Any]) -> tuple[int, str] | None:
     if re.search(r"(?:到手|共|合计|总计)\s*\d+", text):
         return features["qty"]
     # A per-box rate without the number of boxes does not establish a total.
-    if re.search(r"\d+\s*(?:片|对|只|个)\s*[/／]\s*(?:盒|包|袋)", text):
+    if re.search(r"\d+\s*(?:片|对|只|个)\s*[/／]\s*(?:盒|包|袋)", text) and features['qty'] is None:
         return None
     gift = re.search(r"(\d+)\s*(片|对|只|个)\s*(?:送|赠)\s*(\d+)\s*\2", text)
-    if gift and len(audit_components(text)) <= 1:
+    if gift and len(_cached_audit_components(text, parsing_rule_signature())) <= 1:
         return int(gift[1]) + int(gift[3]), gift[2]
     return features["qty"]
 
@@ -753,7 +852,8 @@ def current_code_conflicts(pf: dict[str, Any], ef: dict[str, Any]) -> list[str]:
     family_group = lambda values: {"热贴用品" if value in {"暖贴", "足贴", "暖手用品", "暖手足宝"} else value for value in values}
     if pf["families"] and ef["families"] and not family_group(pf["families"]) & family_group(ef["families"]):
         conflicts.append("品类不一致：平台=" + "/".join(sorted(pf["families"])) + "，ERP=" + "/".join(sorted(ef["families"])))
-    pparts, eparts = audit_components(ptext), audit_components(etext)
+    signature = parsing_rule_signature()
+    pparts, eparts = _cached_audit_components(ptext, signature), _cached_audit_components(etext, signature)
     if len(pparts) >= 2 or len(eparts) >= 2:
         if len(pparts) >= 2 and len(eparts) >= 2 and set(pparts) != set(eparts):
             conflicts.append("套装组成品类不一致：平台=" + "+".join(pparts) + "，ERP=" + "+".join(eparts))
@@ -780,11 +880,66 @@ def current_code_conflicts(pf: dict[str, Any], ef: dict[str, Any]) -> list[str]:
     a, b = color_values(ptext), color_values(etext)
     if a and b and not a & b and not re.search(r"颜色随机|随机色|随机颜色", ptext):
         conflicts.append("颜色不一致：平台=" + "/".join(sorted(a)) + "，ERP=" + "/".join(sorted(b)))
-    body = lambda text: {part for part in ("暖膝", "暖腰", "暖颈", "手腕", "护膝", "护腰") if part in text.replace("暖腕", "手腕")}
+    def body(text):
+        text = text.replace('暖腕','手腕').replace('养护膝盖','膝盖')
+        # A knee heating patch is not the same product type as a wearable
+        # knee support. Only patch wording shares the thermal-patch label.
+        text = re.sub(r'护膝(?:热敷)?贴|膝盖(?:热敷|保暖)贴','暖膝贴',text)
+        return {part for part in ('暖膝','暖腰','暖颈','手腕','护膝','护腰') if part in text}
     a, b = body(ptext) or body(pf["text"]), body(etext)
     if len(a) == len(b) == 1 and a != b:
         conflicts.append("主品部位不一致：平台=" + "/".join(a) + "，ERP=" + "/".join(b))
     return conflicts
+
+
+def composition_review_issues(pf, current):
+    """Only explicit, unresolved composition is blocked; ordinary missing prose is unchanged."""
+    problems = []
+    for feature in [pf, *(r['features'] for r in current)]:
+        detail = feature.get('quantity_structure', {})
+        if detail.get('incomplete'):
+            problems.extend(detail['issues'])
+    for record in current:
+        ef = record['features']
+        if pf['variants'].get('formula') == ef['variants'].get('formula') == {'三合一'} and pf['families'] == ef['families']:
+            continue
+        pparts, eparts = audit_feature_components(pf), audit_feature_components(ef)
+        if len(pparts) >= 2 or len(eparts) >= 2:
+            if set(pparts) != set(eparts):
+                problems.append('平台与ERP组成尚未建立完整对应关系')
+            for key in pparts.keys() & eparts.keys():
+                a, b = pparts[key], eparts[key]
+                if a['qty'] and b['qty'] and quantity_compare(a['qty'], b['qty'], a['families'] | b['families']) is None:
+                    problems.append('组成单位不可比较：' + key)
+    return list(dict.fromkeys(problems))
+
+
+def packaging_review_issues(pf, current):
+    issues = [r['features']['packaging_issue'] for r in current if r['features'].get('packaging_issue')]
+    platform_issue = pf.get('packaging_issue')
+    if platform_issue:
+        explicit_family = extract_families(pf['quantity_text']) - {'包装材料'}
+        resolved = any(r['features'].get('erp_product_confirmation') and explicit_family & r['features']['families']
+            and quantity_compare(pf['qty'],r['features']['qty'],explicit_family|r['features']['families']) is True for r in current)
+        if not resolved:
+            issues.append(platform_issue)
+    return list(dict.fromkeys(issues))
+
+
+def audit_feature_components(feature):
+    # Only the outer mapping is extended below; cached features stay read-only.
+    parts = dict(_cached_audit_components(feature['quantity_text'], parsing_rule_signature()))
+    # Apparel exports often name the main product only in the title, while the
+    # SKU specifies its size and bundled patches. Do not invent a piece count.
+    primary = re.split('搭配|送|赠',feature['quantity_text'],maxsplit=1)[0]
+    roles = [r for r in ('护膝', '护腰') if r in primary]
+    if not roles:
+        roles = [r for r in ('护膝', '护腰') if r in feature.get('title_text', '')]
+    sizes = feature.get('variants', {}).get('size', set())
+    if len(roles) == 1 and sizes and parts and re.search('搭配|送|赠',feature['quantity_text']):
+        if roles[0] not in parts:
+            parts[roles[0]] = build_features('', roles[0] + '/'.join(sorted(sizes)))
+    return parts
 
 
 def apply_confirmed_audit_specs(pf: dict[str, Any]) -> dict[str, Any]:
@@ -817,6 +972,11 @@ def apply_confirmed_audit_specs(pf: dict[str, Any]) -> dict[str, Any]:
 
 
 def audit_current_code(current_code: str, pf: dict[str, Any], erp_by_code: dict[str, list[dict[str, Any]]], erp_records: list[dict[str, Any]]) -> dict[str, Any]:
+    result = _audit_current_code(current_code, pf, erp_by_code, erp_records)
+    return apply_weight_guard(result, pf, erp_by_code.get(literal_text(current_code).strip(), []))
+
+
+def _audit_current_code(current_code: str, pf: dict[str, Any], erp_by_code: dict[str, list[dict[str, Any]]], erp_records: list[dict[str, Any]]) -> dict[str, Any]:
     code = literal_text(current_code).strip()
     if not code:
         result = classify_row(current_code, pf, erp_by_code, erp_records)
@@ -858,6 +1018,21 @@ def audit_current_code(current_code: str, pf: dict[str, Any], erp_by_code: dict[
     else:
         result.update({"核验状态": "核对通过", "匹配依据": "原编码已收录，未发现明示商品或规格冲突",
                        "核验说明": "按用户口径：描述或规格信息不足也核对通过，不要求名称完全一致或全库身份唯一。"})
+        composition_issues = composition_review_issues(comparison, current)
+        if composition_issues:
+            result.update({'核验状态':'待人工确认','匹配依据':'明确组合或包装表达未完成可比解析',
+                           '核验说明':'需人工确认组成：'+'；'.join(composition_issues), '冲突项目':'；'.join(composition_issues)})
+    if any(f.get('quantity_structure', {}).get('incomplete') for f in [comparison, *(r['features'] for r in current)]):
+        reasons = composition_review_issues(comparison, current)
+        result.update({'核验状态':'待人工确认','匹配依据':'明确组合或包装表达未完成可比解析',
+                       '核验说明':'需人工确认组成：'+'；'.join(reasons), '冲突项目':'；'.join(dict.fromkeys([*conflicts,*reasons]))})
+    packaging_issues = packaging_review_issues(comparison,current)
+    if packaging_issues:
+        result.update({'核验状态':'待人工确认','匹配依据':'成品或包装材料身份存在歧义',
+                       '核验说明':'需人工确认成品/包材：'+'；'.join(packaging_issues),
+                       '冲突项目':'；'.join(dict.fromkeys([*conflicts,*packaging_issues]))})
+    if result['核验状态'] == '待人工确认' and (packaging_issues or composition_review_issues(comparison,current)):
+        result['判定路径'] += '；解析待确认'
     result['数量解析备注'] = result['规格问题']
     result['规格问题'] = result['冲突项目']
     if pf.get("duplicate_sku"):
@@ -892,12 +1067,16 @@ def suggest_code_candidates(pf: dict[str, Any], result: dict[str, Any], records:
         ef = record["features"]
         if not record["code"] or len(by_code.get(record["code"], [])) != 1:
             return False
+        if not confirmed and (not role or role != kind(record['name']) or '包装材料' in ef['families']):
+            return False
         if current_code_conflicts(comparison, ef):
+            return False
+        if packaging_review_issues(comparison, [record]):
+            return False
+        if not confirmed and role not in {'护膝', '护腰'} and composition_review_issues(comparison, [record]):
             return False
         if confirmed:
             return True
-        if not role or role != kind(record["name"]) or "包装材料" in ef["families"]:
-            return False
         if re.search(r"[+＋]|送|赠", record["name"]) and role not in {"护膝", "护腰"}:
             # Do not suggest a gift or mixed-material bundle for a plain SKU.
             pparts, eparts = audit_components(sku), audit_components(record["name"])
@@ -1056,6 +1235,13 @@ def build_erp_records(erp_df: pd.DataFrame) -> tuple[list[dict[str, Any]], dict[
         records.append(record)
         if code:
             by_code[code].append(record)
+    interpretation_path = Path(__file__).resolve().parents[1] / 'config/erp_product_confirmations.json'
+    interpretations = json.loads(interpretation_path.read_text(encoding='utf-8'))['records'] if interpretation_path.exists() else {}
+    for code, interpretation in interpretations.items():
+        matches = by_code.get(code, [])
+        if len(matches) == 1 and matches[0]['erp_fingerprint'] == interpretation['erp_fingerprint']:
+            matches[0]['features'] = {**matches[0]['features'], 'families':{interpretation['family']},
+                'packaging_issue':'', 'erp_product_confirmation':interpretation['basis']}
     return records, by_code
 
 
@@ -1072,11 +1258,16 @@ def verify_platform_file(path: str, erp_records: list[dict[str, Any]], erp_by_co
     if sku_column:
         ids = df[sku_column].map(literal_text).str.strip()
         duplicate_ids = set(ids[ids.ne("") & ids.duplicated(keep=False)])
-    out_rows, raw_rows = [], []
+    out_rows, raw_rows, quantity_rows = [], [], []
     for idx, row in df.iterrows():
         if not any(str(value).strip() for value in row.tolist()):
             continue
         def value(field):
+            if field == 'sku_name' and profile.get('sku_name_columns'):
+                missing = [c for c in profile['sku_name_columns'] if c not in df.columns]
+                if missing:
+                    raise RuntimeError(f"平台{platform}的SKU属性列缺失：{missing}；请确认导出模板。")
+                return '；'.join(str(row[c]) for c in profile['sku_name_columns'] if str(row[c]).strip())
             return str(row[cols[field]]) if cols.get(field) else ""
         product_id, title, sku_id, sku_name, current_code = (value(k) for k in ("product_id", "title", "sku_id", "sku_name", "code"))
         pf = build_features(title, sku_name)
@@ -1096,6 +1287,12 @@ def verify_platform_file(path: str, erp_records: list[dict[str, Any]], erp_by_co
         pf["confirmation"], pf["confirmation_issue"] = confirmations.lookup_confirmation({**context, "原编码": current_code}, erp_records, confirmed_entries)
         result = audit_current_code(current_code, pf, erp_by_code, erp_records)
         result, reviewed_suggestion = sku_reviews.apply_review(context, current_code, result, erp_by_code, review_entries)
+        current_records = erp_by_code.get(literal_text(current_code).strip(), [])
+        result = apply_weight_guard(result, pf, current_records)
+        quantity_rows.append({'商品 ID':product_id, 'SKU ID':sku_id, '源行号':idx + header_row + 2,
+            'platform':pf['quantity_structure'],
+            'erp':[{'code':r['code'], 'source':r['source'], 'name':r['name'],
+                    'quantity':r['features']['quantity_structure']} for r in current_records]})
         out_rows.append({"店铺": store, "平台": platform, "商品 ID": product_id, "SKU ID": sku_id,
                          "SKU": sku_name, "原编码": current_code, "应改为编码": result["应改为编码"],
                          "核验状态": result["核验状态"], "匹配依据": result["匹配依据"],
@@ -1110,7 +1307,8 @@ def verify_platform_file(path: str, erp_records: list[dict[str, Any]], erp_by_co
                          "来源行号": idx + header_row + 2, "原始字段JSON": json.dumps(row.to_dict(), ensure_ascii=False)})
     meta = {"store": store, "platform": platform, "source_file": str(Path(path).resolve()), "sheet": sheet,
             "header_row": header_row, "source_rows": len(out_rows), "columns": json.dumps(cols, ensure_ascii=False),
-            "sha256": hashlib.sha256(Path(path).read_bytes()).hexdigest(), "_raw_rows": raw_rows}
+            "sha256": hashlib.sha256(Path(path).read_bytes()).hexdigest(), "_raw_rows": raw_rows,
+            "_quantity_details": quantity_rows}
     return pd.DataFrame(out_rows), meta
 
 
@@ -1201,12 +1399,12 @@ def write_report(output_path: str, results: pd.DataFrame, erp_df: pd.DataFrame, 
     duplicate_codes = duplicate_codes.merge(erp_df[["ERP商家编码", "ERP来源", "ERP商品名称"]], on="ERP商家编码", how="left") if len(duplicate_codes) else pd.DataFrame(columns=["ERP商家编码", "记录数", "ERP来源", "ERP商品名称"])
     rules = pd.DataFrame([
         {'规则': 'ERP来源', '说明': '同时读取组合装和单品CSV，保留全部行、原字段和来源，不按名称或编码去重。'},
-        {'规则': '核对通过', '说明': '原编码已收录，未发现明示商品或规格冲突即通过。用户确认信息不足也通过，不要求完整身份或全库商品唯一。'},
+        {'规则': '核对通过', '说明': '原编码已收录且无明示冲突时，普通描述信息不足可通过；明确组成解析失败、成品/包材歧义和农产品重量待核不放行。'},
         {'规则': '异常（ERP未找到）', '说明': '平台当前非空编码在ERP商家编码列未找到；不自动认定是旧码、错码或ERP导出范围问题。'},
         {'规则': '异常（商品/规格不一致）', '说明': '当前编码已收录，但双方有明确数量、品类、配方、尺码、颜色、材质、容量、型号、香型或套装组成冲突；冲突项目列写实际依据。'},
-        {'规则': '信息不足', '说明': '未写明属性、别名尚未确认、单位不可比较、每盒片数但盒数未知等不当作明确冲突，按用户要求通过。'},
+        {'规则': '信息不足', '说明': '普通属性缺失不当作明确冲突；明确组成或包装表达解析失败进入待确认；农产品重量注明需人工核重，不自动换算。'},
         {'规则': '数量与套装', '说明': '主品、赠品、总数分别处理，不将总数算到赠品上；足贴、发热鞋垫、暖手足宝按已确认规则1对=2片。'},
-        {'规则': '三合一', '说明': '混合装之间只比较总数，忽略配比；混合装对单配方仍属明确冲突。本次7条单配方冲突列异常，供处理。'},
+        {'规则': '三合一', '说明': '混合装之间只比较总数，忽略配比；混合装对单配方仍属明确冲突，用户逐行确认的7条试用装例外仅限原绑定SKU。'},
         {'规则': '空编码', '说明': '全部保留并列编码缺失（待补录）。已有明确关系可列ERP唯一对应编码，未明确时不猜测。'},
         {'规则': '同码与重复SKU', '说明': 'ERP同码规格明确冲突时待人工确认，同码同规格保留来源且按普通编码核对；平台重复SKU逐行保留。'},
         {'规则': '建议编码', '说明': '异常和空码追加推测编码、ERP名称、依据、仍需确认的问题及其他候选。单一有支持的候选才填主推测码，多候选主列留空，未知也留空；原编码、状态和应改为编码保持不变，不写入确认映射。'},

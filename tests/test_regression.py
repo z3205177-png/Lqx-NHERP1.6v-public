@@ -88,7 +88,9 @@ class RegressionTest(unittest.TestCase):
 
     def test_multipack_and_explicit_total_conflict(self):
         quantity, issues = v.quantity_details("5片*6盒，共20片")
-        self.assertEqual(quantity, (20, "片"))
+        # 2026-10-28: a contradictory explicit package total is unresolved.
+        self.assertIsNone(quantity)
+        self.assertEqual(v.quantity_structure("5片*6盒，共20片")['parsed_total'],(20,'片'))
         self.assertTrue(issues)
 
     def test_box_pack_multiplier(self):
