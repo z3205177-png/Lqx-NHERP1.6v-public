@@ -2,10 +2,68 @@
 import re
 
 
+TOTAL = r'到手|共|合计|总计|实发'
+
+
+def quantity_prose(text):
+    """Remove only known non-composition prose; never erase a named gift."""
+    text = re.sub(r'不含赠品|多种搭配', '', text)
+    text = re.sub(r'[【\[]暖身暖足[】\]]', '', text)
+    numerals = dict(zip('一二三四五六七八九十', range(1, 11)))
+    numerals['两'] = 2
+    text = re.sub(r'(买|拍)([一二三四五六七八九十两])送([一二三四五六七八九十两])',
+        lambda m: m[1]+str(numerals[m[2]])+'送'+str(numerals[m[3]]), text)
+    text = re.sub(r'片数:\s*(\d+)(?=\s*(?:[;,|}]|$))',r'片数:\1片',text)
+    text = re.sub(r'(到手|共|实发)([一二三四五六七八九十两])(盒|包|袋)',
+        lambda m:m[1]+str(numerals[m[2]])+m[3],text)
+    badge = r'[【\[]买\d+送\d+[】\]]'
+    if re.search(r'\d+\s*(?:片|对|只|个|包|袋|盒)',re.sub(badge,'',text)):
+        text = re.sub(badge,'',text)
+    total = re.search(rf'(?:{TOTAL})\s*\d+\s*片',text)
+    if total:
+        text = re.sub(r'(?:买|拍)(\d+)\s*(片)?\s*(?:送|赠)\s*(\d+)\s*(片)?\s*(暖足贴|足贴)',
+            lambda m: m[1]+'片+'+m[3]+'片'+m[5],text)
+    return text
+
+
+def apparel_component_text(title,text):
+    """Use a unique title role only for an attribute-only, sized apparel prefix."""
+    roles=[r for r in ('护腰','护膝') if r in title]
+    if len(roles)!=1: return None
+    pieces=re.split(r'[+✚]|送|赠',text,maxsplit=1)
+    if len(pieces)!=2 or not re.search(r'\d+\s*片',pieces[1]) or not re.search(r'暖贴|暖膝|暖腰',pieces[1]): return None
+    prefix=pieces[0]
+    size=r'(?<![a-z])(?:[2-5]?x{1,4}l|[sml])(?![a-z])'
+    if not re.search(size,prefix,re.I) or any(r in prefix for r in ('护腰','护膝')): return None
+    rest=re.sub(r'\d+\s*[-~至]\s*\d+\s*斤','',prefix)
+    rest=re.sub(size,'',rest,flags=re.I)
+    rest=re.sub(r'尺码|颜色分类|颜色|大小|码|黑色|灰色|肤色|双兜|单兜|加厚|加绒','',rest)
+    if re.search(r'[\w\u4e00-\u9fff]',rest): return None
+    return roles[0]+text.replace('✚','+')
+
+
+def parenthetical_counts(text, units):
+    """A pure same-unit breakdown is not an additional bundle component."""
+    issues, details = [], []
+    pattern = rf'(\d+)\s*({units})\s*\(([^()]*)\)'
+    def replace(m):
+        body = m[3]
+        if not re.fullmatch(rf'\s*\d+\s*{re.escape(m[2])}(?:\s*\+\s*\d+\s*{re.escape(m[2])})+\s*', body):
+            return m[0]
+        counts = [int(n) for n in re.findall(rf'(\d+)\s*{re.escape(m[2])}', body)]
+        details.append({'raw':m[0], 'total':(int(m[1]),m[2]), 'terms':counts})
+        if sum(counts) != int(m[1]):
+            issues.append('括号拆分数量与外部总数不一致')
+        return m[1]+m[2]
+    return re.sub(pattern,replace,text), issues, details
+
+
 def packaging_products(text, units):
     atoms = list(re.finditer(rf'(\d+)\s*({units})', text))
     products, issues, used = [], [], set()
     for op in re.finditer(r'[*×x]\s*(\d+)\s*(包|袋|盒)?', text):
+        if re.search(r'\d+(?:\.\d+)?\s*(?:克|千克|公斤|斤|kg|g)\s*$', text[:op.start()]):
+            continue  # Weight multiplication is not a count-unit multiplier.
         before = [a for a in atoms if a.end() <= op.start()]
         if not before:
             continue
@@ -32,16 +90,20 @@ def packaging_products(text, units):
 
 
 def without_rates(text):
-    return re.sub(r'\d+\s*(?:片|对|只|个)\s*[/／]\s*(?:盒|包|袋)', '', text)
+    return re.sub(r'\d+\s*(?:片|对|只|个|袋)\s*[/／]\s*(?:盒|包|袋)', '', text)
 
 
 def unresolved_gifts(text, units, families, scalar):
     problems = []
     for gift in re.split(r'送|赠(?:送)?|搭配', text)[1:]:
-        gift = re.sub(rf'(?:到手|共|合计|总计)\s*\d+\s*(?:{units})', '', gift)
+        gift = re.split(r'[,;|]\s*(?:产品类型|套餐类型|套餐|颜色分类|片数|类型)\s*:',gift,maxsplit=1)[0]
+        gift = re.sub(rf'(?:{TOTAL})\s*\d+\s*(?:盒|包|袋)\s*\d+\s*(?:片|对|只|个)(?:装)?','',gift)
+        gift = re.sub(rf'(?:{TOTAL})\s*\d+\s*(?:{units})', '', gift)
         gift = re.sub(r'^[\s【\[(（]+|[\s【】\[\]()（）,，;；]+$', '', gift)
-        numeric_offer = re.sub(r'同款|更划算|超划算|超值划算|热销[款装]|经济装|划算装|推荐装|量贩装|盒装', '', gift)
-        numeric_offer = re.sub(r'[\s【】\[\]()（）{}，,;；]', '', numeric_offer)
+        numeric_offer = re.sub(r'同款|更划算|超划算|超值划算|热销[款装]|经济装|划算装|推荐装|量贩装|盒装|'
+            r'温暖双手|学习工作手不冷|温暖整个冬天|一夜好眠|温灸热敷|深度缓解|舒缓不适|'
+            r'顺丰包邮|满满一盒|一大箱|店长推荐|强烈推荐|实惠装|超值装|囤货装|热销装|快速发热|家庭热卖装', '', gift)
+        numeric_offer = re.sub(r'[\s【】\[\]()（）{}，,;；.\-]', '', numeric_offer)
         bare_quantity = re.fullmatch(rf'\d+(?:{units})?', numeric_offer)
         if bare_quantity and re.search(rf'\d+\s*(?:{units})',text):
             continue  # the ordinary same-product buy/get quantity expression
@@ -51,7 +113,7 @@ def unresolved_gifts(text, units, families, scalar):
             problems.append('赠品品类未明确：' + gift)
         quantity, _ = scalar(gift)
         # Existing buy40/get40 foot-patch wording uses a separately stated total.
-        declared_unit = re.search(rf'(?:到手|共|合计|总计)\s*\d+\s*({units})',text)
+        declared_unit = re.search(rf'(?:{TOTAL})\s*\d+\s*({units})',text)
         unit_from_total = declared_unit and fs and re.match(r'\d+',gift)
         if quantity is None and not unit_from_total and not (apparel and re.search(r'(?i)\b(?:[sml]|x{1,4}l|[2-5]xl)\b',gift)):
             problems.append('赠品数量未明确：' + gift)
@@ -70,8 +132,8 @@ def additive_quantities(text, scalar, families, variants, units, pair_families):
         return match[0]
     normalized = re.sub(r'\(([^()]*)\)', recipe, normalized)
     # A total field belongs to the entire bundle, never the nearest component.
-    explicit = [(int(m[1]), m[2]) for m in re.finditer(rf'(?:到手|共|合计|总计|片数[:：])\s*(\d+)\s*({units})', normalized)]
-    body = re.sub(rf'(?:到手|共|合计|总计|片数[:：])\s*\d+\s*({units})', '', normalized)
+    explicit = [(int(m[1]), m[2]) for m in re.finditer(rf'(?:{TOTAL})\s*(\d+)\s*({units})', normalized)]
+    body = re.sub(rf'(?:{TOTAL})\s*\d+\s*({units})', '', normalized)
     body = re.sub(rf'(?<=[片对只个盒包袋])加(?=[^+＋]*\d+\s*(?:{units}))', '+', body)
     pieces = re.split(r'[+＋]', body)
     if len(pieces) < 2:
