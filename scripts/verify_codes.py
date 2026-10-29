@@ -31,6 +31,7 @@ import confirmed_mappings as confirmations
 import sku_audit_reviews as sku_reviews
 from quantity_syntax import packaging_products, without_rates, additive_quantities, unresolved_gifts
 from manual_weight import apply_weight_guard
+import agricultural_specs as agriculture
 from erp_library import resolve_erp_inputs, DEFAULT_MANIFEST
 from simple_report import write_simple_report
 
@@ -460,6 +461,7 @@ def build_features(title: str, sku_name: str, erp_name: str = "", erp_category: 
     result['quantity_structure'] = detail
     result['packaging_issue'] = ('彩盒等包装名称需确认是成品还是包装材料'
         if any(w in specific for w in SOFT_PACKAGING_TERMS) and not any(w in specific for w in STRONG_PACKAGING_TERMS) else '')
+    result['agricultural'] = agriculture.parse_spec(specific, title if not is_erp else '', erp_category)
     result["evidence"] = structured_evidence(specific, title if not is_erp else "", erp_category, result)
     return result
 
@@ -973,6 +975,9 @@ def apply_confirmed_audit_specs(pf: dict[str, Any]) -> dict[str, Any]:
 
 def audit_current_code(current_code: str, pf: dict[str, Any], erp_by_code: dict[str, list[dict[str, Any]]], erp_records: list[dict[str, Any]]) -> dict[str, Any]:
     result = _audit_current_code(current_code, pf, erp_by_code, erp_records)
+    agricultural = agriculture.audit(pf, literal_text(current_code).strip(), erp_by_code)
+    if agricultural:
+        result.update(agricultural)
     return apply_weight_guard(result, pf, erp_by_code.get(literal_text(current_code).strip(), []))
 
 
@@ -1042,6 +1047,8 @@ def _audit_current_code(current_code: str, pf: dict[str, Any], erp_by_code: dict
 
 def suggest_code_candidates(pf: dict[str, Any], result: dict[str, Any], records: list[dict[str, Any]], by_code: dict[str, list[dict[str, Any]]]) -> dict[str, Any]:
     """Propose real ERP codes without changing the original audit or confirmations."""
+    if agriculture.is_agricultural(pf) or result.get('农产品解析JSON'):
+        return agriculture.suggestions(pf, result, records, by_code)
     output = {key: "" for key in ("推测商家编码", "推测ERP商品名称", "推测依据", "仍需确认的问题",
                                   "其他候选编码", "其他候选ERP记录", "推测ERP来源")}
     output['候选明细JSON'] = '[]'
@@ -1231,6 +1238,7 @@ def build_erp_records(erp_df: pd.DataFrame) -> tuple[list[dict[str, Any]], dict[
                   "item_id": str(row.get("ERP货品编号", "")).strip(),
                   "spec_code": str(row.get("ERP规格编码", "")).strip(),
                   "source_row": int(row["原始行号"]), "features": features}
+        record['net_weight_kg'] = str(row.get('ERP重量', '')).strip()
         record["erp_fingerprint"] = confirmations.digest({"source": record["source"], "raw": json.loads(row["原始字段JSON"])})
         records.append(record)
         if code:
@@ -1271,6 +1279,8 @@ def verify_platform_file(path: str, erp_records: list[dict[str, Any]], erp_by_co
             return str(row[cols[field]]) if cols.get(field) else ""
         product_id, title, sku_id, sku_name, current_code = (value(k) for k in ("product_id", "title", "sku_id", "sku_name", "code"))
         pf = build_features(title, sku_name)
+        if platform == '京东' and '店内分类' in df.columns:
+            pf['agricultural'] = agriculture.parse_spec(sku_name, title, str(row['店内分类']))
         pf["erp_item_id"] = literal_text(value("erp_item_id")).strip()
         pf["spec_code"] = literal_text(value("spec_code")).strip()
         pf["duplicate_sku"] = literal_text(sku_id).strip() in duplicate_ids
@@ -1279,6 +1289,8 @@ def verify_platform_file(path: str, erp_records: list[dict[str, Any]], erp_by_co
         context = {"平台": platform, "店铺": store, "商品 ID": product_id, "SKU ID": sku_id,
                    "商品标题": title, "SKU": sku_name, "ERP货品编号": pf["erp_item_id"],
                    "ERP规格编码": pf["spec_code"], "独立规格数量": value("quantity")}
+        if platform == '京东' and '店内分类' in df.columns:
+            context['农产品店内分类'] = str(row['店内分类'])
         pf["context"] = context
         component_rule = BUSINESS_RULES.get("component_confirmations", {}).get(confirmations.platform_key(context))
         if component_rule and component_rule["platform_fingerprint"] == confirmations.platform_fingerprint(context):
@@ -1288,9 +1300,14 @@ def verify_platform_file(path: str, erp_records: list[dict[str, Any]], erp_by_co
         result = audit_current_code(current_code, pf, erp_by_code, erp_records)
         result, reviewed_suggestion = sku_reviews.apply_review(context, current_code, result, erp_by_code, review_entries)
         current_records = erp_by_code.get(literal_text(current_code).strip(), [])
+        agricultural = agriculture.audit(pf, literal_text(current_code).strip(), erp_by_code)
+        if agricultural:
+            result.update(agricultural)
+            reviewed_suggestion = None
         result = apply_weight_guard(result, pf, current_records)
         quantity_rows.append({'商品 ID':product_id, 'SKU ID':sku_id, '源行号':idx + header_row + 2,
             'platform':pf['quantity_structure'],
+            'agricultural':json.loads(result['农产品解析JSON']) if result.get('农产品解析JSON') else None,
             'erp':[{'code':r['code'], 'source':r['source'], 'name':r['name'],
                     'quantity':r['features']['quantity_structure']} for r in current_records]})
         out_rows.append({"店铺": store, "平台": platform, "商品 ID": product_id, "SKU ID": sku_id,

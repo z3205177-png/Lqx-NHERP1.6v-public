@@ -10,12 +10,11 @@ from test_matching import erp_record
 
 
 class ManualWeightTests(unittest.TestCase):
-    def test_mixed_weight_units_are_pending_without_conversion(self):
+    def test_mixed_weight_units_detect_explicit_conflict(self):
         record=erp_record('A','大蒜1.5KG')
         result=v.audit_current_code('A',v.build_features('大蒜','5斤装'),{'A':[record]},[record])
-        self.assertEqual(result['核验状态'],'待人工确认')
-        self.assertIn('需人工核重',result['核验说明'])
-        self.assertIn('未执行',result['核验说明'])
+        self.assertEqual(result['核验状态'],'异常（商品/规格不一致）')
+        self.assertIn('净重不一致',result['核验说明'])
         self.assertIsNone(v.quantity_details('5斤装')[0])
 
     def test_other_statuses_survive_and_the_note_is_visible_in_excel(self):

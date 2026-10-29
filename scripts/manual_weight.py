@@ -1,4 +1,4 @@
-"""Flag unsupported agricultural sale weights; never convert or compare them."""
+"""Manual fallback for produce outside the structured agricultural evaluator."""
 import re
 import unicodedata
 
@@ -13,6 +13,8 @@ def needs_weight_review(platform, current):
 
 
 def apply_weight_guard(result, platform, current):
+    if result.get('农产品解析JSON'):
+        return result
     if not needs_weight_review(platform, current):
         return result
     result = dict(result)
