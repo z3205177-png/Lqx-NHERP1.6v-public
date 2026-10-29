@@ -65,6 +65,14 @@ class SkuAuditReviewsTests(unittest.TestCase):
                     _, result, _ = self.run_review(e, e['target_code'])
                     self.assertEqual(result['核验状态'], '核对通过')
 
+    def test_confirmed_wrong_code_is_not_downgraded_by_parser_uncertainty(self):
+        e=self.entry('3841773864017')
+        original,result,proposed=self.run_review(e)
+        self.assertEqual(original['核验状态'],'待人工确认')
+        self.assertEqual(result['核验状态'],'异常（商品/规格不一致）')
+        self.assertEqual(proposed['推测商家编码'],e['target_code'])
+        self.assertEqual(result['应改为编码'],'')
+
     def test_four_female_child_relations_remain_pending(self):
         for sku in ['6119136462479', '6119136462475', '6119136462477', '6119136462478']:
             _, result, _ = self.run_review(self.entry(sku))

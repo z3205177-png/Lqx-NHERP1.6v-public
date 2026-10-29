@@ -83,7 +83,10 @@ def apply_review(context, current_code, result, by_code, entries):
                             '核验说明': entry['basis']})
             return updated, empty_suggestion('')
         # A confirmed replacement never proves the platform's old code correct.
-        if updated['核验状态'] == '核对通过':
+        if updated['核验状态'] == '核对通过' or (updated['核验状态'] == '待人工确认'
+                and '解析待确认' in updated.get('判定路径','')):
+            # A valid, exact human replacement resolves the interpretation;
+            # the different original code remains a confirmed conflict.
             updated['核验状态'] = '异常（商品/规格不一致）'
             updated['冲突项目'] = '原编码与本SKU已确认目标不同'
         note = f"本SKU已确认目标：{target['code']}（{target['name']}）；原编码及原异常保留，未自动改码。"

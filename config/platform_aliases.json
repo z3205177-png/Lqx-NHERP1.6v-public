@@ -5,7 +5,9 @@
       "商品ID",
       "商品Id",
       "itemId",
-      "productId"
+      "productId",
+      "商品编码",
+      "V_SPU"
     ],
     "title": [
       "商品标题",
@@ -16,19 +18,28 @@
     "sku_id": [
       "skuID",
       "skuId",
-      "SKU ID"
+      "SKU ID",
+      "SKUID",
+      "规格ID（SKUID）",
+      "V_SKU",
+      "规格id"
     ],
     "sku_name": [
       "sku名称",
       "销售属性",
       "SKU规格",
-      "规格名称"
+      "规格名称",
+      "商品规格",
+      "自定义尺码",
+      "规格值"
     ],
     "code": [
       "sku编码",
       "SKU商家编码",
       "skuOuterId",
-      "商家编码"
+      "商家编码",
+      "商家SKU",
+      "商家SKU编码"
     ],
     "erp_item_id": [
       "ERP货品编号",
@@ -62,6 +73,48 @@
         "sku_id": "skuId",
         "sku_name": "销售属性",
         "code": "商家编码.1"
+      }
+    },
+    "京东": {
+      "columns": {
+        "product_id": "商品编码",
+        "title": "商品名称",
+        "sku_id": "SKUID",
+        "sku_name": "销售属性",
+        "code": "商家SKU"
+      }
+    },
+    "抖音": {
+      "columns": {
+        "product_id": "商品ID",
+        "title": "商品名称",
+        "sku_id": "规格ID（SKUID）",
+        "sku_name": "商品规格",
+        "code": "商家SKU编码"
+      }
+    },
+    "唯品会": {
+      "sheet": "商品资料",
+      "columns": {
+        "product_id": "V_SPU",
+        "title": "商品名称",
+        "sku_id": "V_SKU",
+        "sku_name": "自定义尺码",
+        "code": "商家编码"
+      },
+      "sku_name_columns": [
+        "自定义尺码",
+        "自定义颜色"
+      ],
+      "description": "已验证的商品资料模板；商家编码为已确认列，SKU规格同时保留自定义尺码与自定义颜色；不猜测或清洗原始货号/条形码。"
+    },
+    "小红书": {
+      "columns": {
+        "product_id": "itemId",
+        "title": "商品标题",
+        "sku_id": "规格id",
+        "sku_name": "规格值",
+        "code": "商家编码"
       }
     }
   },
