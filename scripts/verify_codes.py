@@ -32,6 +32,7 @@ import sku_audit_reviews as sku_reviews
 import confirmed_business_specs as business_specs
 from quantity_syntax import packaging_products, without_rates, additive_quantities, unresolved_gifts
 from quantity_syntax import quantity_prose, parenthetical_counts, apparel_component_text, TOTAL
+from quantity_syntax import layered_packaging_details
 from manual_weight import apply_weight_guard
 import agricultural_specs as agriculture
 from erp_library import resolve_erp_inputs, DEFAULT_MANIFEST
@@ -328,6 +329,9 @@ def _scalar_quantity_details(value: str) -> tuple[tuple[int, str] | None, list[s
 def quantity_structure(value: str) -> dict[str, Any]:
     detail = deepcopy(_cached_quantity_structure(literal_text(value), parsing_rule_signature()))
     text = unicodedata.normalize('NFKC', literal_text(value))
+    layers=layered_packaging_details(text.lower())
+    if layers:
+        detail['packaging_details']=layers
     if '三合一' in text or all(name in text for name in ('艾草','生姜','益母草')):
         detail['recipe_details'] = [{'formula':name,'quantity':(int(n),'片')}
             for name,n in re.findall(r'(艾草|生姜|益母草)\s*(\d+)(?:片)?',text)]
@@ -977,6 +981,10 @@ def composition_review_issues(pf, current):
         ef = record['features']
         _,accessory_issues = business_specs.accessory_conflicts(pf,ef)
         problems.extend(accessory_issues)
+        layered = any(f.get('quantity_structure', {}).get('packaging_details') for f in [pf,ef])
+        if layered and len(audit_feature_components(pf)) <= 1 and len(audit_feature_components(ef)) <= 1:
+            if quantity_compare(pf['qty'],ef['qty'],pf['families'] | ef['families']) is None:
+                problems.append('外包装数量未建立可比对应关系')
         if pf['variants'].get('formula') == ef['variants'].get('formula') == {'三合一'} and pf['families'] == ef['families']:
             continue
         pparts, eparts = audit_feature_components(pf), audit_feature_components(ef)

@@ -3,6 +3,18 @@ import re
 
 
 TOTAL = r'到手|共|合计|总计|实发'
+INNER_COUNT_UNITS = r'抽|张|段'
+
+
+def layered_packaging_details(text):
+    """Record stated outer packages separately from items per package."""
+    details=[]
+    pattern=rf'(?<![\d.])(\d+)\s*(包|袋|盒)\s*[*×x]\s*(\d+)\s*({INNER_COUNT_UNITS})'
+    for match in re.finditer(pattern,text):
+        outer,inner=int(match[1]),int(match[3])
+        details.append({'raw':match[0], 'outer_quantity':(outer,match[2]),
+            'per_package':(inner,match[4]),'inner_total':(outer*inner,match[4])})
+    return details
 
 
 def quantity_prose(text):
@@ -78,6 +90,14 @@ def packaging_products(text, units):
             issues.append('连续包装倍数尚未建立对应关系')
             continue
         multiplier = int(op[1])
+        inner = re.match(rf'\s*({INNER_COUNT_UNITS})',text[op.end():])
+        if not op[2] and inner:
+            if atom[2] in {'包','袋','盒'} and not gap.strip() and multiplier > 0:
+                products.append((int(atom[1]),atom[2]))
+                used.add(atom.start())
+            else:
+                issues.append('包装倍数后带有非包装计数单位，关系需确认')
+            continue
         if not op[2] and re.match(rf'\s*(?:{units})', text[op.end():]):
             issues.append('包装倍数后带有非包装计数单位，关系需确认')
             continue
@@ -101,7 +121,7 @@ def unresolved_gifts(text, units, families, scalar):
         gift = re.sub(rf'(?:{TOTAL})\s*\d+\s*(?:{units})', '', gift)
         gift = re.sub(r'^[\s【\[(（]+|[\s【】\[\]()（）,，;；]+$', '', gift)
         numeric_offer = re.sub(r'同款|更划算|超划算|超值划算|热销[款装]|经济装|划算装|推荐装|量贩装|盒装|'
-            r'温暖双手|学习工作手不冷|温暖整个冬天|一夜好眠|温灸热敷|深度缓解|舒缓不适|'
+            r'温暖双手|学习工作手不冷|温暖整个冬天|一夜好眠|温灸热敷|深度缓解|舒缓不适|暖身先暖足|'
             r'顺丰包邮|满满一盒|一大箱|店长推荐|强烈推荐|实惠装|超值装|囤货装|热销装|快速发热', '', gift)
         numeric_offer = re.sub(r'\d+%选择|超值养护装|家庭热卖装', '', numeric_offer)
         numeric_offer = re.sub(r'[\s【】\[\]()（）{}，,;；.。-]', '', numeric_offer)

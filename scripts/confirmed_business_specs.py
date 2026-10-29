@@ -11,6 +11,8 @@ from functools import lru_cache
 from pathlib import Path
 
 DEFAULT_PATH = Path(__file__).resolve().parents[1] / 'config/confirmed_business_specs.json'
+ACCESSORY_LABELS = {'oil':'精油/艾草油','cover':'布套','shell':'蛋壳/暖蛋',
+    'hook':'挂钩','sleeve':'冰袖','pillow':'冰枕','blanket':'毛毯/盖毯'}
 
 
 def selected_spec(text):
@@ -142,20 +144,21 @@ def accessory_conflicts(platform, erp):
     pa, ea = platform.get('business_accessories', {}), erp.get('business_accessories', {})
     for kind in pa.keys() & ea.keys():
         a,b = pa[kind],ea[kind]
+        label=ACCESSORY_LABELS.get(kind,'附赠品')
         if a['qty'] and b['qty']:
             if a['qty'][1] != b['qty'][1]:
-                issues.append('附赠品单位尚未确认换算：'+kind)
+                issues.append('附赠品单位尚未确认换算：'+label)
             elif a['qty'][0] != b['qty'][0]:
-                conflicts.append('附赠品数量不一致：'+kind)
+                conflicts.append('附赠品数量不一致：'+label)
         if kind in {'cover','shell','sleeve','pillow'}:
             colors=lambda text:set(re.findall('粉色|灰色|蓝色|黑色|白色|红色|紫色|绿色|黄色',text)) | {x+'色' for x in re.findall(r'([白蓝紫粉黄])(?=蛋壳|暖蛋)',text)}
             ac,bc=colors(a['text']),colors(b['text'])
             if ac and bc and not ac & bc and '随机' not in a['text']+b['text']:
-                conflicts.append('附赠品颜色不一致：'+kind)
+                conflicts.append('附赠品颜色不一致：'+label)
             materials=lambda text:set(re.findall('纯棉|仿兔绒|水晶绒|毛绒|加绒|长绒',text))
             am,bm=materials(a['text']),materials(b['text'])
             if am and bm and not am & bm:
-                conflicts.append('附赠品材质不一致：'+kind)
+                conflicts.append('附赠品材质不一致：'+label)
     return conflicts,issues
 
 
