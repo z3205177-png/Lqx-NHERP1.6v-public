@@ -1,0 +1,5379 @@
+{
+  "version": 1,
+  "confirmed_by": "本会话用户",
+  "confirmed_at": "2026-10-29",
+  "reuse_policy": "来源平台仅作依据。复用绑定有效ERP原始记录与已确认规格，保留所有商品、部件及单位限制。SKU专属关系保留身份绑定。",
+  "rules": {
+    "01": {
+      "basis": "附送精油/艾草油作为附赠说明，不计入贴片数量；数量未写明，不单独因此待确认。",
+      "limits": [
+        "主商品数量、款式等继续核对",
+        "不适用于植物精油贴、KT精油贴等实物贴片",
+        "不推广到其他赠品，不自动将91条全部判通过"
+      ],
+      "source_platforms": [
+        "唯品会",
+        "天猫",
+        "快手",
+        "抖音"
+      ]
+    },
+    "02": {
+      "basis": "热水袋附赠布套未写数量，不单独判待确认。",
+      "limits": [
+        "热水袋容量、形状、颜色继续核对",
+        "明确写出的布套材质、款式仍核对",
+        "粉色+灰色等组合装保留组成约束",
+        "不自动将本类50条全部判通过"
+      ],
+      "source_platforms": [
+        "唯品会",
+        "天猫",
+        "快手",
+        "抖音"
+      ]
+    },
+    "03": {
+      "basis": "本批暖手贴规格只写送蛋壳/送暖蛋、未注明外壳数量时，按1个外壳理解。",
+      "limits": [
+        "暖芯片数继续核对",
+        "大暖手/小暖手款继续区分",
+        "外壳颜色、款式继续分别核对",
+        "已明示多个外壳时按明示数量，不覆盖",
+        "不将卡通猫和KT等名称擅自认定等价，不自动将34条全部判通过"
+      ],
+      "source_platforms": [
+        "唯品会",
+        "天猫",
+        "抖音"
+      ]
+    },
+    "04.1": {
+      "basis": "本批小熊玩偶加发热包套餐，未注明玩偶数量时按1只小熊理解；明确写多只时按实际数量核对。",
+      "limits": [
+        "只确认小熊玩偶数量，不确认发热包个数与贴片数的换算",
+        "玩偶款式及暖芯名称、大小款、数量继续分别核对",
+        "不自动将17条全部判通过"
+      ],
+      "source_platforms": [
+        "天猫",
+        "快手",
+        "抖音"
+      ]
+    },
+    "04.2": {
+      "basis": "本批小熊套餐中1个发热包对应1片小暖手贴；10/20/50个分别对应10/20/50片，买40送10合计50。",
+      "limits": [
+        "仅限本批对应暖芯，不作为所有商品个与片通用换算",
+        "玩偶数量、暖芯大小款及具体商品名称继续分别核对",
+        "不将小魔仙与小黄鸭等名称自动认定等价"
+      ],
+      "source_platforms": [
+        "快手",
+        "抖音"
+      ]
+    },
+    "04.3": {
+      "basis": "小魔仙与小黄鸭是不同暖芯，保留区别，不能仅凭玩偶及片数相同互换编码。",
+      "limits": [
+        "不建立不同暖芯名称的通用等价关系",
+        "平台未写暖芯系列时不凭相同数量自动推断或换码",
+        "沿用已确认的默认玩偶数量及限定发热包个/片关系"
+      ],
+      "source_platforms": [
+        "天猫",
+        "快手",
+        "抖音"
+      ]
+    },
+    "05": {
+      "basis": "本批鞋套附送壁挂、挂钩、双面粘钩按附赠配件处理；ERP未列赠品或赠品数量未写明，不单独判待确认。",
+      "limits": [
+        "鞋套材质、只数和盒数继续核对",
+        "不推广到其他赠品或独立售卖的配件",
+        "不自动将本类18条全部判通过"
+      ],
+      "source_platforms": [
+        "唯品会",
+        "天猫",
+        "抖音"
+      ]
+    },
+    "06.1": {
+      "basis": "本批口罩套餐，平台未写附赠冰袖，不单独判待确认。",
+      "limits": [
+        "口罩款式、颜色继续核对",
+        "平台明确写出的冰袖颜色、数量分别核对",
+        "不授权对与只等新单位换算，不自动将11条全部判通过"
+      ],
+      "source_platforms": [
+        "唯品会",
+        "天猫"
+      ]
+    },
+    "06.2": {
+      "basis": "本批冰垫套餐，平台未写附赠冰枕或未写赠品数量，不单独判待确认。",
+      "limits": [
+        "冰垫尺寸、颜色继续核对",
+        "随机色仅适用于标注随机的冰枕，不扩展到主冰垫",
+        "平台明确指定冰枕规格时仍核对，不自动将4条全部判通过"
+      ],
+      "source_platforms": [
+        "唯品会"
+      ]
+    },
+    "06.3": {
+      "basis": "仅在WD09601保暖围挡套餐中，平台送毛毯与ERP送盖毯按同一附赠品识别；未写毯子数量不单独判待确认。",
+      "limits": [
+        "主围挡款式、型号继续核对",
+        "不建立所有毛毯与盖毯的通用等价关系",
+        "不自动将3条全部判通过"
+      ],
+      "source_platforms": [
+        "唯品会",
+        "快手",
+        "抖音"
+      ]
+    },
+    "06.4": {
+      "basis": "本批抖音不焦绿+玉桃粉凉感毛巾10条装，对应ERP红字5片+绿色5片，均为每款5条组合，原编码SWKJ-CP01101011正确。",
+      "limits": [
+        "仅限这两条对应套餐及未变的规格和ERP记录",
+        "不作为其他商品颜色的通用别名",
+        "不作为所有毛巾条与片的通用换算",
+        "组合比例及总数变化时重新核对"
+      ],
+      "source_platforms": [
+        "抖音"
+      ]
+    },
+    "07.1": {
+      "basis": "仅本批护膝部件，1付（一付）=1对=2只。暖膝贴片数独立核对。",
+      "limits": [
+        "不把护膝换算成贴片",
+        "不推广到其他商品或其他未确认单位",
+        "继续核对护膝款式颜色及贴片数量，不自动将7条全部判通过"
+      ],
+      "source_platforms": [
+        "天猫",
+        "抖音"
+      ]
+    },
+    "07.2": {
+      "basis": "本条唯品会德绒护膝均码、黑色2只加30片艾草暖贴，对应ERP黑色L护膝送30片艾草暖贴，原编码NHCP1240101012正确。",
+      "limits": [
+        "仅限本SKU和未变的商品及ERP内容",
+        "不推广所有商品均码等于L码",
+        "数量颜色赠贴规格变化时重新核对"
+      ],
+      "source_platforms": [
+        "唯品会"
+      ]
+    },
+    "07.3": {
+      "basis": "本批天猫6条暖膝贴或老人暖贴套餐只写送护膝而未写数量时，按赠送1对护膝即2只理解。",
+      "limits": [
+        "仅限本批对应套餐，不推广所有赠护膝商品",
+        "贴片数量、护膝款式及明确写出的数量继续核对",
+        "唯品会NH129301的ERP未列赠护膝关系不包含在本次确认中",
+        "不自动将6条全部判通过"
+      ],
+      "source_platforms": [
+        "天猫"
+      ]
+    },
+    "08.1": {
+      "basis": "SWKJ-CP00401064套餐按30片艾热灸贴主品加2片红色暖膝贴分别核对；平台只写送暖膝贴或未写赠品数量时采用该限定组成关系。",
+      "limits": [
+        "只适用本款套餐及有效ERP记录，不推广其他赠贴组合",
+        "主品与赠品分别核对，不仅比较总数",
+        "明示其他数量或颜色等属性时保留实际冲突，不自动将8条全部判通过"
+      ],
+      "source_platforms": [
+        "天猫",
+        "快手",
+        "抖音"
+      ]
+    },
+    "08.2": {
+      "basis": "SWKJ-CP0040125套餐按25片艾热灸贴主品加2片红色暖颈热敷贴分别核对；平台只写送暖颈贴、未写赠品数量时采用该限定组成。",
+      "limits": [
+        "只适用本套餐及有效ERP记录，不推广其他赠贴组合",
+        "明示其他数量颜色等属性仍核对，主品与赠品分别核对"
+      ],
+      "source_platforms": [
+        "抖音"
+      ]
+    },
+    "08.3": {
+      "basis": "SWKJ-CP00401105套餐按50片艾热灸贴主品加2片红色暖腰贴分别核对；平台只写送暖腰贴、未写赠品数量时采用该限定组成。",
+      "limits": [
+        "只适用本套餐及有效ERP记录，不推广其他赠贴组合",
+        "明示其他数量颜色等属性仍核对，主品与赠品分别核对"
+      ],
+      "source_platforms": [
+        "天猫"
+      ]
+    },
+    "08.4": {
+      "basis": "SWKJ-CP00401047套餐按20片艾热灸贴主品加10片洋甘菊蒸汽眼罩分别核对；平台未写赠品数量香型时采用该限定组成。",
+      "limits": [
+        "仅限本套餐及有效ERP记录，不推广其他赠眼罩组合",
+        "明示其他数量香型等属性仍核对，主品与赠品分别核对"
+      ],
+      "source_platforms": [
+        "天猫"
+      ]
+    },
+    "08.5": {
+      "basis": "SWKJ-CP00401060精致护理装两种对应商品均每盒5片；6盒艾灸贴对应30片艾热灸贴，4盒暖颈贴对应20片红色暖颈贴，分别核对。",
+      "limits": [
+        "装量仅限本款对应商品及有效ERP记录，不推广所有盒装暖贴",
+        "各组成分别比较，不仅凭总量相等认定一致",
+        "平台明示不同数量颜色等属性时继续核对"
+      ],
+      "source_platforms": [
+        "天猫"
+      ]
+    },
+    "08.6": {
+      "basis": "本批户外防寒2件套40片固定对应手机宝花色布20片加高温暖贴20片，原码NHCP09801011444正确。",
+      "limits": [
+        "仅对应本款套餐及有效ERP记录，不把所有40片套装视为等价",
+        "各组成与款式分别核对，明示其他数量款式时保留冲突"
+      ],
+      "source_platforms": [
+        "天猫",
+        "快手",
+        "抖音"
+      ]
+    },
+    "08.7": {
+      "basis": "本批艾草加益母草组合，20片档10+10片、40片档20+20片、60片档30+30片。",
+      "limits": [
+        "仅本批3款，不默认所有双配方组合均分",
+        "组成和配比分别核对，不能仅凭总数相同通过",
+        "此确认不取消其他明示规格的核对"
+      ],
+      "source_platforms": [
+        "抖音"
+      ]
+    },
+    "08.8": {
+      "basis": "本批天猫4条送20暖足贴中的20指20片暖足贴，即10对足贴，数量不并入主暖贴。",
+      "limits": [
+        "只确认本批赠品未写单位的数量含义，不默认所有无单位数字均为片",
+        "主暖贴配方、数量和其他规格继续单独核对",
+        "NH4573038610主品30盒装原文尚未确认，不因本项而整体通过"
+      ],
+      "source_platforms": [
+        "天猫"
+      ]
+    },
+    "08.9": {
+      "basis": "ERP编码NH4573038610名称中的KT经典暖贴30盒装实际表示30片盒装，主品为30片经典暖贴。",
+      "limits": [
+        "仅解释该ERP记录，原始名称和源文件保持不变",
+        "不推广其他30盒装文本，不作为盒与片的通用换算",
+        "赠足贴10对与主品数量分开核，其他明示属性继续核对",
+        "后续复用需绑定未变的ERP原始记录指纹"
+      ],
+      "source_platforms": [
+        "天猫"
+      ]
+    },
+    "09.1": {
+      "basis": "本批艾草加生姜组合，20片档10+10片、40片档20+20片、60片档30+30片。",
+      "limits": [
+        "仅本批3款，不默认其他双配方组合均分",
+        "组成配比和其他明示规格继续分别核对，不只比较总量"
+      ],
+      "source_platforms": [
+        "抖音"
+      ]
+    },
+    "09.2": {
+      "basis": "KTCP014151617的20片档玫瑰薰衣草洋甘菊无香各5片；KTCP0200140的40片档各10片。20片档ERP各香型1解释为各1包5片。",
+      "limits": [
+        "仅限这两款和有效ERP记录，不推广其他眼罩包装或香型组合",
+        "四种香型分别核对，不能只凭总数相同取消配比或香型差异",
+        "明示不同香型数量等属性时继续核对"
+      ],
+      "source_platforms": [
+        "抖音"
+      ]
+    },
+    "09.3": {
+      "basis": "NH850856的10片二合一档为无香5片加洋甘菊5片，NH857851的20片档为无香10片加洋甘菊10片。",
+      "limits": [
+        "只确认两款组成配比，不默认其他二合一均分",
+        "不凭ERP总量反推平台未写的盒数，天猫10片每盒等包装问题另核",
+        "不同香型或数量明示冲突仍分别核对"
+      ],
+      "source_platforms": [
+        "唯品会",
+        "天猫"
+      ]
+    },
+    "09.4": {
+      "basis": "NH85285485604和NH85485602均每包5片；前者洋甘菊10片加玫瑰5片加薰衣草5片共20片，后者洋甘菊5片加玫瑰5片共10片。",
+      "limits": [
+        "装量及配比只限本批两款及有效ERP记录，不推广其他眼罩包装",
+        "每种香型和片数分别核对，不仅凭总量相同通过",
+        "明示其他香型数量等属性时保留核对"
+      ],
+      "source_platforms": [
+        "天猫"
+      ]
+    },
+    "10.1": {
+      "basis": "本批NH85101、NH85501、NH85301、NH85701单香眼罩每份1盒10片，NH31601老款艾灸贴每份1盒5片。",
+      "limits": [
+        "仅本批5条单品SKU及未变的内容，不默认所有每盒规格每份均1盒",
+        "不适用于二合一或四合一组合，不把SKU份量当订单购买数量",
+        "香型、款式及其他明示属性继续核对"
+      ],
+      "source_platforms": [
+        "天猫"
+      ]
+    },
+    "10.2": {
+      "basis": "天猫商品694060267930下，NH857851二合一每份2盒20片，NH857855001四合一每份4盒40片，均每盒10片。",
+      "limits": [
+        "仅限本批两条SKU及未变的内容，不默认其他组合盒数",
+        "二合一无香和洋甘菊配比按09.3已确认关系核对",
+        "四合一具体香型未在本次指定，不照搬KT四香配方",
+        "明示其他数量香型等属性仍核对，不作为订单购买数量"
+      ],
+      "source_platforms": [
+        "天猫"
+      ]
+    },
+    "11.1": {
+      "basis": "本批唯品会6条为表中可销售成品，原编码对应正确，平台彩盒装仅表示包装形式。",
+      "limits": [
+        "仅本批6条及有效未变内容，不把其他彩盒记录自动认定成品",
+        "数量颜色长度款式及明确配套件数量继续核对，不把1条与2条互认",
+        "不作为其他商品条与个的通用换算，不修改原ERP名称和分类"
+      ],
+      "source_platforms": [
+        "唯品会"
+      ]
+    },
+    "11.2": {
+      "basis": "CH05601、CH04101、CH08101均为包含实际眼罩或暖贴的可销售成品，并非单独空彩盒包材。",
+      "limits": [
+        "仅解释这三条有效ERP记录，复用需绑定原行指纹",
+        "保留ERP原名称和分类，不把其他彩盒记录自动认定成品",
+        "数量香型配方及其他明示属性继续核对，不以成品身份替代完整核验"
+      ],
+      "source_platforms": [
+        "唯品会"
+      ]
+    },
+    "13.1": {
+      "basis": "仅本批两款同材质鞋套混搭，双方均未写各配色数量时核总只数、材质及颜色款式组合，不默认均分，不因未写配比单独待确认。",
+      "limits": [
+        "仅本批两款及未变的内容，不推广所有混搭商品",
+        "明示数量颜色材质或款式冲突仍保留",
+        "不建立纯色等于蓝色的通用别名，不自动填补未标明的配色",
+        "无纺布加CPE等不同材质组合另行核对各自数量，不套用本条免配比口径"
+      ],
+      "source_platforms": [
+        "天猫"
+      ]
+    },
+    "13.2": {
+      "basis": "本批两款均买无纺布鞋套、送CPE鞋套，每盒50只；买2送1为无纺布100只加CPE50只，买3送2为无纺布150只加CPE100只。",
+      "limits": [
+        "仅本批两款及有效ERP记录，不默认所有鞋套每盒50只",
+        "不同材质的数量分别核对，不套用同材质混色免配比口径",
+        "不新增鞋套双与只的换算，其他明示规格冲突仍保留"
+      ],
+      "source_platforms": [
+        "天猫"
+      ]
+    },
+    "14.1": {
+      "basis": "NH0160297101套餐中的植物精油贴对应ERP的24枚KT精油贴，与20片冰凉贴分别核对。",
+      "limits": [
+        "仅限本款套餐及有效ERP记录，不推广所有植物精油贴名称等价",
+        "不套用液体精油赠品口径，不把贴片赠品数量忽略",
+        "不建立枚与片的通用换算，主品与赠品分别核对，明示冲突保留"
+      ],
+      "source_platforms": [
+        "天猫"
+      ]
+    }
+  },
+  "products": {
+    "NH148301020": {
+      "erp_fingerprint": "d0a17ca7586747bcc22ab450ea8fd3d88ab41e8a05db52ad3c0e70af0c1b74b4",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NH148301030": {
+      "erp_fingerprint": "edd9a8721a60bcaa5896f66aed3ae471790d7ec7ff93029a82c844f39e30b767",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NHCP24401010": {
+      "erp_fingerprint": "11057d8cdb0edae9e874b4704b1181d90fc4e1b86805e99087f9c75cb16ec6a8",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NHCP24401020": {
+      "erp_fingerprint": "61f2df966fae240cf77c4ce34417028f4491a4ec11efe464420d5d34932d93e1",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NHCP24401030": {
+      "erp_fingerprint": "6080a5b45b6b06c1e1ea2506d93cc069c9f3627d3a933590656d7f179cef539f",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NHCP2440105": {
+      "erp_fingerprint": "b2085f570e57510ef4f5ec070c1574e2127e543460186b2e834cf1556ba8a33e",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NHCP1770102": {
+      "erp_fingerprint": "950b0ce22df1f71911435ce88cc18cf34f3c148b7c3a449a25609ac035aaa3f2",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NHCP17701031284": {
+      "erp_fingerprint": "b95793a56ecce277c772661c15ef7a6ec4ea238c1eb1113a9498dc77ccc7b95a",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NHCP1770104": {
+      "erp_fingerprint": "c129f1749da79f38d409bda3aec30689f6e039d4a83c55f1e58443bfbc5f6368",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NHCP17701011284": {
+      "erp_fingerprint": "78496950e4a371e63e75033005e45f060d133a212f8c9b463da595d5055eadeb",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NH8200102": {
+      "erp_fingerprint": "0de67c3111ab3be60bd82e9f42db2b2ffd13f59dfd5c3a379a7ba34fa0ae6179",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NH8200104": {
+      "erp_fingerprint": "6f270c87320b916a6d7f60849ec933882a6381bc9d3cb5df78c7d68f1d7d6225",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NH8200106": {
+      "erp_fingerprint": "e9def1674d4553a6c5972d4164c4cd48d3e4498dca6c0494003c1d3e351f81b4",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "SWKJ-CP00401015": {
+      "erp_fingerprint": "2f47c11736545011f73bd471caa96327a310b9a11228c8d66e842be12e304621",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NH31301128401": {
+      "erp_fingerprint": "04f02c25b8a4c9225f9372e050f2f168b92ec120f2d4a829c00442ee5dbe31d4",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NH31302128401": {
+      "erp_fingerprint": "c70875ec1dd35b6e44325e3efcf542d3025b1b8088a49bf6e500fdfc869e700b",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NH31303128401": {
+      "erp_fingerprint": "3f88bcf3a19a243e6dad750beca2c1eb0140862961646364122e3cb7a568a4b5",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NHCP24401025": {
+      "erp_fingerprint": "daa87c890670e29f9721fc7eddc51872f957e54fff24d374b7650d91e3954be3",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "SWKJ-CP00401020": {
+      "erp_fingerprint": "0ebc4bffa3984113365ff254cbd8e63cda68f96ea71ec145e353a43e373c8292",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "SWKJ-CP00401030": {
+      "erp_fingerprint": "9f8f9b6a3226aa5e0a6b4466f5b8e5000c7d2876fbac6cc906394cc7b0467eeb",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NH822011284": {
+      "erp_fingerprint": "0ff3483d75307b82e23ecf538f5b2847526868b105bbf6f633eccdec31d1adfe",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NH82204128401": {
+      "erp_fingerprint": "2308e8b5bd50a7fcb339b8775fd847e20f726c9a30902fcc19b466458b393144",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "SWKJ-CP00401025": {
+      "erp_fingerprint": "64ce6a8c4b8377fc29ff08a2e4d8313b322c91e13a2a71572a2888853cc3902f",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NH8200103": {
+      "erp_fingerprint": "64c3d1816dc541ef17bc1831013d3f4edff3d8ccee55a4a2df99118c4b0a4c48",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NHCP17501021284": {
+      "erp_fingerprint": "90966d9fe7374f05e49545d5eede4b9cb8ff621504c0fa2469465b05eff6d8c7",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NHCP17501041284": {
+      "erp_fingerprint": "114e120d1b661a350b86f92ac6a366f47a659fddef241b5dfed8f04b15a4dd8e",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NH8200105": {
+      "erp_fingerprint": "5471d803c1fbb6b1317f28be68857f036dfc0f4b2f462feb732ed91a35c15845",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NHCP24401015": {
+      "erp_fingerprint": "94b2cb9ec8086b7d44edc0e259ed8902df31634108c1c9f4977927cef3d0448b",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NHCP17501031284": {
+      "erp_fingerprint": "ee28974a4c72d2e7f75644ec184ada127e4f8dd598e686fd24fafcf445144e71",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NH711128401": {
+      "erp_fingerprint": "d8ee6b7708d615796dca8283d714c20c4f95485219480008ed561e36fecb6242",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NH71102128401": {
+      "erp_fingerprint": "5612b34a096ec096d776d293e498189853b05d3f821098875f08e128bfbbe10a",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NHCP17501051284": {
+      "erp_fingerprint": "05d52826aa672576b2f5571edb87ce76b37b69028ee08f9952ded4186db6d6f9",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "SWKJ-CP00401003": {
+      "erp_fingerprint": "1bbfa50058dfbde22d69fe28aa7dbdc31b18d89d811513f8182c4c118654e11f",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "SWKJ-CP00401": {
+      "erp_fingerprint": "e44bde8b6cb86912d232a970a84a21eb335576abb26c6a5bec57a184a6db04fe",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "SWKJ-CP0040102": {
+      "erp_fingerprint": "3036fed5b87fed5798c3d2c7e8cfdb2898d9d6f2266d2cfbfabd0a31a0723300",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "SWKJ-CP00401035": {
+      "erp_fingerprint": "add52618a15bae30b497e1c1832f810478d6cbed517b5207fe5b87c7c41e5f44",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "SWKJ-CP00401040": {
+      "erp_fingerprint": "c9102631d02d7107a6971770e62e674051a3ec8334b29ee0d41dc1b39dfd2937",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NH148301025": {
+      "erp_fingerprint": "8a808f376f13c8e990dbfa26e829147df6154531f25ada0b449a0811a0d0d2a8",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NH148301010": {
+      "erp_fingerprint": "991d8706c34016e7aad48b3e79ee4112501687588a0261f4206e2d61d05c1534",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NH148301015": {
+      "erp_fingerprint": "6fa266b6d42297dd0d1ba2e3bddaf0e147d7fa5f535a9fdf8af363ea6d34f6d0",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "SWKJ-CP00401045": {
+      "erp_fingerprint": "ac0aeae5dafb43fa009c3bd40a9f0d3fc6b08d9fe604b2d76379447019b8c72f",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NH14830101": {
+      "erp_fingerprint": "bafbccc6b853a1d0888ed3a4dcdadc180368296847b32a0bfeda2d6baa45709d",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NH711820128401": {
+      "erp_fingerprint": "4abf0d0398f536f415c916896df53d74e46ac676ee37b571f93165d2e7b3ab39",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "SWKJ-CP0040103": {
+      "erp_fingerprint": "8b473a1b42368565b03778ae5248936b02cdbe7c56f65dc0675822013aed8149",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "SWKJ-CP0040101": {
+      "erp_fingerprint": "db65bbfbc9dd5561fe73433033ced1e83dcd1cac5f8a5ab067b145dddd07c80b",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NHCP1770105": {
+      "erp_fingerprint": "487baa4d01ccb05c8fb4b18f0bd56c9fc5e451feb6cfc75e9976c35324e0fd1f",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "NHCP17501011284": {
+      "erp_fingerprint": "8387149740ce7a7feae5d1e9184fa6804beecb39596b94e243a7eee950c26121",
+      "rule_ids": [
+        "01"
+      ],
+      "accessories": [
+        "oil"
+      ],
+      "specs": []
+    },
+    "RSD03201": {
+      "erp_fingerprint": "26be8a2636c754edb36e90c73aa48869320cc97b34008a657386491b47589aa6",
+      "rule_ids": [
+        "02"
+      ],
+      "accessories": [
+        "cover"
+      ],
+      "specs": []
+    },
+    "RSD0310102": {
+      "erp_fingerprint": "b2d7edecb4d58e62636daae126ce0a63426964a8db3c94ae50b43564f6c00ea1",
+      "rule_ids": [
+        "02"
+      ],
+      "accessories": [
+        "cover"
+      ],
+      "specs": []
+    },
+    "RSD03101": {
+      "erp_fingerprint": "f8e4d1042deebf69b8dee9bcde9f437a2cd978d19ae4d6be0dd3a9aa90970e76",
+      "rule_ids": [
+        "02"
+      ],
+      "accessories": [
+        "cover"
+      ],
+      "specs": []
+    },
+    "NH139401": {
+      "erp_fingerprint": "bf0803d8420a03dc6f1777fa9e47c49ec9f834b4a89d259678a1504184b308a7",
+      "rule_ids": [
+        "02"
+      ],
+      "accessories": [
+        "cover"
+      ],
+      "specs": []
+    },
+    "NH139501": {
+      "erp_fingerprint": "b821f2d8a5eced3afce3d8d498d470812b12e2ac7d860b0cc272a12370a13620",
+      "rule_ids": [
+        "02"
+      ],
+      "accessories": [
+        "cover"
+      ],
+      "specs": []
+    },
+    "RSD0160102": {
+      "erp_fingerprint": "5cb54836b8fcd7e6d99725464f4608139fcebf0f0de887d55a39068c6683d809",
+      "rule_ids": [
+        "02"
+      ],
+      "accessories": [
+        "cover"
+      ],
+      "specs": []
+    },
+    "RSD01601": {
+      "erp_fingerprint": "edb80a76f10be3ddc3e76c854e93c4b0dfc5344615d389aecd8916ad31179292",
+      "rule_ids": [
+        "02"
+      ],
+      "accessories": [
+        "cover"
+      ],
+      "specs": []
+    },
+    "RSD01501": {
+      "erp_fingerprint": "e0550a639439a885425471c99aabcd98e3fc312ee2cf38e9e058912aca0aa181",
+      "rule_ids": [
+        "02"
+      ],
+      "accessories": [
+        "cover"
+      ],
+      "specs": []
+    },
+    "RSD01401": {
+      "erp_fingerprint": "efe2cd7159bc81cde6c2b8e5fbbd1e5795e8c71d6e1ebf282d4f51ac104b9008",
+      "rule_ids": [
+        "02"
+      ],
+      "accessories": [
+        "cover"
+      ],
+      "specs": []
+    },
+    "RSD01301": {
+      "erp_fingerprint": "99335f359f94f46b383bace6b000595f3157ac05879575780cecbf9f588812b4",
+      "rule_ids": [
+        "02"
+      ],
+      "accessories": [
+        "cover"
+      ],
+      "specs": []
+    },
+    "RSD02901": {
+      "erp_fingerprint": "979a27eeced7ec64fa32941e2e4f55cccb2821aca5c11de4cb5887e8c2f3e329",
+      "rule_ids": [
+        "02"
+      ],
+      "accessories": [
+        "cover"
+      ],
+      "specs": []
+    },
+    "RSD03001": {
+      "erp_fingerprint": "bf3804d2ab548026c92175ac7e44eb721672315f8d1a8100f031354c07ec8567",
+      "rule_ids": [
+        "02"
+      ],
+      "accessories": [
+        "cover"
+      ],
+      "specs": []
+    },
+    "NH471005501": {
+      "erp_fingerprint": "58d6dc794a80aa7e351d5d53f38dfcf0d9c0f6ed31a8efabb4cd78bb343f0fc6",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH550010100": {
+      "erp_fingerprint": "e0d4860c81ea008b4b6fd0d94c4a22587b3a5473d34da6ca6a9aa7673ad2caaf",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH55001080": {
+      "erp_fingerprint": "48b80df4a08737540aac37e18159ecc14f8453d2520ef9d3aacd2c21d5df98d0",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH54901080": {
+      "erp_fingerprint": "61a367fa3ee3ebf9d6bfdaf1f2bb7f2f1f357abd6da94fba45230284bbbbbd30",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH549010100": {
+      "erp_fingerprint": "c3b8dd7df77894042e3830a254aa79f5a84e0b79f7e2398bdde82e6bbf717864",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH5500106003": {
+      "erp_fingerprint": "eda59391d3cb599595815c312faf755defe6e515ba888c70fe191689eecbb93d",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH54901040": {
+      "erp_fingerprint": "73f2e08a1d0227fa358b5571a96a457bcde7db5eb995b05a863f401be24623b2",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH5500104002": {
+      "erp_fingerprint": "833d27e4020610357a7b1fdbac5660f4b59e5c8903fbed6597f46559553f7b85",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "DKCP0190103005": {
+      "erp_fingerprint": "f766e974da718f9aa39483713128d483c3bac8c1e52ed0f952bc52d899c7fc63",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH54901060": {
+      "erp_fingerprint": "e0c72abc8493d10b2e4454cf02ed341f98550f8d9c754d9e99057049c959fbce",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH0064070501": {
+      "erp_fingerprint": "6ba876d2ef5e459ad912b1626c82975594b1ccec4e48365a746c93b233283275",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH5500101003": {
+      "erp_fingerprint": "c4468f9bc6cb996d31f6576d12ce7f4cdbb30322bbbd2ecaf161846c128005b4",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH5500102003": {
+      "erp_fingerprint": "226544421a3fdf94566dcfb07a0c4fe10be636bc9ab6cba3129348adbf56db18",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH55005YW00101": {
+      "erp_fingerprint": "250918cf3435b60f8c9071c7b150accad5602fd6a5254e9f0776b643a389f532",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH00620YW0021": {
+      "erp_fingerprint": "5b77b399cdce137e44ee91fe597c5fcbd233b4ebc07af8bc8bd9f598574174d0",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH0062000301": {
+      "erp_fingerprint": "9f83aad82e357de34f5875905ca7bffcc5d5779fc81cb2cf629dc9aef7871cb2",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH00620YW0011": {
+      "erp_fingerprint": "8f05f89841e72e9eef3415c0f64098a33a3e3930427626c1927b972ad57b935a",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH00640YW0021": {
+      "erp_fingerprint": "2daccfbd94810a22b4499f7b62c02f1100d99df416c017bf43efac9a71113c75",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH0064009401": {
+      "erp_fingerprint": "b70d19eaa6f0aca967628ea0a47a161c3e08d12d9f85a5be4024d7d116cbbc32",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH00640YW0011": {
+      "erp_fingerprint": "8a37599cb4eaffc7c875078b22243c29dc6ce3e0153b8609f318833cdfe5d31e",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH00660W0021": {
+      "erp_fingerprint": "52b26f2949d1dd93aed7120fee3399283e8fc5fa239843be0aeddc11f9e49981",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH00660YW00301": {
+      "erp_fingerprint": "b1be4ad437f2de455b0feb838fe5510ed777a3b87ef42957dceed92ecc5398df",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH00660YW0011": {
+      "erp_fingerprint": "37e2f37931ab8408c5f48c3ad499280671dd3c73e408ac0cbdd8c4b9abde5dff",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH006100W0021": {
+      "erp_fingerprint": "d63ca75731df962f19328cdc9b5c916115b942c6fe501c0998a632c75d7f4e75",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH006100YW00301": {
+      "erp_fingerprint": "0cfceef921155e985047cba302e04801df8daee02a767df0ce3dae0873b3578f",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH006100YW0011": {
+      "erp_fingerprint": "e2ab4faf68eb44fdffedc86aaf401ccf2094c7fcbb738566d981141bcec3728c",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH5500103005": {
+      "erp_fingerprint": "83dde3e0ce20392848084b15be302812a39e57e42a34478ff8a7d46654c2fee4",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH5500106005": {
+      "erp_fingerprint": "a638b7a5a2cb66441ad5de0d81f0b3c5bc864ba25a16fbe228dfdfc32c61b398",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH0062005701": {
+      "erp_fingerprint": "34750361bbd9f565b0d4faa6fd6884b1f692a9cd1b82519e6f2333e98a460a29",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH006200021": {
+      "erp_fingerprint": "4693b08025910e96ff1c1a7a6339e83070472877d6f746598f63a750de1b4d65",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH0064005701": {
+      "erp_fingerprint": "1d79fd4f133d0b43909e595cb5a277339002ed0bd5c25cc80a4a1bfd69b15761",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH0064009501": {
+      "erp_fingerprint": "4e3942ee5e8cd796256f1a416fe7e99e030c7989b1263a681edee92fadd88b78",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH0066005701": {
+      "erp_fingerprint": "0b433f42601c4736474e1131ff9bb0318dffeee228ff1fe761943d9c74a9e416",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NH0066009501": {
+      "erp_fingerprint": "1c1ff2877b0c817b68276fadfc0ff4e70bd5f50e1a514906cfc1eddaecdca309",
+      "rule_ids": [
+        "03"
+      ],
+      "accessories": [
+        "shell"
+      ],
+      "specs": []
+    },
+    "NHCP2600105": {
+      "erp_fingerprint": "24c04983fbb58d600712f95b3f1963a6b2e80d06d5bcca728895302d3073d4b4",
+      "rule_ids": [
+        "04.1",
+        "04.2",
+        "04.3"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "04.1",
+            "04.2"
+          ],
+          "components": {
+            "暖手": {
+              "text": "小暖手贴50片",
+              "qty": [
+                50,
+                "片"
+              ]
+            },
+            "玩偶": {
+              "text": "小熊玩偶1只",
+              "qty": [
+                1,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "【自发热暖手宝】持久发热/温而不烫,【卡通小熊】买40送10(到手50个发热包更划算)",
+          "original_spec": "【自发热暖手宝】持久发热/温而不烫,【卡通小熊】买40送10（到手50个发热包更划算）",
+          "source_platforms": [
+            "快手"
+          ]
+        },
+        {
+          "rule_ids": [
+            "04.1",
+            "04.2"
+          ],
+          "components": {
+            "暖手": {
+              "text": "小暖手贴50片",
+              "qty": [
+                50,
+                "片"
+              ]
+            },
+            "玩偶": {
+              "text": "小熊玩偶1只",
+              "qty": [
+                1,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "{颜色分类:【自发热暖手宝】持久发热/温而不烫, 片数:【卡通小熊】买40送10(到手50个发热包更划算)}",
+          "original_spec": "{颜色分类:【自发热暖手宝】持久发热/温而不烫， 片数:【卡通小熊】买40送10（到手50个发热包更划算）}",
+          "source_platforms": [
+            "抖音"
+          ]
+        },
+        {
+          "rule_ids": [
+            "04.1"
+          ],
+          "components": {
+            "暖手": {
+              "text": "小暖手贴50片",
+              "qty": [
+                50,
+                "片"
+              ]
+            },
+            "玩偶": {
+              "text": "小熊玩偶1只",
+              "qty": [
+                1,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "颜色分类:30片送20片【小暖手送小熊】;",
+          "original_spec": "颜色分类:30片送20片【小暖手送小熊】;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "04.1",
+          "04.1",
+          "04.1",
+          "04.2",
+          "04.2",
+          "04.2"
+        ],
+        "components": {
+          "暖手": {
+            "text": "小魔仙小暖手贴50片",
+            "qty": [
+              50,
+              "片"
+            ]
+          },
+          "玩偶": {
+            "text": "小熊玩偶1只",
+            "qty": [
+              1,
+              "只"
+            ]
+          }
+        },
+        "qty": null
+      }
+    },
+    "NHCP2600102": {
+      "erp_fingerprint": "c160af254e0577d54584f783bf74518a7d61bebbe369b8d22ceaf84fc09b3755",
+      "rule_ids": [
+        "04.1",
+        "04.2",
+        "04.3"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "04.1",
+            "04.2"
+          ],
+          "components": {
+            "暖手": {
+              "text": "小暖手贴20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            },
+            "玩偶": {
+              "text": "小熊玩偶1只",
+              "qty": [
+                1,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "【自发热暖手宝】持久发热/温而不烫,【卡通小熊】搭配20个发热包(实惠装)",
+          "original_spec": "【自发热暖手宝】持久发热/温而不烫,【卡通小熊】搭配20个发热包（实惠装）",
+          "source_platforms": [
+            "快手"
+          ]
+        },
+        {
+          "rule_ids": [
+            "04.1",
+            "04.2"
+          ],
+          "components": {
+            "暖手": {
+              "text": "小暖手贴20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            },
+            "玩偶": {
+              "text": "小熊玩偶1只",
+              "qty": [
+                1,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "{颜色分类:【自发热暖手宝】持久发热/温而不烫, 片数:【卡通小熊】搭配20个发热包(实惠装)}",
+          "original_spec": "{颜色分类:【自发热暖手宝】持久发热/温而不烫， 片数:【卡通小熊】搭配20个发热包（实惠装）}",
+          "source_platforms": [
+            "抖音"
+          ]
+        },
+        {
+          "rule_ids": [
+            "04.1"
+          ],
+          "components": {
+            "暖手": {
+              "text": "小暖手贴20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            },
+            "玩偶": {
+              "text": "小熊玩偶1只",
+              "qty": [
+                1,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "颜色分类:10片送10片【小暖手送小熊】;",
+          "original_spec": "颜色分类:10片送10片【小暖手送小熊】;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "04.1",
+          "04.1",
+          "04.1",
+          "04.2",
+          "04.2",
+          "04.2"
+        ],
+        "components": {
+          "暖手": {
+            "text": "小魔仙小暖手贴20片",
+            "qty": [
+              20,
+              "片"
+            ]
+          },
+          "玩偶": {
+            "text": "小熊玩偶1只",
+            "qty": [
+              1,
+              "只"
+            ]
+          }
+        },
+        "qty": null
+      }
+    },
+    "NHCP2600101": {
+      "erp_fingerprint": "63307b711ebc620307a53dc1996639980ee06a4efa3e47f3e615f1384ccf5bd7",
+      "rule_ids": [
+        "04.1",
+        "04.2",
+        "04.3"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "04.1",
+            "04.2"
+          ],
+          "components": {
+            "暖手": {
+              "text": "小暖手贴10片",
+              "qty": [
+                10,
+                "片"
+              ]
+            },
+            "玩偶": {
+              "text": "小熊玩偶1只",
+              "qty": [
+                1,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "【自发热暖手宝】持久发热/温而不烫,【卡通小熊】搭配10个发热包(体验装)",
+          "original_spec": "【自发热暖手宝】持久发热/温而不烫,【卡通小熊】搭配10个发热包（体验装）",
+          "source_platforms": [
+            "快手"
+          ]
+        },
+        {
+          "rule_ids": [
+            "04.1",
+            "04.2"
+          ],
+          "components": {
+            "暖手": {
+              "text": "小暖手贴10片",
+              "qty": [
+                10,
+                "片"
+              ]
+            },
+            "玩偶": {
+              "text": "小熊玩偶1只",
+              "qty": [
+                1,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "{颜色分类:【自发热暖手宝】持久发热/温而不烫, 片数:【卡通小熊】搭配10个发热包(体验装)}",
+          "original_spec": "{颜色分类:【自发热暖手宝】持久发热/温而不烫， 片数:【卡通小熊】搭配10个发热包（体验装）}",
+          "source_platforms": [
+            "抖音"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "04.1",
+          "04.1",
+          "04.1",
+          "04.2",
+          "04.2",
+          "04.2"
+        ],
+        "components": {
+          "暖手": {
+            "text": "小魔仙小暖手贴10片",
+            "qty": [
+              10,
+              "片"
+            ]
+          },
+          "玩偶": {
+            "text": "小熊玩偶1只",
+            "qty": [
+              1,
+              "只"
+            ]
+          }
+        },
+        "qty": null
+      }
+    },
+    "NHCP26001010": {
+      "erp_fingerprint": "2f4d36bd640fa6a33949c9b047c3b7e1c1b606b8b4d5d9eed9f8bdf077b8fffe",
+      "rule_ids": [
+        "04.1",
+        "04.3"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "04.1"
+          ],
+          "components": {
+            "暖手": {
+              "text": "小暖手贴10片",
+              "qty": [
+                10,
+                "片"
+              ]
+            },
+            "玩偶": {
+              "text": "小熊玩偶1只",
+              "qty": [
+                1,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "颜色分类:治愈棕熊❤送10片暖芯;",
+          "original_spec": "颜色分类:治愈棕熊❤送10片暖芯;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "04.1"
+        ],
+        "components": {
+          "暖手": {
+            "text": "小黄鸭小暖手贴10片",
+            "qty": [
+              10,
+              "片"
+            ]
+          },
+          "玩偶": {
+            "text": "小熊玩偶1只",
+            "qty": [
+              1,
+              "只"
+            ]
+          }
+        },
+        "qty": null
+      }
+    },
+    "NHCP26001020": {
+      "erp_fingerprint": "f06b9cd96470d5979e91a29ef198959fb92a45cc799d4a4fc6b19fce5883fff7",
+      "rule_ids": [
+        "04.1",
+        "04.3"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "04.1"
+          ],
+          "components": {
+            "暖手": {
+              "text": "小暖手贴20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            },
+            "玩偶": {
+              "text": "小熊玩偶1只",
+              "qty": [
+                1,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "颜色分类:治愈棕熊❤送20片暖芯;",
+          "original_spec": "颜色分类:治愈棕熊❤送20片暖芯;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "04.1"
+        ],
+        "components": {
+          "暖手": {
+            "text": "小黄鸭小暖手贴20片",
+            "qty": [
+              20,
+              "片"
+            ]
+          },
+          "玩偶": {
+            "text": "小熊玩偶1只",
+            "qty": [
+              1,
+              "只"
+            ]
+          }
+        },
+        "qty": null
+      }
+    },
+    "NHCP26001050": {
+      "erp_fingerprint": "bccb9f85484b469ee77e5ad0556385001d2c5eb6d3dcfc7232dd878afd83493d",
+      "rule_ids": [
+        "04.1",
+        "04.3"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "04.1"
+          ],
+          "components": {
+            "暖手": {
+              "text": "小暖手贴50片",
+              "qty": [
+                50,
+                "片"
+              ]
+            },
+            "玩偶": {
+              "text": "小熊玩偶1只",
+              "qty": [
+                1,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "颜色分类:治愈棕熊❤送50片暖芯;",
+          "original_spec": "颜色分类:治愈棕熊❤送50片暖芯;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "04.1"
+        ],
+        "components": {
+          "暖手": {
+            "text": "小黄鸭小暖手贴50片",
+            "qty": [
+              50,
+              "片"
+            ]
+          },
+          "玩偶": {
+            "text": "小熊玩偶1只",
+            "qty": [
+              1,
+              "只"
+            ]
+          }
+        },
+        "qty": null
+      }
+    },
+    "NHCP3010150": {
+      "erp_fingerprint": "2283bb4d3654f7bbd2cefe6e06808db13d583a8df3ce4419e79cd16539a9f8a2",
+      "rule_ids": [
+        "05"
+      ],
+      "accessories": [
+        "hook"
+      ],
+      "specs": []
+    },
+    "NHCP3010100": {
+      "erp_fingerprint": "3c154c0212dc96cd6b27b8dac41749dd7b79738f1a8bb60b6abc07d8b945cf41",
+      "rule_ids": [
+        "05"
+      ],
+      "accessories": [
+        "hook"
+      ],
+      "specs": []
+    },
+    "NHCP3010200": {
+      "erp_fingerprint": "84d0b191519af3c1b27c321d3eb6cbca3ada2862cede81017097c92e6b4887b8",
+      "rule_ids": [
+        "05"
+      ],
+      "accessories": [
+        "hook"
+      ],
+      "specs": []
+    },
+    "NH14850150": {
+      "erp_fingerprint": "6ebc48435c4755316d59edb740cf2212f47783efc271139b469ff784b35fda39",
+      "rule_ids": [
+        "05"
+      ],
+      "accessories": [
+        "hook"
+      ],
+      "specs": []
+    },
+    "NH148501100": {
+      "erp_fingerprint": "700d317c4ba80b0971f44401bbd1345388b946b0fc8fba4377b9fef7524fc96c",
+      "rule_ids": [
+        "05"
+      ],
+      "accessories": [
+        "hook"
+      ],
+      "specs": []
+    },
+    "NH148501200": {
+      "erp_fingerprint": "3ce79cc589c4bd9c7e5195a69ea5289b25900d1cb814e62caa1b5dff2cd34881",
+      "rule_ids": [
+        "05"
+      ],
+      "accessories": [
+        "hook"
+      ],
+      "specs": []
+    },
+    "NH148501300": {
+      "erp_fingerprint": "ec47a2c77ebc0dcd47a3596d72f95ffeebe0c3b46dc442b5aabb11488e0443b7",
+      "rule_ids": [
+        "05"
+      ],
+      "accessories": [
+        "hook"
+      ],
+      "specs": []
+    },
+    "NH148501150": {
+      "erp_fingerprint": "c178da900192f445cbc26c1ad486cf000def9a853586fe5c247d004ace1fc287",
+      "rule_ids": [
+        "05"
+      ],
+      "accessories": [
+        "hook"
+      ],
+      "specs": []
+    },
+    "NH148501250": {
+      "erp_fingerprint": "462c2ec664d3a9395f84dd20d876546f44a150a483cd8d456359fdda48688592",
+      "rule_ids": [
+        "05"
+      ],
+      "accessories": [
+        "hook"
+      ],
+      "specs": []
+    },
+    "NHCP301150": {
+      "erp_fingerprint": "65f13b639779602803a05342f124faeba7071f33bce2aa60fa9a8242780d6a21",
+      "rule_ids": [
+        "05"
+      ],
+      "accessories": [
+        "hook"
+      ],
+      "specs": []
+    },
+    "NHCP3010250": {
+      "erp_fingerprint": "461e9c308cd7f61807b66c81682bec3b5a0d33fd43093466ba0090476b30c4b0",
+      "rule_ids": [
+        "05"
+      ],
+      "accessories": [
+        "hook"
+      ],
+      "specs": []
+    },
+    "NH5270153301": {
+      "erp_fingerprint": "22db00394499dfa54019aa62caea4a9d88f24b8aba3dfce9b01cff44e1ab76e7",
+      "rule_ids": [
+        "06.1"
+      ],
+      "accessories": [
+        "sleeve"
+      ],
+      "specs": []
+    },
+    "NH9690153201": {
+      "erp_fingerprint": "85074cc8cd455de0b76e60ba5977dff37c0cb77b32a115c7831a0b4e0450df3a",
+      "rule_ids": [
+        "06.1"
+      ],
+      "accessories": [
+        "sleeve"
+      ],
+      "specs": []
+    },
+    "NH5250153401": {
+      "erp_fingerprint": "78ed7d18a8a168f58b3c68456b6102196b98ca270bdc7041f520355b33c412b7",
+      "rule_ids": [
+        "06.1"
+      ],
+      "accessories": [
+        "sleeve"
+      ],
+      "specs": []
+    },
+    "NH9670153001": {
+      "erp_fingerprint": "c080749356a5a2aea83fa20ee166d668a2e9fe31309c892cf68bd4b8705120e8",
+      "rule_ids": [
+        "06.1"
+      ],
+      "accessories": [
+        "sleeve"
+      ],
+      "specs": []
+    },
+    "NH5230153301": {
+      "erp_fingerprint": "ddce87cdca7e31424a502acbfc9d245d277eccf3d77831b1f4ad4331bb699c72",
+      "rule_ids": [
+        "06.1"
+      ],
+      "accessories": [
+        "sleeve"
+      ],
+      "specs": []
+    },
+    "NH5260153201": {
+      "erp_fingerprint": "47be33c1cc5bf0961b1bb9314f1c8cc06e9cdc919770a3a9406a3ddac1d394b2",
+      "rule_ids": [
+        "06.1"
+      ],
+      "accessories": [
+        "sleeve"
+      ],
+      "specs": []
+    },
+    "NH1490101": {
+      "erp_fingerprint": "4b400f786f21ae8bfc00984a6f36f77c0ca63574965038b7239c17d8c7ef66f0",
+      "rule_ids": [
+        "06.2"
+      ],
+      "accessories": [
+        "pillow"
+      ],
+      "specs": []
+    },
+    "NH0340105401": {
+      "erp_fingerprint": "e2fc2756805b2c836fc2e920ed0a9622cf423cb7ae389a27f96c9507579738de",
+      "rule_ids": [
+        "06.2"
+      ],
+      "accessories": [
+        "pillow"
+      ],
+      "specs": []
+    },
+    "NH5370105401": {
+      "erp_fingerprint": "9494f175554f71d5531c847a7343ea2d47b777d56bf2b0da4da93b1ad45d3aa4",
+      "rule_ids": [
+        "06.2"
+      ],
+      "accessories": [
+        "pillow"
+      ],
+      "specs": []
+    },
+    "NH0520111001": {
+      "erp_fingerprint": "b2e0c1db6b80ab84eef41439bbebab7eef2e3a81c290f9104507cd032f4ff23d",
+      "rule_ids": [
+        "06.2"
+      ],
+      "accessories": [
+        "pillow"
+      ],
+      "specs": []
+    },
+    "WD09601": {
+      "erp_fingerprint": "38934bb28b76b5584c9be95b209ab8797332e6cd887ac86d7da3a6fa4d5efd78",
+      "rule_ids": [
+        "06.3"
+      ],
+      "accessories": [
+        "blanket"
+      ],
+      "specs": []
+    },
+    "SWKJ-CP01101011": {
+      "erp_fingerprint": "6bb295fe6ed761325319ab5aa81a99c62e8021f41955ac7a1859780daacb2f97",
+      "rule_ids": [
+        "06.4"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "06.4"
+          ],
+          "components": {
+            "毛巾(红字)": {
+              "text": "冰凉毛巾红字5片",
+              "qty": [
+                5,
+                "片"
+              ]
+            },
+            "毛巾(绿色)": {
+              "text": "冰凉毛巾绿色5片",
+              "qty": [
+                5,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            10,
+            "片"
+          ],
+          "color_values": [
+            "红",
+            "绿"
+          ],
+          "selected_spec": "{颜色分类:【不焦绿+玉桃粉】凉感小毛巾(组合装), 数量:10条装【划算装】清凉一夏}",
+          "original_spec": "{颜色分类:【不焦绿+玉桃粉】凉感小毛巾（组合装）， 数量:10条装【划算装】清凉一夏}",
+          "source_platforms": [
+            "抖音"
+          ],
+          "identity": {
+            "平台": "抖音",
+            "商品 ID": "3822046739989397776",
+            "SKU ID": "3676800040027138"
+          }
+        },
+        {
+          "rule_ids": [
+            "06.4"
+          ],
+          "components": {
+            "毛巾(红字)": {
+              "text": "冰凉毛巾红字5片",
+              "qty": [
+                5,
+                "片"
+              ]
+            },
+            "毛巾(绿色)": {
+              "text": "冰凉毛巾绿色5片",
+              "qty": [
+                5,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            10,
+            "片"
+          ],
+          "color_values": [
+            "红",
+            "绿"
+          ],
+          "selected_spec": "{颜色分类:【不焦绿+玉桃粉】凉感小毛巾(组合装), 产品类型:10条装【超值优惠】}",
+          "original_spec": "{颜色分类:【不焦绿+玉桃粉】凉感小毛巾（组合装）， 产品类型:10条装【超值优惠】}",
+          "source_platforms": [
+            "抖音"
+          ],
+          "identity": {
+            "平台": "抖音",
+            "商品 ID": "3819791126353805587",
+            "SKU ID": "3674673940656898"
+          }
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "06.4"
+        ],
+        "components": {
+          "毛巾(红字)": {
+            "text": "冰凉毛巾红字5片",
+            "qty": [
+              5,
+              "片"
+            ]
+          },
+          "毛巾(绿色)": {
+            "text": "冰凉毛巾绿色5片",
+            "qty": [
+              5,
+              "片"
+            ]
+          }
+        },
+        "qty": [
+          10,
+          "片"
+        ],
+        "color_values": [
+          "红",
+          "绿"
+        ]
+      }
+    },
+    "NH701010NH69901": {
+      "erp_fingerprint": "141276e29be3875c76fef9310be1532f511a61df2210cf2e5bb42619a29bae5b",
+      "rule_ids": [
+        "07.1"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "07.1"
+          ],
+          "components": {
+            "暖膝": {
+              "text": "暖膝10片",
+              "qty": [
+                10,
+                "片"
+              ]
+            },
+            "护膝": {
+              "text": "护膝2只",
+              "qty": [
+                2,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "{颜色分类:艾草暖膝贴【送黑色护膝套一付】, 片数:10片【体验装】暖膝护膝}",
+          "original_spec": "{颜色分类:艾草暖膝贴【送黑色护膝套一付】， 片数:10片【体验装】暖膝护膝}",
+          "source_platforms": [
+            "抖音"
+          ]
+        },
+        {
+          "rule_ids": [
+            "07.1"
+          ],
+          "components": {
+            "暖膝": {
+              "text": "暖膝10片",
+              "qty": [
+                10,
+                "片"
+              ]
+            },
+            "护膝": {
+              "text": "护膝2只",
+              "qty": [
+                2,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "片数:10片【体验装】;颜色分类:艾草暖膝贴【买即送护膝2只】;",
+          "original_spec": "片数:10片【体验装】;颜色分类:艾草暖膝贴【买即送护膝2只】;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "07.1"
+        ],
+        "components": {
+          "暖膝": {
+            "text": "暖膝10片",
+            "qty": [
+              10,
+              "片"
+            ]
+          },
+          "护膝": {
+            "text": "护膝2只",
+            "qty": [
+              2,
+              "只"
+            ]
+          }
+        },
+        "qty": null
+      }
+    },
+    "NH55906": {
+      "erp_fingerprint": "39e1f001b8a6167531a205f67dfb3e1f93f15604172b37ac4d6d8dc4e081aaa1",
+      "rule_ids": [
+        "07.1",
+        "07.3"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "07.1"
+          ],
+          "components": {
+            "暖膝": {
+              "text": "暖膝60片",
+              "qty": [
+                60,
+                "片"
+              ]
+            },
+            "护膝": {
+              "text": "护膝2只",
+              "qty": [
+                2,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "{颜色分类:艾草暖膝贴【送黑色护膝套一付】, 片数:60片【量贩装】暖膝护膝}",
+          "original_spec": "{颜色分类:艾草暖膝贴【送黑色护膝套一付】， 片数:60片【量贩装】暖膝护膝}",
+          "source_platforms": [
+            "抖音"
+          ]
+        },
+        {
+          "rule_ids": [
+            "07.1"
+          ],
+          "components": {
+            "暖膝": {
+              "text": "暖膝60片",
+              "qty": [
+                60,
+                "片"
+              ]
+            },
+            "护膝": {
+              "text": "护膝2只",
+              "qty": [
+                2,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "片数:买40片送20片【到手60片】超划算;颜色分类:艾草暖膝贴【买即送护膝2只】;",
+          "original_spec": "片数:买40片送20片【到手60片】超划算;颜色分类:艾草暖膝贴【买即送护膝2只】;",
+          "source_platforms": [
+            "天猫"
+          ]
+        },
+        {
+          "rule_ids": [
+            "07.3"
+          ],
+          "components": {
+            "暖膝": {
+              "text": "暖膝60片",
+              "qty": [
+                60,
+                "片"
+              ]
+            },
+            "护膝": {
+              "text": "护膝2只",
+              "qty": [
+                2,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "片数:60片;颜色分类:【增强升级款】蝶形设计贴合关节丨送护膝;",
+          "original_spec": "片数:60片;颜色分类:【增强升级款】蝶形设计贴合关节丨送护膝;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "07.1"
+        ],
+        "components": {
+          "暖膝": {
+            "text": "暖膝60片",
+            "qty": [
+              60,
+              "片"
+            ]
+          },
+          "护膝": {
+            "text": "护膝2只",
+            "qty": [
+              2,
+              "只"
+            ]
+          }
+        },
+        "qty": null
+      }
+    },
+    "NH55904": {
+      "erp_fingerprint": "8fe95ae4eedc84feb6b3363a796aaa1cbba6585e71288b7c860dd92099ab30a2",
+      "rule_ids": [
+        "07.1",
+        "07.3"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "07.1"
+          ],
+          "components": {
+            "暖膝": {
+              "text": "暖膝40片",
+              "qty": [
+                40,
+                "片"
+              ]
+            },
+            "护膝": {
+              "text": "护膝2只",
+              "qty": [
+                2,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "{颜色分类:艾草暖膝贴【送黑色护膝套一付】, 片数:40片【更划算】暖膝护膝}",
+          "original_spec": "{颜色分类:艾草暖膝贴【送黑色护膝套一付】， 片数:40片【更划算】暖膝护膝}",
+          "source_platforms": [
+            "抖音"
+          ]
+        },
+        {
+          "rule_ids": [
+            "07.3"
+          ],
+          "components": {
+            "暖膝": {
+              "text": "暖膝40片",
+              "qty": [
+                40,
+                "片"
+              ]
+            },
+            "护膝": {
+              "text": "护膝2只",
+              "qty": [
+                2,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "片数:40片;颜色分类:【增强升级款】蝶形设计贴合关节丨送护膝;",
+          "original_spec": "片数:40片;颜色分类:【增强升级款】蝶形设计贴合关节丨送护膝;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "07.1"
+        ],
+        "components": {
+          "暖膝": {
+            "text": "暖膝40片",
+            "qty": [
+              40,
+              "片"
+            ]
+          },
+          "护膝": {
+            "text": "护膝2只",
+            "qty": [
+              2,
+              "只"
+            ]
+          }
+        },
+        "qty": null
+      }
+    },
+    "NH55902": {
+      "erp_fingerprint": "cb0fbbcf6e570f567700ce2d025ebf735e07fe9a7009c6686d1b9053f3a0d6df",
+      "rule_ids": [
+        "07.1",
+        "07.3"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "07.1"
+          ],
+          "components": {
+            "暖膝": {
+              "text": "暖膝20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            },
+            "护膝": {
+              "text": "护膝2只",
+              "qty": [
+                2,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "{颜色分类:艾草暖膝贴【送黑色护膝套一付】, 片数:20片【经济装】暖膝护膝}",
+          "original_spec": "{颜色分类:艾草暖膝贴【送黑色护膝套一付】， 片数:20片【经济装】暖膝护膝}",
+          "source_platforms": [
+            "抖音"
+          ]
+        },
+        {
+          "rule_ids": [
+            "07.3"
+          ],
+          "components": {
+            "暖膝": {
+              "text": "暖膝20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            },
+            "护膝": {
+              "text": "护膝2只",
+              "qty": [
+                2,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "片数:20片;颜色分类:【增强升级款】蝶形设计贴合关节丨送护膝;",
+          "original_spec": "片数:20片;颜色分类:【增强升级款】蝶形设计贴合关节丨送护膝;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "07.1"
+        ],
+        "components": {
+          "暖膝": {
+            "text": "暖膝20片",
+            "qty": [
+              20,
+              "片"
+            ]
+          },
+          "护膝": {
+            "text": "护膝2只",
+            "qty": [
+              2,
+              "只"
+            ]
+          }
+        },
+        "qty": null
+      }
+    },
+    "NH55930": {
+      "erp_fingerprint": "acfad1d7939423b6be05fc8d453263ccbc02b71e512909f2c500285a27370edd",
+      "rule_ids": [
+        "07.1"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "07.1"
+          ],
+          "components": {
+            "暖膝": {
+              "text": "暖膝30片",
+              "qty": [
+                30,
+                "片"
+              ]
+            },
+            "护膝": {
+              "text": "护膝2只",
+              "qty": [
+                2,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "片数:买20片送10片【到手30片】经济装;颜色分类:艾草暖膝贴【买即送护膝2只】;",
+          "original_spec": "片数:买20片送10片【到手30片】经济装;颜色分类:艾草暖膝贴【买即送护膝2只】;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "07.1"
+        ],
+        "components": {
+          "暖膝": {
+            "text": "暖膝30片",
+            "qty": [
+              30,
+              "片"
+            ]
+          },
+          "护膝": {
+            "text": "护膝2只",
+            "qty": [
+              2,
+              "只"
+            ]
+          }
+        },
+        "qty": null
+      }
+    },
+    "NHCP1240101012": {
+      "erp_fingerprint": "597f16dd72382614d60abd374706c3b385a4f2120a64d7512a479fdb57d22a13",
+      "rule_ids": [
+        "07.2"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "07.2"
+          ],
+          "components": {
+            "护膝": {
+              "text": "护膝黑色L2只",
+              "qty": [
+                2,
+                "只"
+              ]
+            },
+            "暖贴": {
+              "text": "艾草暖贴30片",
+              "qty": [
+                30,
+                "片"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "德绒护膝【均码】;德绒护膝2只黑色【加30片艾草暖贴】",
+          "original_spec": "德绒护膝【均码】；德绒护膝2只黑色【加30片艾草暖贴】",
+          "source_platforms": [
+            "唯品会"
+          ],
+          "identity": {
+            "平台": "唯品会",
+            "商品 ID": "3617312404656336896",
+            "SKU ID": "3617312404656336897"
+          }
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "07.2"
+        ],
+        "components": {
+          "护膝": {
+            "text": "护膝黑色L2只",
+            "qty": [
+              2,
+              "只"
+            ]
+          },
+          "暖贴": {
+            "text": "艾草暖贴30片",
+            "qty": [
+              30,
+              "片"
+            ]
+          }
+        },
+        "qty": null
+      }
+    },
+    "NH80501020": {
+      "erp_fingerprint": "64a8b4f9576b2c550bf8cf04fedfb5efebc0dcf24f05c864e7ff27480b82fb7b",
+      "rule_ids": [
+        "07.3"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "07.3"
+          ],
+          "components": {
+            "暖贴": {
+              "text": "暖贴20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            },
+            "护膝": {
+              "text": "护膝2只",
+              "qty": [
+                2,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "颜色分类:20片老人暖贴送护膝【双效合一更温暖】;",
+          "original_spec": "颜色分类:20片老人暖贴送护膝【双效合一更温暖】;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "07.3"
+        ],
+        "components": {
+          "暖贴": {
+            "text": "暖贴20片",
+            "qty": [
+              20,
+              "片"
+            ]
+          },
+          "护膝": {
+            "text": "护膝2只",
+            "qty": [
+              2,
+              "只"
+            ]
+          }
+        },
+        "qty": null
+      }
+    },
+    "NH80501040": {
+      "erp_fingerprint": "439177c71898ed701121ba1eec4497b0a205e52850d033fa0c222d3e304416a8",
+      "rule_ids": [
+        "07.3"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "07.3"
+          ],
+          "components": {
+            "暖贴": {
+              "text": "暖贴40片",
+              "qty": [
+                40,
+                "片"
+              ]
+            },
+            "护膝": {
+              "text": "护膝2只",
+              "qty": [
+                2,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "颜色分类:40片老人暖贴送护膝【双效合一更温暖】;",
+          "original_spec": "颜色分类:40片老人暖贴送护膝【双效合一更温暖】;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "07.3"
+        ],
+        "components": {
+          "暖贴": {
+            "text": "暖贴40片",
+            "qty": [
+              40,
+              "片"
+            ]
+          },
+          "护膝": {
+            "text": "护膝2只",
+            "qty": [
+              2,
+              "只"
+            ]
+          }
+        },
+        "qty": null
+      }
+    },
+    "NH80501060": {
+      "erp_fingerprint": "7e8c324badbf800e334ac4e1e02b58abeb934a1e8830a5644bd642f4a17834c9",
+      "rule_ids": [
+        "07.3"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "07.3"
+          ],
+          "components": {
+            "暖贴": {
+              "text": "暖贴60片",
+              "qty": [
+                60,
+                "片"
+              ]
+            },
+            "护膝": {
+              "text": "护膝2只",
+              "qty": [
+                2,
+                "只"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "颜色分类:60片老人暖贴送护膝【双效合一更温暖】;",
+          "original_spec": "颜色分类:60片老人暖贴送护膝【双效合一更温暖】;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "07.3"
+        ],
+        "components": {
+          "暖贴": {
+            "text": "暖贴60片",
+            "qty": [
+              60,
+              "片"
+            ]
+          },
+          "护膝": {
+            "text": "护膝2只",
+            "qty": [
+              2,
+              "只"
+            ]
+          }
+        },
+        "qty": null
+      }
+    },
+    "SWKJ-CP00401064": {
+      "erp_fingerprint": "674f4e65615023805123337f3c9b2babe8bc102b6d0bbfcb2982403895a41869",
+      "rule_ids": [
+        "08.1"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "08.1"
+          ],
+          "components": {
+            "艾热灸": {
+              "text": "艾热灸贴30片",
+              "qty": [
+                30,
+                "片"
+              ]
+            },
+            "暖膝": {
+              "text": "红色暖膝贴2片",
+              "qty": [
+                2,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            32,
+            "片"
+          ],
+          "selected_spec": "六盒量贩装【共30片】送暖膝贴",
+          "original_spec": "六盒量贩装【共30片】送暖膝贴",
+          "source_platforms": [
+            "快手"
+          ]
+        },
+        {
+          "rule_ids": [
+            "08.1"
+          ],
+          "components": {
+            "艾热灸": {
+              "text": "艾热灸贴30片",
+              "qty": [
+                30,
+                "片"
+              ]
+            },
+            "暖膝": {
+              "text": "红色暖膝贴2片",
+              "qty": [
+                2,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            32,
+            "片"
+          ],
+          "selected_spec": "艾草热敷spa【颈肩腰腿 全身可用】,【周期装】5片*6盒(共30片 送暖膝贴)",
+          "original_spec": "艾草热敷SPA【颈肩腰腿 全身可用】,【周期装】5片*6盒（共30片 送暖膝贴）",
+          "source_platforms": [
+            "快手"
+          ]
+        },
+        {
+          "rule_ids": [
+            "08.1"
+          ],
+          "components": {
+            "艾热灸": {
+              "text": "艾热灸贴30片",
+              "qty": [
+                30,
+                "片"
+              ]
+            },
+            "暖膝": {
+              "text": "红色暖膝贴2片",
+              "qty": [
+                2,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            32,
+            "片"
+          ],
+          "selected_spec": "{套餐类型:【周期装】5片*6盒, 件数:艾草热敷spa【颈肩腰腿 全身可用】}",
+          "original_spec": "{套餐类型:【周期装】5片*6盒， 件数:艾草热敷SPA【颈肩腰腿 全身可用】}",
+          "source_platforms": [
+            "抖音"
+          ]
+        },
+        {
+          "rule_ids": [
+            "08.1"
+          ],
+          "components": {
+            "艾热灸": {
+              "text": "艾热灸贴30片",
+              "qty": [
+                30,
+                "片"
+              ]
+            },
+            "暖膝": {
+              "text": "红色暖膝贴2片",
+              "qty": [
+                2,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            32,
+            "片"
+          ],
+          "selected_spec": "{颜色分类:六盒量贩装【共30片】送暖膝贴, 套餐类型:艾草精油热敷【缓解姨妈痛】}",
+          "original_spec": "{颜色分类:六盒量贩装【共30片】送暖膝贴， 套餐类型:艾草精油热敷【缓解姨妈痛】}",
+          "source_platforms": [
+            "抖音"
+          ]
+        },
+        {
+          "rule_ids": [
+            "08.1"
+          ],
+          "components": {
+            "艾热灸": {
+              "text": "艾热灸贴30片",
+              "qty": [
+                30,
+                "片"
+              ]
+            },
+            "暖膝": {
+              "text": "红色暖膝贴2片",
+              "qty": [
+                2,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            32,
+            "片"
+          ],
+          "selected_spec": "颜色分类:6盒划算装【共30片】送暖膝贴;",
+          "original_spec": "颜色分类:6盒划算装【共30片】送暖膝贴;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "08.1",
+          "08.1",
+          "08.1",
+          "08.1"
+        ],
+        "components": {
+          "艾热灸": {
+            "text": "艾热灸贴30片",
+            "qty": [
+              30,
+              "片"
+            ]
+          },
+          "暖膝": {
+            "text": "红色暖膝贴2片",
+            "qty": [
+              2,
+              "片"
+            ]
+          }
+        },
+        "qty": [
+          32,
+          "片"
+        ]
+      }
+    },
+    "SWKJ-CP0040125": {
+      "erp_fingerprint": "2ddadcffc8601be230de7d567076e48c47bfb754caa009e283561d40ef025dde",
+      "rule_ids": [
+        "08.2"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "08.2"
+          ],
+          "components": {
+            "艾热灸": {
+              "text": "艾热灸贴25片",
+              "qty": [
+                25,
+                "片"
+              ]
+            },
+            "暖颈": {
+              "text": "红色暖颈贴2片",
+              "qty": [
+                2,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            27,
+            "片"
+          ],
+          "selected_spec": "{颜色分类:【周期装】5盒共25片(送暖颈贴), 产品类型:艾草热敷spa【颈肩腰腿 全身可用】}",
+          "original_spec": "{颜色分类:【周期装】5盒共25片（送暖颈贴）， 产品类型:艾草热敷SPA【颈肩腰腿 全身可用】}",
+          "source_platforms": [
+            "抖音"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "08.2"
+        ],
+        "components": {
+          "艾热灸": {
+            "text": "艾热灸贴25片",
+            "qty": [
+              25,
+              "片"
+            ]
+          },
+          "暖颈": {
+            "text": "红色暖颈贴2片",
+            "qty": [
+              2,
+              "片"
+            ]
+          }
+        },
+        "qty": [
+          27,
+          "片"
+        ]
+      }
+    },
+    "SWKJ-CP00401105": {
+      "erp_fingerprint": "c684009383128639a5ef4084a4bf5c1523079fa7852ec5cf8b6621a5a270ca93",
+      "rule_ids": [
+        "08.3"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "08.3"
+          ],
+          "components": {
+            "艾热灸": {
+              "text": "艾热灸贴50片",
+              "qty": [
+                50,
+                "片"
+              ]
+            },
+            "暖腰": {
+              "text": "红色暖腰贴2片",
+              "qty": [
+                2,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            52,
+            "片"
+          ],
+          "selected_spec": "颜色分类:10盒量贩装【共50片】送暖腰贴;",
+          "original_spec": "颜色分类:10盒量贩装【共50片】送暖腰贴;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "08.3"
+        ],
+        "components": {
+          "艾热灸": {
+            "text": "艾热灸贴50片",
+            "qty": [
+              50,
+              "片"
+            ]
+          },
+          "暖腰": {
+            "text": "红色暖腰贴2片",
+            "qty": [
+              2,
+              "片"
+            ]
+          }
+        },
+        "qty": [
+          52,
+          "片"
+        ]
+      }
+    },
+    "SWKJ-CP00401047": {
+      "erp_fingerprint": "4acacab30507cbf1cd08c788e8acc5a60c854288637b45b6581fa5a16ea2b8cd",
+      "rule_ids": [
+        "08.4"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "08.4"
+          ],
+          "components": {
+            "艾热灸": {
+              "text": "艾热灸贴20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            },
+            "眼罩": {
+              "text": "洋甘菊蒸汽眼罩10片",
+              "qty": [
+                10,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            30,
+            "片"
+          ],
+          "selected_spec": "颜色分类:4盒实惠装【共20片】送蒸汽眼罩;",
+          "original_spec": "颜色分类:4盒实惠装【共20片】送蒸汽眼罩;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "08.4"
+        ],
+        "components": {
+          "艾热灸": {
+            "text": "艾热灸贴20片",
+            "qty": [
+              20,
+              "片"
+            ]
+          },
+          "眼罩": {
+            "text": "洋甘菊蒸汽眼罩10片",
+            "qty": [
+              10,
+              "片"
+            ]
+          }
+        },
+        "qty": [
+          30,
+          "片"
+        ]
+      }
+    },
+    "SWKJ-CP00401060": {
+      "erp_fingerprint": "8e997812dfa5a8e847db1ddef8fb6f361c63280e25b69b2a860f02adf760a1ed",
+      "rule_ids": [
+        "08.5"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "08.5"
+          ],
+          "components": {
+            "艾热灸": {
+              "text": "艾热灸贴30片",
+              "qty": [
+                30,
+                "片"
+              ]
+            },
+            "暖颈": {
+              "text": "红色暖颈贴20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            50,
+            "片"
+          ],
+          "selected_spec": "颜色分类:精致护理装【6盒艾灸贴+4盒暖颈贴】;",
+          "original_spec": "颜色分类:精致护理装【6盒艾灸贴+4盒暖颈贴】;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "08.5"
+        ],
+        "components": {
+          "艾热灸": {
+            "text": "艾热灸贴30片",
+            "qty": [
+              30,
+              "片"
+            ]
+          },
+          "暖颈": {
+            "text": "红色暖颈贴20片",
+            "qty": [
+              20,
+              "片"
+            ]
+          }
+        },
+        "qty": [
+          50,
+          "片"
+        ]
+      }
+    },
+    "NHCP09801011444": {
+      "erp_fingerprint": "83890e3d4aab2e64e3d837c1a5ecf6108bdf0a3d52ca19ba4ee6200d098d3a30",
+      "rule_ids": [
+        "08.6"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "08.6"
+          ],
+          "components": {
+            "暖手": {
+              "text": "花色布手机宝20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            },
+            "暖贴": {
+              "text": "高温暖贴20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            40,
+            "片"
+          ],
+          "selected_spec": "【户外防寒2件套】40片",
+          "original_spec": "【户外防寒2件套】40片",
+          "source_platforms": [
+            "快手"
+          ]
+        },
+        {
+          "rule_ids": [
+            "08.6"
+          ],
+          "components": {
+            "暖手": {
+              "text": "花色布手机宝20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            },
+            "暖贴": {
+              "text": "高温暖贴20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            40,
+            "片"
+          ],
+          "selected_spec": "{片数:【户外防寒2件套】40片}",
+          "original_spec": "{片数:【户外防寒2件套】40片}",
+          "source_platforms": [
+            "抖音"
+          ]
+        },
+        {
+          "rule_ids": [
+            "08.6"
+          ],
+          "components": {
+            "暖手": {
+              "text": "花色布手机宝20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            },
+            "暖贴": {
+              "text": "高温暖贴20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            40,
+            "片"
+          ],
+          "selected_spec": "颜色分类:【户外防寒2件套】40片;",
+          "original_spec": "颜色分类:【户外防寒2件套】40片;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "08.6"
+        ],
+        "components": {
+          "暖手": {
+            "text": "花色布手机宝20片",
+            "qty": [
+              20,
+              "片"
+            ]
+          },
+          "暖贴": {
+            "text": "高温暖贴20片",
+            "qty": [
+              20,
+              "片"
+            ]
+          }
+        },
+        "qty": [
+          40,
+          "片"
+        ]
+      }
+    },
+    "NH0021010210": {
+      "erp_fingerprint": "9ff0a99e13683bc0230d1eb2061c144aa321b9f203f2de53d6ec1e13699c2087",
+      "rule_ids": [
+        "08.7"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "08.7"
+          ],
+          "components": {
+            "暖贴(艾草)": {
+              "text": "艾草暖贴10片",
+              "qty": [
+                10,
+                "片"
+              ]
+            },
+            "暖贴(益母草)": {
+              "text": "益母草暖贴10片",
+              "qty": [
+                10,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            20,
+            "片"
+          ],
+          "selected_spec": "{颜色分类:艾草+益母草组合【经期常备】强烈推荐, 片数:20片【经济装】}",
+          "original_spec": "{颜色分类:艾草+益母草组合【经期常备】强烈推荐， 片数:20片【经济装】}",
+          "source_platforms": [
+            "抖音"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "08.7"
+        ],
+        "components": {
+          "暖贴(艾草)": {
+            "text": "艾草暖贴10片",
+            "qty": [
+              10,
+              "片"
+            ]
+          },
+          "暖贴(益母草)": {
+            "text": "益母草暖贴10片",
+            "qty": [
+              10,
+              "片"
+            ]
+          }
+        },
+        "qty": [
+          20,
+          "片"
+        ]
+      }
+    },
+    "NHCP0120160": {
+      "erp_fingerprint": "ea44b0fbdbf1be75f39320f2ab2aaf3ab9bae33d9a2ceca48ccf991d49570c34",
+      "rule_ids": [
+        "08.7"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "08.7"
+          ],
+          "components": {
+            "暖贴(艾草)": {
+              "text": "艾草暖贴30片",
+              "qty": [
+                30,
+                "片"
+              ]
+            },
+            "暖贴(益母草)": {
+              "text": "益母草暖贴30片",
+              "qty": [
+                30,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            60,
+            "片"
+          ],
+          "selected_spec": "{颜色分类:艾草+益母草组合【经期常备】强烈推荐, 片数:买40送20【到手60片】满满一盒更划算}",
+          "original_spec": "{颜色分类:艾草+益母草组合【经期常备】强烈推荐， 片数:买40送20【到手60片】满满一盒更划算}",
+          "source_platforms": [
+            "抖音"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "08.7"
+        ],
+        "components": {
+          "暖贴(艾草)": {
+            "text": "艾草暖贴30片",
+            "qty": [
+              30,
+              "片"
+            ]
+          },
+          "暖贴(益母草)": {
+            "text": "益母草暖贴30片",
+            "qty": [
+              30,
+              "片"
+            ]
+          }
+        },
+        "qty": [
+          60,
+          "片"
+        ]
+      }
+    },
+    "NHCP0110140": {
+      "erp_fingerprint": "dddfa71fa0e6cc5e0073567786810fa2b469ab805c1e894003d2be12396562d9",
+      "rule_ids": [
+        "08.7"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "08.7"
+          ],
+          "components": {
+            "暖贴(艾草)": {
+              "text": "艾草暖贴20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            },
+            "暖贴(益母草)": {
+              "text": "益母草暖贴20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            40,
+            "片"
+          ],
+          "selected_spec": "{颜色分类:艾草+益母草组合【经期常备】强烈推荐, 片数:买30送10【到手40片】推荐装}",
+          "original_spec": "{颜色分类:艾草+益母草组合【经期常备】强烈推荐， 片数:买30送10【到手40片】推荐装}",
+          "source_platforms": [
+            "抖音"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "08.7"
+        ],
+        "components": {
+          "暖贴(艾草)": {
+            "text": "艾草暖贴20片",
+            "qty": [
+              20,
+              "片"
+            ]
+          },
+          "暖贴(益母草)": {
+            "text": "益母草暖贴20片",
+            "qty": [
+              20,
+              "片"
+            ]
+          }
+        },
+        "qty": [
+          40,
+          "片"
+        ]
+      }
+    },
+    "NH4573038610": {
+      "erp_fingerprint": "afbcd5f0f226897a475032c7c9f3794e4846241037636ea9528c06797cc4119d",
+      "rule_ids": [
+        "08.8",
+        "08.9"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "08.8"
+          ],
+          "components": {
+            "暖贴": {
+              "text": "经典暖贴30片",
+              "qty": [
+                30,
+                "片"
+              ]
+            },
+            "足贴": {
+              "text": "KT足贴20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            50,
+            "片"
+          ],
+          "selected_spec": "片数:30片;颜色分类:经典特惠暖贴【送20暖足贴】;",
+          "original_spec": "片数:30片;颜色分类:经典特惠暖贴【送20暖足贴】;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "08.9"
+        ],
+        "components": {
+          "暖贴": {
+            "text": "KT经典暖贴30片",
+            "qty": [
+              30,
+              "片"
+            ]
+          },
+          "足贴": {
+            "text": "KT足贴20片",
+            "qty": [
+              20,
+              "片"
+            ]
+          }
+        },
+        "qty": [
+          50,
+          "片"
+        ]
+      }
+    },
+    "NH38703038610": {
+      "erp_fingerprint": "176b455443c99579eea9e146e652a5245df2c2a4e635332cc5ea9b61371784e3",
+      "rule_ids": [
+        "08.8"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "08.8"
+          ],
+          "components": {
+            "暖贴": {
+              "text": "艾草暖贴30片",
+              "qty": [
+                30,
+                "片"
+              ]
+            },
+            "足贴": {
+              "text": "KT足贴20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            50,
+            "片"
+          ],
+          "selected_spec": "片数:30片;颜色分类:艾草热敷贴【送20暖足贴】;",
+          "original_spec": "片数:30片;颜色分类:艾草热敷贴【送20暖足贴】;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "08.8"
+        ],
+        "components": {
+          "暖贴": {
+            "text": "艾草暖贴30片",
+            "qty": [
+              30,
+              "片"
+            ]
+          },
+          "足贴": {
+            "text": "KT足贴20片",
+            "qty": [
+              20,
+              "片"
+            ]
+          }
+        },
+        "qty": [
+          50,
+          "片"
+        ]
+      }
+    },
+    "NH38810387103901038610": {
+      "erp_fingerprint": "0159c562e8d087ad0d84b1bdcce91cdd7d95c55614abbf8f4bc249fbb2105df2",
+      "rule_ids": [
+        "08.8"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "08.8"
+          ],
+          "components": {
+            "暖贴": {
+              "text": "三合一暖贴30片",
+              "qty": [
+                30,
+                "片"
+              ]
+            },
+            "足贴": {
+              "text": "KT足贴20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            50,
+            "片"
+          ],
+          "selected_spec": "片数:30片;颜色分类:【推荐套餐】三合一暖贴【送20暖足贴】;",
+          "original_spec": "片数:30片;颜色分类:【推荐套餐】三合一暖贴【送20暖足贴】;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "08.8"
+        ],
+        "components": {
+          "暖贴": {
+            "text": "三合一暖贴30片",
+            "qty": [
+              30,
+              "片"
+            ]
+          },
+          "足贴": {
+            "text": "KT足贴20片",
+            "qty": [
+              20,
+              "片"
+            ]
+          }
+        },
+        "qty": [
+          50,
+          "片"
+        ]
+      }
+    },
+    "NH39003038610": {
+      "erp_fingerprint": "d613a11dbf2cfd17b06e04dda062fa54729684759fc379bc706893ce7fbcf1a4",
+      "rule_ids": [
+        "08.8"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "08.8"
+          ],
+          "components": {
+            "暖贴": {
+              "text": "益母草暖贴30片",
+              "qty": [
+                30,
+                "片"
+              ]
+            },
+            "足贴": {
+              "text": "KT足贴20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            50,
+            "片"
+          ],
+          "selected_spec": "片数:30片;颜色分类:益母草宫暖贴【单拍30送20暖足贴】;",
+          "original_spec": "片数:30片;颜色分类:益母草宫暖贴【单拍30送20暖足贴】;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "08.8"
+        ],
+        "components": {
+          "暖贴": {
+            "text": "益母草暖贴30片",
+            "qty": [
+              30,
+              "片"
+            ]
+          },
+          "足贴": {
+            "text": "KT足贴20片",
+            "qty": [
+              20,
+              "片"
+            ]
+          }
+        },
+        "qty": [
+          50,
+          "片"
+        ]
+      }
+    },
+    "NHCP02001020": {
+      "erp_fingerprint": "3af41d324614b2adb11f837dbe017b92632d7f928501631e89fa31594e34b52c",
+      "rule_ids": [
+        "09.1"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "09.1"
+          ],
+          "components": {
+            "暖贴(艾草)": {
+              "text": "艾草暖贴10片",
+              "qty": [
+                10,
+                "片"
+              ]
+            },
+            "暖贴(生姜)": {
+              "text": "生姜暖贴10片",
+              "qty": [
+                10,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            20,
+            "片"
+          ],
+          "selected_spec": "{颜色分类:艾草+生姜组合【经期常备】强烈推荐, 片数:20片【经济装】}",
+          "original_spec": "{颜色分类:艾草+生姜组合【经期常备】强烈推荐， 片数:20片【经济装】}",
+          "source_platforms": [
+            "抖音"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "09.1"
+        ],
+        "components": {
+          "暖贴(艾草)": {
+            "text": "艾草暖贴10片",
+            "qty": [
+              10,
+              "片"
+            ]
+          },
+          "暖贴(生姜)": {
+            "text": "生姜暖贴10片",
+            "qty": [
+              10,
+              "片"
+            ]
+          }
+        },
+        "qty": [
+          20,
+          "片"
+        ]
+      }
+    },
+    "NHCP0120130": {
+      "erp_fingerprint": "831555f6ee2f857a309d919c51b49680dc32b02968d502ab751b5ade70e60187",
+      "rule_ids": [
+        "09.1"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "09.1"
+          ],
+          "components": {
+            "暖贴(艾草)": {
+              "text": "艾草暖贴30片",
+              "qty": [
+                30,
+                "片"
+              ]
+            },
+            "暖贴(生姜)": {
+              "text": "生姜暖贴30片",
+              "qty": [
+                30,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            60,
+            "片"
+          ],
+          "selected_spec": "{颜色分类:艾草+生姜组合【经期常备】强烈推荐, 片数:买40送20【到手60片】更划算}",
+          "original_spec": "{颜色分类:艾草+生姜组合【经期常备】强烈推荐， 片数:买40送20【到手60片】更划算}",
+          "source_platforms": [
+            "抖音"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "09.1"
+        ],
+        "components": {
+          "暖贴(艾草)": {
+            "text": "艾草暖贴30片",
+            "qty": [
+              30,
+              "片"
+            ]
+          },
+          "暖贴(生姜)": {
+            "text": "生姜暖贴30片",
+            "qty": [
+              30,
+              "片"
+            ]
+          }
+        },
+        "qty": [
+          60,
+          "片"
+        ]
+      }
+    },
+    "NHCP01101040": {
+      "erp_fingerprint": "e8d120cfa14c07d4237bcdc25b7972bc3146e7431d89ce4a56715252bf956589",
+      "rule_ids": [
+        "09.1"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "09.1"
+          ],
+          "components": {
+            "暖贴(艾草)": {
+              "text": "艾草暖贴20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            },
+            "暖贴(生姜)": {
+              "text": "生姜暖贴20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            40,
+            "片"
+          ],
+          "selected_spec": "{颜色分类:艾草+生姜组合【经期常备】强烈推荐, 片数:买30送10【到手40片】推荐装}",
+          "original_spec": "{颜色分类:艾草+生姜组合【经期常备】强烈推荐， 片数:买30送10【到手40片】推荐装}",
+          "source_platforms": [
+            "抖音"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "09.1"
+        ],
+        "components": {
+          "暖贴(艾草)": {
+            "text": "艾草暖贴20片",
+            "qty": [
+              20,
+              "片"
+            ]
+          },
+          "暖贴(生姜)": {
+            "text": "生姜暖贴20片",
+            "qty": [
+              20,
+              "片"
+            ]
+          }
+        },
+        "qty": [
+          40,
+          "片"
+        ]
+      }
+    },
+    "KTCP014151617": {
+      "erp_fingerprint": "83bf1e974bc732ac50ba6e044581b147b06b0846292b5dc331282591868a2aa5",
+      "rule_ids": [
+        "09.2"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "09.2"
+          ],
+          "components": {
+            "眼罩(玫瑰)": {
+              "text": "KT蒸汽眼罩玫瑰5片",
+              "qty": [
+                5,
+                "片"
+              ]
+            },
+            "眼罩(薰衣草)": {
+              "text": "KT蒸汽眼罩薰衣草5片",
+              "qty": [
+                5,
+                "片"
+              ]
+            },
+            "眼罩(洋甘菊)": {
+              "text": "KT蒸汽眼罩洋甘菊5片",
+              "qty": [
+                5,
+                "片"
+              ]
+            },
+            "眼罩(无香)": {
+              "text": "KT蒸汽眼罩无香5片",
+              "qty": [
+                5,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            20,
+            "片"
+          ],
+          "selected_spec": "{颜色分类:护眼组合【四种香型】强烈推荐, 类型:买3送1【到手4包】超值划算}",
+          "original_spec": "{颜色分类:护眼组合【四种香型】强烈推荐， 类型:买3送1【到手4包】超值划算}",
+          "source_platforms": [
+            "抖音"
+          ]
+        },
+        {
+          "rule_ids": [
+            "09.2"
+          ],
+          "components": {
+            "眼罩(玫瑰)": {
+              "text": "KT蒸汽眼罩玫瑰5片",
+              "qty": [
+                5,
+                "片"
+              ]
+            },
+            "眼罩(薰衣草)": {
+              "text": "KT蒸汽眼罩薰衣草5片",
+              "qty": [
+                5,
+                "片"
+              ]
+            },
+            "眼罩(洋甘菊)": {
+              "text": "KT蒸汽眼罩洋甘菊5片",
+              "qty": [
+                5,
+                "片"
+              ]
+            },
+            "眼罩(无香)": {
+              "text": "KT蒸汽眼罩无香5片",
+              "qty": [
+                5,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            20,
+            "片"
+          ],
+          "selected_spec": "{颜色分类:凯蒂猫【组合装】正版授权, 片数:买15送5【到手20片】热销装}",
+          "original_spec": "{颜色分类:凯蒂猫【组合装】正版授权， 片数:买15送5【到手20片】热销装}",
+          "source_platforms": [
+            "抖音"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "09.2"
+        ],
+        "components": {
+          "眼罩(玫瑰)": {
+            "text": "KT蒸汽眼罩玫瑰5片",
+            "qty": [
+              5,
+              "片"
+            ]
+          },
+          "眼罩(薰衣草)": {
+            "text": "KT蒸汽眼罩薰衣草5片",
+            "qty": [
+              5,
+              "片"
+            ]
+          },
+          "眼罩(洋甘菊)": {
+            "text": "KT蒸汽眼罩洋甘菊5片",
+            "qty": [
+              5,
+              "片"
+            ]
+          },
+          "眼罩(无香)": {
+            "text": "KT蒸汽眼罩无香5片",
+            "qty": [
+              5,
+              "片"
+            ]
+          }
+        },
+        "qty": [
+          20,
+          "片"
+        ]
+      }
+    },
+    "KTCP0200140": {
+      "erp_fingerprint": "4a06d2e9cc8b21802dbf13321aeb5aad48fb786c0517b97ece544f612b2fbad5",
+      "rule_ids": [
+        "09.2"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "09.2"
+          ],
+          "components": {
+            "眼罩(玫瑰)": {
+              "text": "KT蒸汽眼罩玫瑰10片",
+              "qty": [
+                10,
+                "片"
+              ]
+            },
+            "眼罩(薰衣草)": {
+              "text": "KT蒸汽眼罩薰衣草10片",
+              "qty": [
+                10,
+                "片"
+              ]
+            },
+            "眼罩(洋甘菊)": {
+              "text": "KT蒸汽眼罩洋甘菊10片",
+              "qty": [
+                10,
+                "片"
+              ]
+            },
+            "眼罩(无香)": {
+              "text": "KT蒸汽眼罩无香10片",
+              "qty": [
+                10,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            40,
+            "片"
+          ],
+          "selected_spec": "{颜色分类:凯蒂猫【组合装】正版授权, 片数:买30送10【到手40片】更划算}",
+          "original_spec": "{颜色分类:凯蒂猫【组合装】正版授权， 片数:买30送10【到手40片】更划算}",
+          "source_platforms": [
+            "抖音"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "09.2"
+        ],
+        "components": {
+          "眼罩(玫瑰)": {
+            "text": "KT蒸汽眼罩玫瑰10片",
+            "qty": [
+              10,
+              "片"
+            ]
+          },
+          "眼罩(薰衣草)": {
+            "text": "KT蒸汽眼罩薰衣草10片",
+            "qty": [
+              10,
+              "片"
+            ]
+          },
+          "眼罩(洋甘菊)": {
+            "text": "KT蒸汽眼罩洋甘菊10片",
+            "qty": [
+              10,
+              "片"
+            ]
+          },
+          "眼罩(无香)": {
+            "text": "KT蒸汽眼罩无香10片",
+            "qty": [
+              10,
+              "片"
+            ]
+          }
+        },
+        "qty": [
+          40,
+          "片"
+        ]
+      }
+    },
+    "NH857851": {
+      "erp_fingerprint": "3f0d2a397c60bdf00f4cf48d420e5c6b3a62921a37e87ec7f5ddf2e88299d30b",
+      "rule_ids": [
+        "09.3",
+        "10.2"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "09.3"
+          ],
+          "components": {
+            "眼罩(无香)": {
+              "text": "暖火蒸汽眼罩无香10片",
+              "qty": [
+                10,
+                "片"
+              ]
+            },
+            "眼罩(洋甘菊)": {
+              "text": "暖火蒸汽眼罩洋甘菊10片",
+              "qty": [
+                10,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            20,
+            "片"
+          ],
+          "selected_spec": "【20片】;无香型+洋甘菊【10片/盒】",
+          "original_spec": "【20片】；无香型+洋甘菊【10片/盒】",
+          "source_platforms": [
+            "唯品会"
+          ]
+        },
+        {
+          "rule_ids": [
+            "09.3",
+            "10.2"
+          ],
+          "components": {
+            "眼罩(无香)": {
+              "text": "暖火蒸汽眼罩无香10片",
+              "qty": [
+                10,
+                "片"
+              ]
+            },
+            "眼罩(洋甘菊)": {
+              "text": "暖火蒸汽眼罩洋甘菊10片",
+              "qty": [
+                10,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            20,
+            "片"
+          ],
+          "selected_spec": "颜色分类:无香型+洋甘菊【10片/盒】;",
+          "original_spec": "颜色分类:无香型+洋甘菊【10片/盒】;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "09.3"
+        ],
+        "components": {
+          "眼罩(无香)": {
+            "text": "暖火蒸汽眼罩无香10片",
+            "qty": [
+              10,
+              "片"
+            ]
+          },
+          "眼罩(洋甘菊)": {
+            "text": "暖火蒸汽眼罩洋甘菊10片",
+            "qty": [
+              10,
+              "片"
+            ]
+          }
+        },
+        "qty": [
+          20,
+          "片"
+        ]
+      }
+    },
+    "NH850856": {
+      "erp_fingerprint": "8f6061faae542d33d17654e0ab22e0f58f22a44e68cec8ed5cb82f02919a6d29",
+      "rule_ids": [
+        "09.3"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "09.3"
+          ],
+          "components": {
+            "眼罩(无香)": {
+              "text": "暖火蒸汽眼罩无香5片",
+              "qty": [
+                5,
+                "片"
+              ]
+            },
+            "眼罩(洋甘菊)": {
+              "text": "暖火蒸汽眼罩洋甘菊5片",
+              "qty": [
+                5,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            10,
+            "片"
+          ],
+          "selected_spec": "颜色分类:无香+洋甘菊/10片装;",
+          "original_spec": "颜色分类:无香+洋甘菊/10片装;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "09.3"
+        ],
+        "components": {
+          "眼罩(无香)": {
+            "text": "暖火蒸汽眼罩无香5片",
+            "qty": [
+              5,
+              "片"
+            ]
+          },
+          "眼罩(洋甘菊)": {
+            "text": "暖火蒸汽眼罩洋甘菊5片",
+            "qty": [
+              5,
+              "片"
+            ]
+          }
+        },
+        "qty": [
+          10,
+          "片"
+        ]
+      }
+    },
+    "NH85285485604": {
+      "erp_fingerprint": "eb6aeac91c6fee2ee5308d73e5a75c3051674f91ccf4ac5a05d5cf7872d50d6f",
+      "rule_ids": [
+        "09.4"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "09.4"
+          ],
+          "components": {
+            "眼罩(洋甘菊)": {
+              "text": "暖火蒸汽眼罩洋甘菊10片",
+              "qty": [
+                10,
+                "片"
+              ]
+            },
+            "眼罩(玫瑰)": {
+              "text": "暖火蒸汽眼罩玫瑰5片",
+              "qty": [
+                5,
+                "片"
+              ]
+            },
+            "眼罩(薰衣草)": {
+              "text": "暖火蒸汽眼罩薰衣草5片",
+              "qty": [
+                5,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            20,
+            "片"
+          ],
+          "selected_spec": "颜色分类:【买3送1共20片】洋甘菊*2+玫瑰香*1+薰衣草*1;",
+          "original_spec": "颜色分类:【买3送1共20片】洋甘菊*2+玫瑰香*1+薰衣草*1;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "09.4"
+        ],
+        "components": {
+          "眼罩(洋甘菊)": {
+            "text": "暖火蒸汽眼罩洋甘菊10片",
+            "qty": [
+              10,
+              "片"
+            ]
+          },
+          "眼罩(玫瑰)": {
+            "text": "暖火蒸汽眼罩玫瑰5片",
+            "qty": [
+              5,
+              "片"
+            ]
+          },
+          "眼罩(薰衣草)": {
+            "text": "暖火蒸汽眼罩薰衣草5片",
+            "qty": [
+              5,
+              "片"
+            ]
+          }
+        },
+        "qty": [
+          20,
+          "片"
+        ]
+      }
+    },
+    "NH85485602": {
+      "erp_fingerprint": "efd0e7427b9b26fe850cb61c39a097346c675135a87ddec3c541ebf395b10f46",
+      "rule_ids": [
+        "09.4"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "09.4"
+          ],
+          "components": {
+            "眼罩(洋甘菊)": {
+              "text": "暖火蒸汽眼罩洋甘菊5片",
+              "qty": [
+                5,
+                "片"
+              ]
+            },
+            "眼罩(玫瑰)": {
+              "text": "暖火蒸汽眼罩玫瑰5片",
+              "qty": [
+                5,
+                "片"
+              ]
+            }
+          },
+          "qty": [
+            10,
+            "片"
+          ],
+          "selected_spec": "颜色分类:【2包共10片】洋甘菊*1+玫瑰香*1;",
+          "original_spec": "颜色分类:【2包共10片】洋甘菊*1+玫瑰香*1;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "09.4"
+        ],
+        "components": {
+          "眼罩(洋甘菊)": {
+            "text": "暖火蒸汽眼罩洋甘菊5片",
+            "qty": [
+              5,
+              "片"
+            ]
+          },
+          "眼罩(玫瑰)": {
+            "text": "暖火蒸汽眼罩玫瑰5片",
+            "qty": [
+              5,
+              "片"
+            ]
+          }
+        },
+        "qty": [
+          10,
+          "片"
+        ]
+      }
+    },
+    "NH85101": {
+      "erp_fingerprint": "e0b3c13701caae5761e1d1deb806738d54d15b4c77866df55935994ca177933f",
+      "rule_ids": [
+        "10.1"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "10.1"
+          ],
+          "components": {},
+          "qty": [
+            10,
+            "片"
+          ],
+          "selected_spec": "颜色分类:无香型【10片/盒】;",
+          "original_spec": "颜色分类:无香型【10片/盒】;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ]
+    },
+    "NH85501": {
+      "erp_fingerprint": "68a697b0b8f13fb9ff2ffb7bb547e281942ab61316e31b1787c7c524bb0cd60c",
+      "rule_ids": [
+        "10.1"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "10.1"
+          ],
+          "components": {},
+          "qty": [
+            10,
+            "片"
+          ],
+          "selected_spec": "颜色分类:玫瑰香【10片/盒】;",
+          "original_spec": "颜色分类:玫瑰香【10片/盒】;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ]
+    },
+    "NH85301": {
+      "erp_fingerprint": "2c56422ec7cd2159f4353429597e86bc0d701358a201ed66c3b2548765aef223",
+      "rule_ids": [
+        "10.1"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "10.1"
+          ],
+          "components": {},
+          "qty": [
+            10,
+            "片"
+          ],
+          "selected_spec": "颜色分类:薰衣草【10片/盒】;",
+          "original_spec": "颜色分类:薰衣草【10片/盒】;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ]
+    },
+    "NH85701": {
+      "erp_fingerprint": "b850712ce237609f6f938cdb77199d3fbc1e71b373a568f7d6684b2fd55b0b9d",
+      "rule_ids": [
+        "10.1"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "10.1"
+          ],
+          "components": {},
+          "qty": [
+            10,
+            "片"
+          ],
+          "selected_spec": "颜色分类:洋甘菊【10片/盒】;",
+          "original_spec": "颜色分类:洋甘菊【10片/盒】;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ]
+    },
+    "NH31601": {
+      "erp_fingerprint": "1987050ef2386673e92b584d23982f7b5b3a85d38f0e5d8bbee413a8c19af0b7",
+      "rule_ids": [
+        "10.1"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "10.1"
+          ],
+          "components": {},
+          "qty": [
+            5,
+            "片"
+          ],
+          "selected_spec": "片数:5片/盒;颜色分类:暖火艾灸肩颈贴;",
+          "original_spec": "片数:5片/盒;颜色分类:暖火艾灸肩颈贴;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ]
+    },
+    "NH857855001": {
+      "erp_fingerprint": "8352d4593e2d119107579dca2db549f3361ac6355661f99b323389cd4b3f21a8",
+      "rule_ids": [
+        "10.2"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "10.2"
+          ],
+          "components": {},
+          "qty": [
+            40,
+            "片"
+          ],
+          "selected_spec": "颜色分类:四合一【10片/盒】;",
+          "original_spec": "颜色分类:四合一【10片/盒】;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ]
+    },
+    "KTCP03901": {
+      "erp_fingerprint": "71dcb867591e3d6f4261ead218cb4a44f5f56f3395c3154697ab4cb585bb67bf",
+      "rule_ids": [
+        "11.1"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "11.1"
+          ],
+          "components": {},
+          "qty": [
+            30,
+            "片"
+          ],
+          "finished_product": true,
+          "families": [
+            "暖贴"
+          ],
+          "selected_spec": "凯蒂猫12种图案随机暖身贴;kt暖贴30片彩盒装",
+          "original_spec": "凯蒂猫12种图案随机暖身贴；KT暖贴30片彩盒装",
+          "source_platforms": [
+            "唯品会"
+          ]
+        }
+      ]
+    },
+    "NH139701021400": {
+      "erp_fingerprint": "bbc436212664b6c7afff73bc3fea9221d621d292c146cf97f04c4d3ecdac4bd0",
+      "rule_ids": [
+        "11.1"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "11.1"
+          ],
+          "components": {},
+          "qty": [
+            2,
+            "个"
+          ],
+          "finished_product": true,
+          "families": [
+            "热水袋"
+          ],
+          "selected_spec": "2条灰色【长款80cm/加厚防爆】精美彩盒装;【温暖升级【暖背/暖腰/暖腿/暖被窝】",
+          "original_spec": "2条灰色【长款80cm/加厚防爆】精美彩盒装；【温暖升级【暖背/暖腰/暖腿/暖被窝】",
+          "source_platforms": [
+            "唯品会"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "11.1"
+        ],
+        "components": {},
+        "qty": [
+          2,
+          "个"
+        ],
+        "finished_product": true,
+        "families": [
+          "热水袋"
+        ]
+      }
+    },
+    "NH1397011401": {
+      "erp_fingerprint": "de7ab239dbedc387fc291f2e3258360edab11c95cc96e1ac7e0292709700fc30",
+      "rule_ids": [
+        "11.1"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "11.1"
+          ],
+          "components": {},
+          "qty": [
+            1,
+            "个"
+          ],
+          "finished_product": true,
+          "families": [
+            "热水袋"
+          ],
+          "selected_spec": "1条灰色【长款80cm/加厚防爆】精美彩盒装;【温暖升级【暖背/暖腰/暖腿/暖被窝】",
+          "original_spec": "1条灰色【长款80cm/加厚防爆】精美彩盒装；【温暖升级【暖背/暖腰/暖腿/暖被窝】",
+          "source_platforms": [
+            "唯品会"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "11.1"
+        ],
+        "components": {},
+        "qty": [
+          1,
+          "个"
+        ],
+        "finished_product": true,
+        "families": [
+          "热水袋"
+        ]
+      }
+    },
+    "NH79301": {
+      "erp_fingerprint": "7d6071050b36dbc5eca6a98fbed670263a85689de80ac13f0930fe17554bd996",
+      "rule_ids": [
+        "11.1"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "11.1"
+          ],
+          "components": {},
+          "qty": [
+            60,
+            "片"
+          ],
+          "finished_product": true,
+          "families": [
+            "暖贴"
+          ],
+          "selected_spec": "【发热12小时 更安全】;增强型暖贴60片彩盒装",
+          "original_spec": "【发热12小时 更安全】；增强型暖贴60片彩盒装",
+          "source_platforms": [
+            "唯品会"
+          ]
+        }
+      ]
+    },
+    "NH139601021399": {
+      "erp_fingerprint": "c74a688a154a1c41928c698b20dec7d1d52c1714cf6fd43e5310627bf8dc2472",
+      "rule_ids": [
+        "11.1"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "11.1"
+          ],
+          "components": {},
+          "qty": [
+            2,
+            "个"
+          ],
+          "finished_product": true,
+          "families": [
+            "热水袋"
+          ],
+          "selected_spec": "2条粉色【长款80cm/加厚防爆】精美彩盒装;【温暖升级【暖背/暖腰/暖腿/暖被窝】",
+          "original_spec": "2条粉色【长款80cm/加厚防爆】精美彩盒装；【温暖升级【暖背/暖腰/暖腿/暖被窝】",
+          "source_platforms": [
+            "唯品会"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "11.1"
+        ],
+        "components": {},
+        "qty": [
+          2,
+          "个"
+        ],
+        "finished_product": true,
+        "families": [
+          "热水袋"
+        ]
+      }
+    },
+    "NH1396019901": {
+      "erp_fingerprint": "94b9f61ade49901e4a63c8b6256a21492601c201434196f7333be0510719574d",
+      "rule_ids": [
+        "11.1"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "11.1"
+          ],
+          "components": {},
+          "qty": [
+            1,
+            "个"
+          ],
+          "finished_product": true,
+          "families": [
+            "热水袋"
+          ],
+          "selected_spec": "1条粉色【长款80cm/加厚防爆】精美彩盒装;【温暖升级【暖背/暖腰/暖腿/暖被窝】",
+          "original_spec": "1条粉色【长款80cm/加厚防爆】精美彩盒装；【温暖升级【暖背/暖腰/暖腿/暖被窝】",
+          "source_platforms": [
+            "唯品会"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "11.1"
+        ],
+        "components": {},
+        "qty": [
+          1,
+          "个"
+        ],
+        "finished_product": true,
+        "families": [
+          "热水袋"
+        ]
+      }
+    },
+    "CH05601": {
+      "erp_fingerprint": "531ecfed98d108f2c40ff055b3d3adb95fee646a4df2edf38567e6ddf81285a3",
+      "rule_ids": [
+        "11.2"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "11.2"
+          ],
+          "components": {},
+          "qty": [
+            10,
+            "片"
+          ],
+          "finished_product": true,
+          "families": [
+            "眼罩"
+          ],
+          "selected_spec": "1盒【共10片】舒缓眼部尝鲜装;无香型蒸汽眼罩【蒸汽热敷】",
+          "original_spec": "1盒【共10片】舒缓眼部尝鲜装；无香型蒸汽眼罩【蒸汽热敷】",
+          "source_platforms": [
+            "唯品会"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "11.2"
+        ],
+        "components": {},
+        "qty": [
+          10,
+          "片"
+        ],
+        "finished_product": true,
+        "families": [
+          "眼罩"
+        ]
+      }
+    },
+    "CH04101": {
+      "erp_fingerprint": "786cdc9bc904e744d04480520103c297596c84cb67bb7497255ad100b3dda848",
+      "rule_ids": [
+        "11.2"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "11.2"
+          ],
+          "components": {},
+          "qty": [
+            30,
+            "片"
+          ],
+          "finished_product": true,
+          "families": [
+            "暖贴"
+          ],
+          "selected_spec": "30片;kitty生姜暖贴【30片盒装】",
+          "original_spec": "30片；Kitty生姜暖贴【30片盒装】",
+          "source_platforms": [
+            "唯品会"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "11.2"
+        ],
+        "components": {},
+        "qty": [
+          30,
+          "片"
+        ],
+        "finished_product": true,
+        "families": [
+          "暖贴"
+        ]
+      }
+    },
+    "CH08101": {
+      "erp_fingerprint": "86ac18c42b2370042587e3b64d44a2339386de8655d9d486ec0853792bae511a",
+      "rule_ids": [
+        "11.2"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "11.2"
+          ],
+          "components": {},
+          "qty": [
+            30,
+            "片"
+          ],
+          "finished_product": true,
+          "families": [
+            "暖贴"
+          ],
+          "selected_spec": "30片;kitty三合一暖贴【30片盒装】",
+          "original_spec": "30片；Kitty三合一暖贴【30片盒装】",
+          "source_platforms": [
+            "唯品会"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "11.2"
+        ],
+        "components": {},
+        "qty": [
+          30,
+          "片"
+        ],
+        "finished_product": true,
+        "families": [
+          "暖贴"
+        ]
+      }
+    },
+    "NH146701146601": {
+      "erp_fingerprint": "7ab37593225fb660e92a70bf906895b47a864806b16fb1d7825c445f55f526f9",
+      "rule_ids": [
+        "13.1"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "13.1"
+          ],
+          "components": {},
+          "qty": [
+            200,
+            "只"
+          ],
+          "selected_spec": "颜色分类:蓝色灰色200只混搭【超值优惠装】;",
+          "original_spec": "颜色分类:蓝色灰色200只混搭【超值优惠装】;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "13.1"
+        ],
+        "components": {},
+        "qty": [
+          200,
+          "只"
+        ]
+      }
+    },
+    "NH1466068636504": {
+      "erp_fingerprint": "509d1c7914c9dba0204379a821ee79f5a4f41c1732bc648f95805fc50662e748",
+      "rule_ids": [
+        "13.1"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "13.1"
+          ],
+          "components": {},
+          "qty": [
+            300,
+            "只"
+          ],
+          "selected_spec": "颜色分类:300只加厚纯色+印花混搭【超值优惠装】;",
+          "original_spec": "颜色分类:300只加厚纯色+印花混搭【超值优惠装】;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "13.1"
+        ],
+        "components": {},
+        "qty": [
+          300,
+          "只"
+        ]
+      }
+    },
+    "NH1485013011": {
+      "erp_fingerprint": "761a981a890638c3bb2f5426ce9ae1f499ffa06e2d0cc2522867ee7e3b6f2a8f",
+      "rule_ids": [
+        "13.2"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "13.2"
+          ],
+          "components": {
+            "鞋套(无纺布)": {
+              "text": "无纺布鞋套100只",
+              "qty": [
+                100,
+                "只"
+              ]
+            },
+            "鞋套(CPE)": {
+              "text": "CPE鞋套50只",
+              "qty": [
+                50,
+                "只"
+              ]
+            }
+          },
+          "qty": [
+            150,
+            "只"
+          ],
+          "selected_spec": "颜色分类:【加厚无纺布+防水cpe】买2送1共3盒;",
+          "original_spec": "颜色分类:【加厚无纺布+防水CPE】买2送1共3盒;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "13.2"
+        ],
+        "components": {
+          "鞋套(无纺布)": {
+            "text": "无纺布鞋套100只",
+            "qty": [
+              100,
+              "只"
+            ]
+          },
+          "鞋套(CPE)": {
+            "text": "CPE鞋套50只",
+            "qty": [
+              50,
+              "只"
+            ]
+          }
+        },
+        "qty": [
+          150,
+          "只"
+        ]
+      }
+    },
+    "NH148501301": {
+      "erp_fingerprint": "83bc0b26bd4a5bb556f75495a0a173d967e49e9e1dc1e385761263661a1a2e4b",
+      "rule_ids": [
+        "13.2"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "13.2"
+          ],
+          "components": {
+            "鞋套(无纺布)": {
+              "text": "无纺布鞋套150只",
+              "qty": [
+                150,
+                "只"
+              ]
+            },
+            "鞋套(CPE)": {
+              "text": "CPE鞋套100只",
+              "qty": [
+                100,
+                "只"
+              ]
+            }
+          },
+          "qty": [
+            250,
+            "只"
+          ],
+          "selected_spec": "颜色分类:【加厚无纺布+防水cpe】买3送2共5盒;",
+          "original_spec": "颜色分类:【加厚无纺布+防水CPE】买3送2共5盒;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "13.2"
+        ],
+        "components": {
+          "鞋套(无纺布)": {
+            "text": "无纺布鞋套150只",
+            "qty": [
+              150,
+              "只"
+            ]
+          },
+          "鞋套(CPE)": {
+            "text": "CPE鞋套100只",
+            "qty": [
+              100,
+              "只"
+            ]
+          }
+        },
+        "qty": [
+          250,
+          "只"
+        ]
+      }
+    },
+    "NH0160297101": {
+      "erp_fingerprint": "512a9ab662d5bd6ef8d1755c53e4180ef51f2374dbae0ec5e421d86d387d7f88",
+      "rule_ids": [
+        "14.1"
+      ],
+      "accessories": [],
+      "specs": [
+        {
+          "rule_ids": [
+            "14.1"
+          ],
+          "components": {
+            "冰凉贴": {
+              "text": "冰凉贴20片",
+              "qty": [
+                20,
+                "片"
+              ]
+            },
+            "精油贴": {
+              "text": "KT精油贴24枚",
+              "qty": [
+                24,
+                "枚"
+              ]
+            }
+          },
+          "qty": null,
+          "selected_spec": "颜色分类:降温冰凉贴【20片装】送植物精油贴;",
+          "original_spec": "颜色分类:降温冰凉贴【20片装】送植物精油贴;",
+          "source_platforms": [
+            "天猫"
+          ]
+        }
+      ],
+      "erp_interpretation": {
+        "rule_ids": [
+          "14.1"
+        ],
+        "components": {
+          "冰凉贴": {
+            "text": "冰凉贴20片",
+            "qty": [
+              20,
+              "片"
+            ]
+          },
+          "精油贴": {
+            "text": "KT精油贴24枚",
+            "qty": [
+              24,
+              "枚"
+            ]
+          }
+        },
+        "qty": null
+      }
+    }
+  },
+  "pending": [
+    {
+      "identity": {
+        "平台": "唯品会",
+        "商品 ID": "2034859877531492352",
+        "SKU ID": "2034859877531496448"
+      },
+      "reference_code": "NH129301",
+      "note": "用户暂跳过，待确认；保留参考对应NH129301（暖膝贴20片盒装），平台赠护膝关系尚未确认，不作为已确认目标或自动通过依据。"
+    },
+    {
+      "identity": {
+        "平台": "天猫",
+        "商品 ID": "995028434489",
+        "SKU ID": "6143598122468"
+      },
+      "reference_code": "NH8050102",
+      "note": "待确认：用户说明赠护腰不一定全是黑色L码，实际赠品颜色及尺码未确认；ERP黑色L仅作当前参考，不设默认值、不据此通过，也不直接认定编码错误。"
+    },
+    {
+      "identity": {
+        "平台": "天猫",
+        "商品 ID": "995028434489",
+        "SKU ID": "6143598122469"
+      },
+      "reference_code": "NH80501041319",
+      "note": "待确认：用户说明赠护腰不一定全是黑色L码，实际赠品颜色及尺码未确认；ERP黑色L仅作当前参考，不设默认值、不据此通过，也不直接认定编码错误。"
+    },
+    {
+      "identity": {
+        "平台": "天猫",
+        "商品 ID": "995028434489",
+        "SKU ID": "6143598122470"
+      },
+      "reference_code": "NH8050106",
+      "note": "待确认：用户说明赠护腰不一定全是黑色L码，实际赠品颜色及尺码未确认；ERP黑色L仅作当前参考，不设默认值、不据此通过，也不直接认定编码错误。"
+    }
+  ]
+}

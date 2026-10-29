@@ -29,6 +29,7 @@ import pandas as pd
 from rapidfuzz import fuzz
 import confirmed_mappings as confirmations
 import sku_audit_reviews as sku_reviews
+import confirmed_business_specs as business_specs
 from quantity_syntax import packaging_products, without_rates, additive_quantities, unresolved_gifts
 from quantity_syntax import quantity_prose, parenthetical_counts, apparel_component_text, TOTAL
 from manual_weight import apply_weight_guard
@@ -269,11 +270,18 @@ def _scalar_quantity_details(value: str) -> tuple[tuple[int, str] | None, list[s
     s = unicodedata.normalize("NFKC", literal_text(value)).lower()
     issues = []
     totals = list(dict.fromkeys((int(n), u) for n, u in re.findall(rf"(?:{TOTAL})\s*(\d+)\s*({COUNT_UNITS})", s)))
-    nested = re.search(rf'(?:{TOTAL})\s*\d+\s*(?:盒|包|袋)\s*(\d+)\s*(片|对|只|个)',s)
+    # Adjacent outer/inner totals state the physical count, not a conversion.
+    nested = re.search(rf'(?:{TOTAL})\s*\d+\s*(?:盒|包|袋)\s*(?:共|合计|总计)?\s*\(?\s*(\d+)\s*(片|对|只|个)',s)
     if nested:
         totals = [q for q in totals if q[1] not in {'盒','包','袋'}] + [(int(nested[1]),nested[2])]
         totals = list(dict.fromkeys(totals))
     pack_totals, pack_issues = packaging_products(s, COUNT_UNITS)
+    rates = re.findall(r'(\d+)\s*(片|对|只|个)\s*[/／]\s*(盒|包|袋)',s)
+    if len(rates) == 1:
+        per,unit,outer = rates[0]
+        outer_counts = list(dict.fromkeys(int(n) for n in re.findall(rf'(\d+)\s*{outer}',s)))
+        if len(outer_counts) == 1:
+            pack_totals.append((int(per)*outer_counts[0],unit))
     issues.extend(pack_issues)
     ingredients = {x for x in ("艾草", "益母草", "生姜") if x in s}
     each = re.search(rf"各\s*(\d+)\s*({COUNT_UNITS})", s)
@@ -446,7 +454,7 @@ def extract_variant_groups(text: str) -> dict[str, set[str]]:
         groups["gender"].add("女款")
     if "儿童" in s or "童款" in s or "儿童款" in s:
         groups["gender"].add("儿童款")
-    for material in ("pvc", "cpe", "丁腈", "硅胶"):
+    for material in ("pvc", "cpe", "丁腈", "硅胶", "无纺布"):
         if material in s:
             groups["material"].add(material)
     groups["size"].update(re.findall(r"(?<![a-z])(?:[2-5]?x{1,4}l|[sml])(?![a-z])", s))
@@ -865,6 +873,8 @@ def _cached_audit_components(text, rule_signature):
 
 
 def audit_quantity(features: dict[str, Any]) -> tuple[int, str] | None:
+    if 'confirmed_components' in features:
+        return features['qty']
     text = features["quantity_text"]
     if re.search(r"(?:到手|共|合计|总计)\s*\d+", text):
         return features["qty"]
@@ -886,7 +896,6 @@ def current_code_conflicts(pf: dict[str, Any], ef: dict[str, Any]) -> list[str]:
     family_group = lambda values: {"热贴用品" if value in {"暖贴", "足贴", "暖手用品", "暖手足宝"} else value for value in values}
     if pf["families"] and ef["families"] and not family_group(pf["families"]) & family_group(ef["families"]):
         conflicts.append("品类不一致：平台=" + "/".join(sorted(pf["families"])) + "，ERP=" + "/".join(sorted(ef["families"])))
-    signature = parsing_rule_signature()
     pparts, eparts = audit_feature_components(pf), audit_feature_components(ef)
     if len(pparts) >= 2 or len(eparts) >= 2:
         if len(pparts) >= 2 and len(eparts) >= 2 and set(pparts) != set(eparts):
@@ -894,6 +903,14 @@ def current_code_conflicts(pf: dict[str, Any], ef: dict[str, Any]) -> list[str]:
         for part in pparts.keys() & eparts.keys():
             if quantity_compare(pparts[part]["qty"], eparts[part]["qty"], pparts[part]["families"] | eparts[part]["families"]) is False:
                 conflicts.append(f"套装{part}数量不一致：平台={pparts[part]['qty']}，ERP={eparts[part]['qty']}")
+            for attr, label in [('formula','配方'),('scent','香型'),('material','材质'),('size','尺码')]:
+                a = pparts[part].get('evidence', {}).get(attr, set())
+                b = eparts[part].get('evidence', {}).get(attr, set())
+                if attr == 'size':
+                    normalize = lambda values: {re.sub(r'^x{2,4}l$',lambda m: str(len(m[0])-1)+'xl',x.lower()) for x in values}
+                    a,b = normalize(a),normalize(b)
+                if a and b and not a & b:
+                    conflicts.append(f'套装{part}{label}不一致')
     elif feature_quantity_compare(pf,ef) is False:
         conflicts.append(f"数量不一致：平台={audit_quantity(pf)}，ERP={audit_quantity(ef)}")
     for key, label in (("formula", "配方/混合装"), ("material", "材质"),
@@ -911,7 +928,11 @@ def current_code_conflicts(pf: dict[str, Any], ef: dict[str, Any]) -> list[str]:
             conflicts.append(label + "不一致：平台=" + "/".join(sorted(a)) + "，ERP=" + "/".join(sorted(b)))
     # SKU color is selected data; title colors and unselected gender prose are not.
     color_values = lambda text: set(extract_variant_groups(text.replace("小黄鸭", "")).get("color", set())) | {x for x in ("咖", "肤", "橙") if x in text}
-    a, b = color_values(ptext), color_values(etext)
+    a, b = color_values(pf.get('comparison_color_text',ptext)), color_values(ef.get('comparison_color_text',etext))
+    if pf.get('business_color_values') is not None:
+        a = set(pf['business_color_values'])
+    if ef.get('business_color_values') is not None:
+        b = set(ef['business_color_values'])
     if a and b and not a & b and not re.search(r"颜色随机|随机色|随机颜色", ptext):
         conflicts.append("颜色不一致：平台=" + "/".join(sorted(a)) + "，ERP=" + "/".join(sorted(b)))
     def body(text):
@@ -923,6 +944,12 @@ def current_code_conflicts(pf: dict[str, Any], ef: dict[str, Any]) -> list[str]:
     a, b = body(ptext) or body(pf["text"]), body(etext)
     if len(a) == len(b) == 1 and a != b:
         conflicts.append("主品部位不一致：平台=" + "/".join(a) + "，ERP=" + "/".join(b))
+    for terms,label in [(('小魔仙','小黄鸭'),'暖芯系列'),(('大暖手','小暖手'),'暖芯大小款')]:
+        a,b = {x for x in terms if x in ptext},{x for x in terms if x in etext}
+        if a and b and not a & b:
+            conflicts.append(label+'不一致')
+    accessory_conflicts,_ = business_specs.accessory_conflicts(pf,ef)
+    conflicts.extend(accessory_conflicts)
     return conflicts
 
 
@@ -948,6 +975,8 @@ def composition_review_issues(pf, current):
             problems.extend(detail['issues'])
     for record in current:
         ef = record['features']
+        _,accessory_issues = business_specs.accessory_conflicts(pf,ef)
+        problems.extend(accessory_issues)
         if pf['variants'].get('formula') == ef['variants'].get('formula') == {'三合一'} and pf['families'] == ef['families']:
             continue
         pparts, eparts = audit_feature_components(pf), audit_feature_components(ef)
@@ -974,6 +1003,8 @@ def packaging_review_issues(pf, current):
 
 
 def audit_feature_components(feature):
+    if 'confirmed_components' in feature:
+        return feature['confirmed_components']
     # Only the outer mapping is extended below; cached features stay read-only.
     parts = dict(_cached_audit_components(feature.get('component_parse_text',feature['quantity_text']), parsing_rule_signature()))
     # Apparel exports often name the main product only in the title, while the
@@ -1019,7 +1050,17 @@ def apply_confirmed_audit_specs(pf: dict[str, Any]) -> dict[str, Any]:
 
 
 def audit_current_code(current_code: str, pf: dict[str, Any], erp_by_code: dict[str, list[dict[str, Any]]], erp_records: list[dict[str, Any]]) -> dict[str, Any]:
-    result = _audit_current_code(current_code, pf, erp_by_code, erp_records)
+    code = literal_text(current_code).strip()
+    prepared, issue = business_specs.transform_platform(pf, code, erp_by_code.get(code, []), build_features)
+    result = _audit_current_code(current_code, prepared, erp_by_code, erp_records)
+    if issue and result['核验状态'] == '核对通过':
+        result.update(核验状态='待人工确认',核验说明=issue,冲突项目=issue)
+    if prepared.get('business_rule_ids'):
+        result['业务口径依据'] = '；'.join(prepared['business_rule_ids'])
+        result['业务数量解析JSON'] = json.dumps(prepared['quantity_structure'], ensure_ascii=False)
+    note = business_specs.pending_note(pf.get('context', {}))
+    if note and code:
+        result.update(核验状态='待人工确认',核验说明=note,匹配依据='用户明确保留待确认')
     agricultural = agriculture.audit(pf, literal_text(current_code).strip(), erp_by_code)
     if agricultural:
         result.update(agricultural)
@@ -1299,6 +1340,8 @@ def build_erp_records(erp_df: pd.DataFrame) -> tuple[list[dict[str, Any]], dict[
         if len(matches) == 1 and matches[0]['erp_fingerprint'] == interpretation['erp_fingerprint']:
             matches[0]['features'] = {**matches[0]['features'], 'families':{interpretation['family']},
                 'packaging_issue':'', 'erp_product_confirmation':interpretation['basis']}
+    for record in records:
+        business_specs.transform_erp(record, build_features)
     return records, by_code
 
 
@@ -1348,6 +1391,10 @@ def verify_platform_file(path: str, erp_records: list[dict[str, Any]], erp_by_co
         pf["confirmation"], pf["confirmation_issue"] = confirmations.lookup_confirmation({**context, "原编码": current_code}, erp_records, confirmed_entries)
         result = audit_current_code(current_code, pf, erp_by_code, erp_records)
         result, reviewed_suggestion = sku_reviews.apply_review(context, current_code, result, erp_by_code, review_entries)
+        pending_note = business_specs.pending_note(context)
+        if pending_note and literal_text(current_code).strip():
+            result.update(核验状态='待人工确认',核验说明=pending_note,匹配依据='用户明确保留待确认')
+            reviewed_suggestion = sku_reviews.empty_suggestion(pending_note)
         current_records = erp_by_code.get(literal_text(current_code).strip(), [])
         agricultural = agriculture.audit(pf, literal_text(current_code).strip(), erp_by_code)
         if agricultural:
@@ -1356,6 +1403,7 @@ def verify_platform_file(path: str, erp_records: list[dict[str, Any]], erp_by_co
         result = apply_weight_guard(result, pf, current_records)
         quantity_rows.append({'商品 ID':product_id, 'SKU ID':sku_id, '源行号':idx + header_row + 2,
             'platform':pf['quantity_structure'],
+            'confirmed_business_specs':json.loads(result['业务数量解析JSON']) if result.get('业务数量解析JSON') else None,
             'agricultural':json.loads(result['农产品解析JSON']) if result.get('农产品解析JSON') else None,
             'erp':[{'code':r['code'], 'source':r['source'], 'name':r['name'],
                     'quantity':r['features']['quantity_structure']} for r in current_records]})
