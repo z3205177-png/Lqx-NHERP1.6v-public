@@ -30,6 +30,7 @@ from rapidfuzz import fuzz
 import confirmed_mappings as confirmations
 import sku_audit_reviews as sku_reviews
 from quantity_syntax import packaging_products, without_rates, additive_quantities, unresolved_gifts
+from quantity_syntax import quantity_prose, parenthetical_counts, apparel_component_text, TOTAL
 from manual_weight import apply_weight_guard
 import agricultural_specs as agriculture
 from erp_library import resolve_erp_inputs, DEFAULT_MANIFEST
@@ -267,7 +268,11 @@ SOFT_PACKAGING_TERMS = ('彩盒','彩箱','纸盒','内盒','包装袋')
 def _scalar_quantity_details(value: str) -> tuple[tuple[int, str] | None, list[str]]:
     s = unicodedata.normalize("NFKC", literal_text(value)).lower()
     issues = []
-    totals = list(dict.fromkeys((int(n), u) for n, u in re.findall(rf"(?:到手|共|合计|总计)\s*(\d+)\s*({COUNT_UNITS})", s)))
+    totals = list(dict.fromkeys((int(n), u) for n, u in re.findall(rf"(?:{TOTAL})\s*(\d+)\s*({COUNT_UNITS})", s)))
+    nested = re.search(rf'(?:{TOTAL})\s*\d+\s*(?:盒|包|袋)\s*(\d+)\s*(片|对|只|个)',s)
+    if nested:
+        totals = [q for q in totals if q[1] not in {'盒','包','袋'}] + [(int(nested[1]),nested[2])]
+        totals = list(dict.fromkeys(totals))
     pack_totals, pack_issues = packaging_products(s, COUNT_UNITS)
     issues.extend(pack_issues)
     ingredients = {x for x in ("艾草", "益母草", "生姜") if x in s}
@@ -286,9 +291,10 @@ def _scalar_quantity_details(value: str) -> tuple[tuple[int, str] | None, list[s
         different_product = re.match(r'足贴|鞋垫|暖贴|眼罩|护膝|护腰|暖手|精油|收纳',s[gift.end():].lstrip())
         if unit and (not first_unit or not second_unit or first_unit == second_unit) and not different_product:
             gift_total = (int(gift[1]) + int(gift[3]), unit)
-    if len(totals) > 1:
+    if any(len({n for n,unit in totals if unit==u})>1 for _,u in totals):
         issues.append("明示总数量相互冲突")
-    quantity = totals[0] if totals else each_total or (pack_totals[0] if len(pack_totals) == 1 else None) or gift_total
+    preferred = next((q for q in totals if q[1] in {'片','只','个'}), totals[0] if totals else None)
+    quantity = preferred or each_total or (pack_totals[0] if len(pack_totals) == 1 else None) or gift_total
     if quantity is None and len(direct) == 1 and not each:
         quantity = direct[0]
     if quantity is None and formula_total:
@@ -329,15 +335,32 @@ def parsing_rule_signature():
 @lru_cache(maxsize=32768)
 def _cached_quantity_structure(value, rule_signature):
     text = unicodedata.normalize('NFKC', literal_text(value)).lower()
+    text = quantity_prose(text)
+    text, breakdown_issues, breakdown_details = parenthetical_counts(text, COUNT_UNITS)
     parsed = additive_quantities(text, _scalar_quantity_details, extract_families,
         extract_variant_groups, COUNT_UNITS, BUSINESS_RULES.get('pair_piece_families', []))
     if parsed is not None:
         parsed['raw'] = literal_text(value)
+        if breakdown_issues:
+            parsed.update(qty=None, incomplete=True, issues=[*parsed['issues'], *breakdown_issues])
+        parsed['breakdown_details'] = breakdown_details
         return parsed
-    qty, issues = _scalar_quantity_details(value)
+    qty, issues = _scalar_quantity_details(text)
+    equivalent = re.search(r'(\d+)\s*片(?:装)?\s*[/／]\s*(\d+)\s*对',text)
+    equivalent_issue = False
+    alternatives = list(dict.fromkeys((int(n),u) for n,u in re.findall(rf'(?:{TOTAL})\s*(\d+)\s*({COUNT_UNITS})',text)))
+    if equivalent:
+        permitted = bool(extract_families(text) & set(BUSINESS_RULES.get('pair_piece_families', [])))
+        qty=(int(equivalent[1]),'片')
+        alternatives += [(int(equivalent[1]),'片'),(int(equivalent[2]),'对')]
+        issues=[i for i in issues if i!='数量未明确或多个数量表达无法确定总数']
+        if permitted and int(equivalent[1]) != 2*int(equivalent[2]):
+            equivalent_issue=True
+            issues.append('已授权品类的片/对明示数量互相矛盾')
     gift_issues = unresolved_gifts(text, COUNT_UNITS, extract_families, _scalar_quantity_details)
-    issues = list(dict.fromkeys([*issues, *gift_issues]))
-    incomplete = bool(gift_issues) or any('包装倍数' in issue for issue in issues)
+    issues = list(dict.fromkeys([*issues, *gift_issues, *breakdown_issues]))
+    inconsistent = any(issue in {'明示总数量相互冲突','总数与包装倍数或配方组成不一致'} for issue in issues)
+    incomplete = bool(gift_issues or breakdown_issues or equivalent_issue or inconsistent) or any('包装倍数' in issue for issue in issues)
     if qty is None and re.search(r'\d+\s*(?:片|对|只|个)\s*[/／]\s*(?:盒|包|袋)',text):
         incomplete = True
         issues = [*issues, '每包数量已知但包装数或总数未明确']
@@ -346,7 +369,8 @@ def _cached_quantity_structure(value, rule_signature):
         issues = [*issues, '三合一总数量未明确']
     return {'raw': literal_text(value), 'qty': None if incomplete else qty, 'parsed_total':qty,
             'parts': [], 'issues': issues,
-            'incomplete': incomplete, 'additive': False}
+            'incomplete': incomplete, 'additive': False, 'breakdown_details':breakdown_details,
+            'alternative_quantities':alternatives}
 
 
 def quantity_details(value: str) -> tuple[tuple[int, str] | None, list[str]]:
@@ -447,7 +471,11 @@ def build_features(title: str, sku_name: str, erp_name: str = "", erp_category: 
         if is_erp or (len(fallback) == 1 and not (fallback == {'足贴'} and shoe_like_spec)):
             families = fallback
             family_source = 'erp_category' if is_erp else 'title'
-    detail = quantity_structure(specific)
+    component_text = apparel_component_text(title, unicodedata.normalize('NFKC',specific).lower()) if not is_erp else None
+    detail = quantity_structure(component_text or specific)
+    if component_text:
+        detail['raw'] = specific
+        detail['contextual_main'] = '标题唯一护膝/护腰品类与SKU明示尺码；未推定衣物件数'
     quantity, issues = detail['qty'], detail['issues']
     # SKU attributes take precedence. Title-only attributes generate candidates;
     # they do not fill missing SKU specifications for automatic decisions.
@@ -459,6 +487,8 @@ def build_features(title: str, sku_name: str, erp_name: str = "", erp_category: 
     result['title_text'] = title
     result['family_source'] = family_source
     result['quantity_structure'] = detail
+    if component_text:
+        result['component_parse_text'] = component_text
     result['packaging_issue'] = ('彩盒等包装名称需确认是成品还是包装材料'
         if any(w in specific for w in SOFT_PACKAGING_TERMS) and not any(w in specific for w in STRONG_PACKAGING_TERMS) else '')
     result['agricultural'] = agriculture.parse_spec(specific, title if not is_erp else '', erp_category)
@@ -790,6 +820,8 @@ def audit_components(text: str) -> dict[str, dict[str, Any]]:
 
 @lru_cache(maxsize=32768)
 def _cached_audit_components(text, rule_signature):
+    text = quantity_prose(unicodedata.normalize('NFKC',text).lower())
+    text, _, _ = parenthetical_counts(text, COUNT_UNITS)
     parsed = quantity_structure(text)
     if parsed['additive']:
         components = {}
@@ -855,14 +887,14 @@ def current_code_conflicts(pf: dict[str, Any], ef: dict[str, Any]) -> list[str]:
     if pf["families"] and ef["families"] and not family_group(pf["families"]) & family_group(ef["families"]):
         conflicts.append("品类不一致：平台=" + "/".join(sorted(pf["families"])) + "，ERP=" + "/".join(sorted(ef["families"])))
     signature = parsing_rule_signature()
-    pparts, eparts = _cached_audit_components(ptext, signature), _cached_audit_components(etext, signature)
+    pparts, eparts = audit_feature_components(pf), audit_feature_components(ef)
     if len(pparts) >= 2 or len(eparts) >= 2:
         if len(pparts) >= 2 and len(eparts) >= 2 and set(pparts) != set(eparts):
             conflicts.append("套装组成品类不一致：平台=" + "+".join(pparts) + "，ERP=" + "+".join(eparts))
         for part in pparts.keys() & eparts.keys():
             if quantity_compare(pparts[part]["qty"], eparts[part]["qty"], pparts[part]["families"] | eparts[part]["families"]) is False:
                 conflicts.append(f"套装{part}数量不一致：平台={pparts[part]['qty']}，ERP={eparts[part]['qty']}")
-    elif quantity_compare(audit_quantity(pf), audit_quantity(ef), pf["families"] | ef["families"]) is False:
+    elif feature_quantity_compare(pf,ef) is False:
         conflicts.append(f"数量不一致：平台={audit_quantity(pf)}，ERP={audit_quantity(ef)}")
     for key, label in (("formula", "配方/混合装"), ("material", "材质"),
                        ("size", "尺码"), ("gender", "男女童规格"),
@@ -892,6 +924,19 @@ def current_code_conflicts(pf: dict[str, Any], ef: dict[str, Any]) -> list[str]:
     if len(a) == len(b) == 1 and a != b:
         conflicts.append("主品部位不一致：平台=" + "/".join(a) + "，ERP=" + "/".join(b))
     return conflicts
+
+
+def feature_quantity_compare(pf,ef):
+    """Compare separately declared units directly, without granting conversion."""
+    def values(f):
+        result=set(tuple(q) for q in f.get('quantity_structure',{}).get('alternative_quantities',[]))
+        qty=audit_quantity(f)
+        if qty: result.add(tuple(qty))
+        return result
+    a,b=values(pf),values(ef)
+    same=[x[0]==y[0] for x in a for y in b if x[1]==y[1]]
+    if same: return all(same)
+    return quantity_compare(audit_quantity(pf),audit_quantity(ef),pf['families']|ef['families'])
 
 
 def composition_review_issues(pf, current):
@@ -930,7 +975,7 @@ def packaging_review_issues(pf, current):
 
 def audit_feature_components(feature):
     # Only the outer mapping is extended below; cached features stay read-only.
-    parts = dict(_cached_audit_components(feature['quantity_text'], parsing_rule_signature()))
+    parts = dict(_cached_audit_components(feature.get('component_parse_text',feature['quantity_text']), parsing_rule_signature()))
     # Apparel exports often name the main product only in the title, while the
     # SKU specifies its size and bundled patches. Do not invent a piece count.
     primary = re.split('搭配|送|赠',feature['quantity_text'],maxsplit=1)[0]
@@ -1076,6 +1121,10 @@ def suggest_code_candidates(pf: dict[str, Any], result: dict[str, Any], records:
             return False
         if not confirmed and (not role or role != kind(record['name']) or '包装材料' in ef['families']):
             return False
+        if not confirmed:
+            formulas = comparison.get('variants', {}).get('formula', set())
+            if len(formulas)>1 and not formulas.issubset(ef.get('variants',{}).get('formula',set())):
+                return False  # A mixed-formula SKU is not a single-formula candidate.
         if current_code_conflicts(comparison, ef):
             return False
         if packaging_review_issues(comparison, [record]):
