@@ -11,11 +11,11 @@ def quantity_prose(text):
     text = re.sub(r'[【\[]暖身暖足[】\]]', '', text)
     numerals = dict(zip('一二三四五六七八九十', range(1, 11)))
     numerals['两'] = 2
+    text = re.sub(r'(?:(?<=共)|(?<=到手)|(?<=实发)|(?<![\u4e00-\u9fff]))([一二三四五六七八九十两])(?=盒|包|袋)',lambda m:str(numerals[m[1]]),text)
+    text = re.sub(r'(?:共|到手)\s*\d+\s*(?:盒|包|袋)\s*\(\s*(\d+)\s*(片|对|只|个)\s*\)',r'共\1\2',text)
     text = re.sub(r'(买|拍)([一二三四五六七八九十两])送([一二三四五六七八九十两])',
         lambda m: m[1]+str(numerals[m[2]])+'送'+str(numerals[m[3]]), text)
     text = re.sub(r'片数:\s*(\d+)(?=\s*(?:[;,|}]|$))',r'片数:\1片',text)
-    text = re.sub(r'(到手|共|实发)([一二三四五六七八九十两])(盒|包|袋)',
-        lambda m:m[1]+str(numerals[m[2]])+m[3],text)
     badge = r'[【\[]买\d+送\d+[】\]]'
     if re.search(r'\d+\s*(?:片|对|只|个|包|袋|盒)',re.sub(badge,'',text)):
         text = re.sub(badge,'',text)
@@ -102,8 +102,9 @@ def unresolved_gifts(text, units, families, scalar):
         gift = re.sub(r'^[\s【\[(（]+|[\s【】\[\]()（）,，;；]+$', '', gift)
         numeric_offer = re.sub(r'同款|更划算|超划算|超值划算|热销[款装]|经济装|划算装|推荐装|量贩装|盒装|'
             r'温暖双手|学习工作手不冷|温暖整个冬天|一夜好眠|温灸热敷|深度缓解|舒缓不适|'
-            r'顺丰包邮|满满一盒|一大箱|店长推荐|强烈推荐|实惠装|超值装|囤货装|热销装|快速发热|家庭热卖装', '', gift)
-        numeric_offer = re.sub(r'[\s【】\[\]()（）{}，,;；.\-]', '', numeric_offer)
+            r'顺丰包邮|满满一盒|一大箱|店长推荐|强烈推荐|实惠装|超值装|囤货装|热销装|快速发热', '', gift)
+        numeric_offer = re.sub(r'\d+%选择|超值养护装|家庭热卖装', '', numeric_offer)
+        numeric_offer = re.sub(r'[\s【】\[\]()（）{}，,;；.。-]', '', numeric_offer)
         bare_quantity = re.fullmatch(rf'\d+(?:{units})?', numeric_offer)
         if bare_quantity and re.search(rf'\d+\s*(?:{units})',text):
             continue  # the ordinary same-product buy/get quantity expression
@@ -162,7 +163,8 @@ def additive_quantities(text, scalar, families, variants, units, pair_families):
         label = label or (next(iter(fs)) if len(fs) == 1 else '/'.join(sorted(fs)) or '未明确品类')
         label = {'发热鞋垫':'鞋垫','暖手用品':'暖手','暖手足宝':'暖手'}.get(label,label)
         traits = sorted(set(vs.get('formula', set())) | set(vs.get('style', set())) |
-                        {x for x in ('经典', '升级', '增强') if x in piece})
+                        set(vs.get('material', set())) | set(vs.get('color', set())) |
+                        {x for x in ('经典', '升级', '增强','玫瑰','薰衣草','洋甘菊','无香','桂花') if x in piece})
         key = label + ('(' + '/'.join(traits) + ')' if traits else '')
         optional_count = bool(label in {'护膝', '护腰'} and vs.get('size'))
         if quantity is None and not optional_count:
