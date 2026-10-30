@@ -38,7 +38,7 @@ description: 用户在对话中上传店铺商品Excel或CSV并要求核对商�
 
 ## 验证
 
-修改前备份现有版本。运行`python -m unittest discover -s tests -v`。维护者本地真实样本复跑`python scripts/run_real_regression.py`；该脚本依赖本地历史文件，不随共享版上传。后者验证只输入平台文件的默认流程、固定ERP、两表交付、原值和完整候选集合，不能用旧统计代替新结果。用户要求暂不打包。
+修改前备份现有版本。运行`python -m unittest discover -s tests -v`。维护者按[回归验证](references/回归验证.md)用`scripts/regress_all.py`和本机样本配置复跑默认入口，比较冻结结果及完整候选身份。缺样本、缺基线、未知状态或选择性回归须如实说明范围，无基线不宣称零变化，历史快照不称原始导出。样本及私有路径不上传，不能用旧统计代替新结果。用户要求暂不打包。
 
 ## 其他助手使用
 

@@ -1,0 +1,68 @@
+{
+  "description": "复制到本机配置并填写路径。相对路径以配置文件所在目录为准，不自动清洗或替换商家编码。",
+  "platforms": [
+    {
+      "name": "快手",
+      "platform": "快手",
+      "store": "示例店铺",
+      "files": [
+        "private/快手.xlsx"
+      ],
+      "source_kind": "请注明原始导出或历史字段快照"
+    },
+    {
+      "name": "京东暖贴",
+      "platform": "京东",
+      "store": "示例店铺",
+      "files": [
+        "private/京东暖贴.xlsx"
+      ],
+      "source_kind": "请注明原始导出或历史字段快照"
+    },
+    {
+      "name": "京东大蒜",
+      "platform": "京东",
+      "store": "示例店铺",
+      "files": [
+        "private/京东大蒜.xlsx"
+      ],
+      "source_kind": "请注明原始导出或历史字段快照"
+    },
+    {
+      "name": "抖音",
+      "platform": "抖音",
+      "store": "示例店铺",
+      "files": [
+        "private/抖音.xlsx"
+      ],
+      "source_kind": "请注明原始导出或历史字段快照"
+    },
+    {
+      "name": "天猫",
+      "platform": "天猫",
+      "store": "示例店铺",
+      "files": [
+        "private/天猫.xlsx"
+      ],
+      "source_kind": "请注明原始导出或历史字段快照"
+    },
+    {
+      "name": "唯品会",
+      "platform": "唯品会",
+      "store": "示例店铺",
+      "files": [
+        "private/唯品会.xlsx"
+      ],
+      "source_kind": "请注明原始导出或历史字段快照"
+    },
+    {
+      "name": "小红书",
+      "platform": "小红书",
+      "store": "示例店铺",
+      "files": [
+        "private/小红书.xlsx"
+      ],
+      "source_kind": "请注明原始导出或历史字段快照"
+    }
+  ]
+}
