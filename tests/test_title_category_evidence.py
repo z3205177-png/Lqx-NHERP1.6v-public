@@ -29,7 +29,7 @@ class TitleCategoryEvidenceTests(unittest.TestCase):
         b=v.build_features('','',erp_name='暖膝热敷贴2片')
         self.assertFalse(any('主品部位' in x for x in v.current_code_conflicts(a,b)))
         support=v.build_features('保暖护膝','灰色护膝L')
-        self.assertTrue(any('主品部位' in x for x in v.current_code_conflicts(support,b)))
+        self.assertTrue(any('商品类型不一致' in x for x in v.current_code_conflicts(support,b)))
 
 
 if __name__=='__main__':unittest.main()

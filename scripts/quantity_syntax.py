@@ -6,6 +6,44 @@ TOTAL = r'到手|共|合计|总计|实发'
 INNER_COUNT_UNITS = r'抽|张|段'
 
 
+def numeric_piece_offer(text, variants):
+    """Recognize one same-item piece offer; selector text describes both terms.
+
+    Named gifts and unknown prose never inherit the main item's identity.
+    Keep incompatible formula/style selections unresolved rather than merging.
+    """
+    # Explicit received totals and “same item” offers already have a separate,
+    # validated legacy path, including numeric consistency and real gifts.
+    if '同款' in text or re.search(rf'(?:{TOTAL})\s*\d+\s*片',text):
+        return text,None
+    match=re.search(r'(?<![\d.\-])(\d+)\s*(片)?\s*(?:送|赠)\s*(\d+)\s*片',text)
+    if not match or min(int(match[1]),int(match[3]))<=0:
+        return text,None
+    prefix,suffix=text[:match.start()],text[match.end():]
+    if re.search(r'送|赠|搭配',prefix+suffix):
+        return text,{'raw':match[0],'issues':['多段买赠或额外赠品尚未建立完整组成关系']}
+    residue=re.sub(r'(?:适用)?\s*\d{2}\s*[-~至]\s*\d{2}\s*码','',suffix)
+    residue=re.sub(r'艾草|益母草|生姜|卡通|特惠|儿童|男码|女码|男款|女款|通用|款|'
+        r'保暖|热敷|驱寒|适用|码|装|经典|升级|增强|高温|快速发热','',residue)
+    residue=re.sub(r'[\s★☆【】\[\]()（）,，;；:.。|_-]','',residue)
+    if residue:
+        if not match[2]:
+            return text,{'raw':match[0],'issues':['买赠尾部含商品名称或未确认说明，不能推定为同款加赠']}
+        return text,None
+    left,right=variants(prefix),variants(suffix)
+    for key,label in [('formula','配方'),('style','款式'),('material','材质'),('gender','男女童规格'),('size','尺码'),('color','颜色')]:
+        if left.get(key) and right.get(key) and not left[key]&right[key]:
+            return text,{'raw':match[0],'issues':['买赠主品与赠品的'+label+'不同，不能合并为同款数量']}
+    details={'raw':match[0],'bought':(int(match[1]),'片'),'gifted':(int(match[3]),'片'),
+        'total':(int(match[1])+int(match[3]),'片'),'issues':[]}
+    return prefix+str(details['total'][0])+'片'+suffix,details
+
+
+def without_remark_gifts(text):
+    """Only the explicitly approved essential-oil gift is a quantity remark."""
+    return re.sub(r'(?:送|赠(?:送)?)\s*精油(?=$|[\s;；|【】\[\]()（）,.。])','',text)
+
+
 def layered_packaging_details(text):
     """Record stated outer packages separately from items per package."""
     details=[]

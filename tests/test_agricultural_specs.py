@@ -31,10 +31,10 @@ class AgriculturalTests(unittest.TestCase):
         self.assertEqual(self.compare('净重500g','大蒜600g')['核验状态'],'异常（商品/规格不一致）')
         self.assertEqual(self.compare('净重500g+','大蒜400g+')['核验状态'],'待人工确认')
 
-    def test_gross_never_proves_net(self):
+    def test_confirmed_gross_tolerance_does_not_relabel_it_as_net(self):
         r=self.compare('含箱净重500g+','大蒜500g')
-        self.assertEqual(r['核验状态'],'待人工确认')
-        self.assertIn('需人工核重',r['核验说明'])
+        self.assertEqual(r['核验状态'],'核对通过')
+        self.assertIn('整单总重',r['核验说明'])
         d=json.loads(r['农产品解析JSON'])
         self.assertIsNone(d['platform']['net'])
         self.assertEqual(d['platform']['gross'],{'g':500,'bound':'min'})
@@ -68,8 +68,8 @@ class AgriculturalTests(unittest.TestCase):
         self.assertEqual(p['heads'],15)
         self.assertIsNone(p['net'])
         r=self.compare('干蒜3条5-5.5cm','干蒜5头网兜3条5-5.5cm',net_weight_kg='1.2')
-        self.assertEqual(r['核验状态'],'待人工确认')
-        self.assertIn('核重',r['核验说明'])
+        self.assertEqual(r['核验状态'],'核对通过')
+        self.assertIn('按头/条销售，未核重量',r['核验说明'])
 
     def test_by_weight_string_does_not_mean_one_string(self):
         s=a.parse_spec('干蒜5头网兜 5斤 5-5.5cm')
@@ -106,8 +106,8 @@ class AgriculturalTests(unittest.TestCase):
         wrong=self.compare('干蒜1斤+生姜2斤','干蒜1000g+生姜500g')
         self.assertEqual(wrong['核验状态'],'异常（商品/规格不一致）')
 
-    def test_unknown_ratio_is_pending(self):
-        self.assertEqual(self.compare('姜蒜组合250g6:4','姜蒜组合250g')['核验状态'],'待人工确认')
+    def test_confirmed_ginger_garlic_weight_ratio_passes(self):
+        self.assertEqual(self.compare('姜蒜组合250g6:4','姜蒜组合250g')['核验状态'],'核对通过')
 
     def test_unknown_multipliers_never_pass(self):
         for p in ['大蒜500g*3','大蒜100g*2*3袋']:
@@ -142,12 +142,14 @@ class AgriculturalConfirmationTests(unittest.TestCase):
         pf=v.build_features(context['商品标题'],context['SKU']);pf['context']=context
         return pf
 
-    def test_all_fifteen_deferred_rows_stay_pending(self):
-        entries=[e for e in a.load_facts()['rows'].values() if e.get('pending')]
+    def test_fifteen_deferred_rows_are_resolved_with_history(self):
+        entries=[e for e in a.load_facts()['rows'].values() if e.get('history')]
         self.assertEqual(len(entries),15)
         for e in entries:
             with self.subTest(sku=e['context']['SKU ID']):
-                self.assertEqual(a.audit(self.feature(e),e['current_code'],self.by)['核验状态'],'待人工确认')
+                self.assertNotIn('pending',e)
+                self.assertTrue(e['history'][0]['pending'])
+                self.assertEqual(a.audit(self.feature(e),e['current_code'],self.by)['核验状态'],'核对通过')
 
     def test_two_targets_remain_conflicts_then_pass_with_correct_code(self):
         entries=[e for e in a.load_facts()['rows'].values() if e.get('target_code')]
@@ -167,12 +169,12 @@ class AgriculturalConfirmationTests(unittest.TestCase):
             pf['context']={**pf['context'],'SKU ID':'a-new-sku'}
             self.assertEqual(a.audit(pf,e['current_code'],self.by)['核验状态'],'待人工确认')
 
-    def test_gift_confirmation_is_local_and_erp_bound(self):
+    def test_gift_weight_fact_remains_scoped_but_gift_no_longer_blocks_main(self):
         e=next(e for e in a.load_facts()['rows'].values() if e.get('gift_g'))
         pf=self.feature(e)
         self.assertEqual(a.audit(pf,e['current_code'],self.by)['核验状态'],'核对通过')
         pf['context']={**pf['context'],'SKU ID':'new'}
-        self.assertEqual(a.audit(pf,e['current_code'],self.by)['核验状态'],'待人工确认')
+        self.assertEqual(a.audit(pf,e['current_code'],self.by)['核验状态'],'核对通过')
         pf=self.feature(e);changed=deepcopy(self.by[e['current_code']][0]);changed['erp_fingerprint']='changed'
         result=a.audit(pf,e['current_code'],{**self.by,e['current_code']:[changed]})
         self.assertEqual(result['核验状态'],'待人工确认');self.assertIn('ERP记录变化',result['核验说明'])

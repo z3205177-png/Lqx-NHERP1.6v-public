@@ -37,11 +37,11 @@ class CompositionQuantityTests(unittest.TestCase):
             with self.subTest(spec=spec):
                 self.assertEqual(self.audit(spec,'暖贴20片')['核验状态'],'待人工确认')
 
-    def test_unsupported_gift_preserves_main_count_as_diagnostic_only(self):
+    def test_oil_gift_is_only_a_remark_and_does_not_change_main_count(self):
         parsed=v.quantity_structure('暖颈贴5片盒装（红色）*2送精油')
         self.assertEqual(parsed['parsed_total'],(10,'片'))
-        self.assertIsNone(parsed['qty'])
-        self.assertTrue(parsed['incomplete'])
+        self.assertEqual(parsed['qty'],(10,'片'))
+        self.assertFalse(parsed['incomplete'])
 
     def test_different_known_components_compare_without_cross_unit_total(self):
         spec='暖贴20片+眼罩1个'

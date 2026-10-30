@@ -32,7 +32,7 @@ import sku_audit_reviews as sku_reviews
 import confirmed_business_specs as business_specs
 from quantity_syntax import packaging_products, without_rates, additive_quantities, unresolved_gifts
 from quantity_syntax import quantity_prose, parenthetical_counts, apparel_component_text, TOTAL
-from quantity_syntax import layered_packaging_details
+from quantity_syntax import layered_packaging_details, numeric_piece_offer, without_remark_gifts
 from manual_weight import apply_weight_guard
 import agricultural_specs as agriculture
 from erp_library import resolve_erp_inputs, DEFAULT_MANIFEST
@@ -348,11 +348,20 @@ def parsing_rule_signature():
 def _cached_quantity_structure(value, rule_signature):
     text = unicodedata.normalize('NFKC', literal_text(value)).lower()
     text = quantity_prose(text)
+    main_text = without_remark_gifts(text)
+    oil_remark = main_text!=text
+    text = main_text
     text, breakdown_issues, breakdown_details = parenthetical_counts(text, COUNT_UNITS)
+    text, offer = numeric_piece_offer(text,extract_variant_groups)
     parsed = additive_quantities(text, _scalar_quantity_details, extract_families,
         extract_variant_groups, COUNT_UNITS, BUSINESS_RULES.get('pair_piece_families', []))
     if parsed is not None:
         parsed['raw'] = literal_text(value)
+        if offer:
+            parsed['offer_details']=offer
+            if offer['issues']:
+                parsed.update(qty=None,incomplete=True,issues=[*parsed['issues'],*offer['issues']])
+        if oil_remark:parsed['remark_gifts']=['精油']
         if breakdown_issues:
             parsed.update(qty=None, incomplete=True, issues=[*parsed['issues'], *breakdown_issues])
         parsed['breakdown_details'] = breakdown_details
@@ -379,10 +388,19 @@ def _cached_quantity_structure(value, rule_signature):
     if '三合一' in text and qty is None:
         incomplete = True
         issues = [*issues, '三合一总数量未明确']
-    return {'raw': literal_text(value), 'qty': None if incomplete else qty, 'parsed_total':qty,
+    if offer and offer['issues']:
+        incomplete=True
+        issues=[*issues,*offer['issues']]
+    if oil_remark and qty is None:
+        incomplete=True
+        issues=[*issues,'精油仅作备注，主商品数量尚未明确']
+    result={'raw': literal_text(value), 'qty': None if incomplete else qty, 'parsed_total':qty,
             'parts': [], 'issues': issues,
             'incomplete': incomplete, 'additive': False, 'breakdown_details':breakdown_details,
             'alternative_quantities':alternatives}
+    if offer: result['offer_details']=offer
+    if oil_remark: result['remark_gifts']=['精油']
+    return result
 
 
 def quantity_details(value: str) -> tuple[tuple[int, str] | None, list[str]]:
@@ -629,7 +647,7 @@ def three_in_one_total_match(pf, current, records, approved):
         for issue in features.get("qty_issues", []):
             # A stated received total covers the numeric buy/gift offer. It
             # does not establish an unrelated named gift's product relation.
-            quantity_text = features.get("quantity_text", features["text"])
+            quantity_text = without_remark_gifts(features.get("quantity_text", features["text"]))
             numeric_offer = re.search(r"买\s*(\d+)\s*片?\s*送\s*(\d+)\s*片?\s*[【\[]?\s*(?:到手|共|合计|总计)\s*(\d+)\s*片", quantity_text)
             if (issue == "赠品或主赠品数量未建立对应关系" and numeric_offer
                     and not re.search(r"送|赠", quantity_text[:numeric_offer.start()] + quantity_text[numeric_offer.end():])):
@@ -833,6 +851,8 @@ def audit_components(text: str) -> dict[str, dict[str, Any]]:
 @lru_cache(maxsize=32768)
 def _cached_audit_components(text, rule_signature):
     text = quantity_prose(unicodedata.normalize('NFKC',text).lower())
+    text = without_remark_gifts(text)
+    text, _ = numeric_piece_offer(text,extract_variant_groups)
     text, _, _ = parenthetical_counts(text, COUNT_UNITS)
     parsed = quantity_structure(text)
     if parsed['additive']:
@@ -944,10 +964,22 @@ def current_code_conflicts(pf: dict[str, Any], ef: dict[str, Any]) -> list[str]:
         # A knee heating patch is not the same product type as a wearable
         # knee support. Only patch wording shares the thermal-patch label.
         text = re.sub(r'护膝(?:热敷)?贴|膝盖(?:热敷|保暖)贴','暖膝贴',text)
-        return {part for part in ('暖膝','暖腰','暖颈','手腕','护膝','护腰') if part in text}
+        parts={part for part in ('暖膝','暖腰','暖颈','手腕','护膝','护腰','暖足') if part in text}
+        aliases=BUSINESS_RULES.get('body_part_aliases',{})
+        return {next((canonical for canonical,words in aliases.items() if part in words),part) for part in parts}
     a, b = body(ptext) or body(pf["text"]), body(etext)
     if len(a) == len(b) == 1 and a != b:
         conflicts.append("主品部位不一致：平台=" + "/".join(a) + "，ERP=" + "/".join(b))
+    def knee_type(feature):
+        text=feature['quantity_text']
+        if re.search(r'暖膝|膝盖.*(?:热敷|保暖).*贴|护膝(?:热敷)?贴',text):
+            return '热敷贴'
+        if '护膝' in text and (feature['evidence'].get('size') or re.search(r'\d+\s*(?:只|件|副)|穿戴|加绒',text)):
+            return '穿戴护膝'
+        return ''
+    ptype,etype=knee_type(pf),knee_type(ef)
+    if ptype and etype and ptype!=etype:
+        conflicts.append('膝部商品类型不一致：穿戴护膝与暖膝热敷贴不能等同')
     for terms,label in [(('小魔仙','小黄鸭'),'暖芯系列'),(('大暖手','小暖手'),'暖芯大小款')]:
         a,b = {x for x in terms if x in ptext},{x for x in terms if x in etext}
         if a and b and not a & b:
@@ -979,6 +1011,12 @@ def composition_review_issues(pf, current):
             problems.extend(detail['issues'])
     for record in current:
         ef = record['features']
+        if any(f.get('quantity_structure',{}).get('offer_details') for f in (pf,ef)):
+            if feature_quantity_compare(pf,ef) is None:
+                problems.append('买赠总片数与ERP数量尚未建立可比关系')
+        if any(f.get('quantity_structure',{}).get('remark_gifts') for f in (pf,ef)):
+            if feature_quantity_compare(pf,ef) is None:
+                problems.append('精油仅作备注，主商品数量单位尚未建立可比关系')
         _,accessory_issues = business_specs.accessory_conflicts(pf,ef)
         problems.extend(accessory_issues)
         layered = any(f.get('quantity_structure', {}).get('packaging_details') for f in [pf,ef])
