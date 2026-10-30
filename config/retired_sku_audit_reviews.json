@@ -32,7 +32,16 @@
         "cell": "H5",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NH82102"
+      "target_code": "NH82102",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "knee_part_alias",
+        "reason": "新增膝部同义规则，继续区分穿戴护膝与热敷贴",
+        "superseded_by": "config/platform_aliases.json::business_rules.body_part_aliases[膝部]",
+        "rule_doc": "references/人工复核转规则.md#赠品和部位",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "1b4d6643e394547a1e554675197f567764189d0b687db7a32ef4bb94f296dcd0": {
       "context": {
@@ -62,7 +71,16 @@
         "cell": "H6",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NH00401028"
+      "target_code": "NH00401028",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "existing_rules_reproduce",
+        "reason": "既有规则已独立重现相同结论及目标",
+        "superseded_by": "scripts/verify_codes.py::audit_current_code",
+        "rule_doc": "references/人工复核转规则.md#复核清理和回溯",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "5d6ff83a76c973f71681c1c9b145ad46441c416fb53b4efb9c3db81b052d01d0": {
       "context": {
@@ -92,7 +110,16 @@
         "cell": "H7",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NH00401048"
+      "target_code": "NH00401048",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "existing_rules_reproduce",
+        "reason": "既有规则已独立重现相同结论及目标",
+        "superseded_by": "scripts/verify_codes.py::audit_current_code",
+        "rule_doc": "references/人工复核转规则.md#复核清理和回溯",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "ef60b8de40aab53f5f6aab5e26b1daaf99d71dc33d468021f625a868c7ade26f": {
       "context": {
@@ -122,7 +149,16 @@
         "cell": "H12",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NH0040108"
+      "target_code": "NH0040108",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "existing_rules_reproduce",
+        "reason": "既有规则已独立重现相同结论及目标",
+        "superseded_by": "scripts/verify_codes.py::audit_current_code",
+        "rule_doc": "references/人工复核转规则.md#复核清理和回溯",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "b6f63d9dbdd439d540c2539a40cd850bd467d7174ed163ffbe193485aabe52c3": {
       "context": {
@@ -152,7 +188,16 @@
         "cell": "H19",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NH00401018"
+      "target_code": "NH00401018",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "existing_rules_reproduce",
+        "reason": "既有规则已独立重现相同结论及目标",
+        "superseded_by": "scripts/verify_codes.py::audit_current_code",
+        "rule_doc": "references/人工复核转规则.md#复核清理和回溯",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "eaa328ec2a981f2aaa38e2d1570d7333cd5657fa1cc8791f67b12aac6a07e17d": {
       "context": {
@@ -182,7 +227,16 @@
         "cell": "H28",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NHCP08601"
+      "target_code": "NHCP08601",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "same_item_piece_gift",
+        "reason": "新增同款明确片数买赠规则，独立核对总片数",
+        "superseded_by": "scripts/quantity_syntax.py::numeric_piece_offer",
+        "rule_doc": "references/人工复核转规则.md#同类片数促销",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "0a12515babb03c3dceaf5f7bbd7b775d376f6661c74804ff0b4929c4a5d3512f": {
       "context": {
@@ -212,7 +266,16 @@
         "cell": "H29",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NHCP07001"
+      "target_code": "NHCP07001",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "same_item_piece_gift",
+        "reason": "新增同款明确片数买赠规则，独立核对总片数",
+        "superseded_by": "scripts/quantity_syntax.py::numeric_piece_offer",
+        "rule_doc": "references/人工复核转规则.md#同类片数促销",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "004311bad0fef203f1acd651c69d1aad4d6b42563e8196604c142050545732f4": {
       "context": {
@@ -242,7 +305,16 @@
         "cell": "H30",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NHCP05201"
+      "target_code": "NHCP05201",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "same_item_piece_gift",
+        "reason": "新增同款明确片数买赠规则，独立核对总片数",
+        "superseded_by": "scripts/quantity_syntax.py::numeric_piece_offer",
+        "rule_doc": "references/人工复核转规则.md#同类片数促销",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "62a03e7cad4b51965277b4bc3edb7d741ac6b838796b1d6bb14d523bb7d08c5a": {
       "context": {
@@ -272,7 +344,16 @@
         "cell": "H31",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NHCP06501"
+      "target_code": "NHCP06501",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "same_item_piece_gift",
+        "reason": "新增同款明确片数买赠规则，独立核对总片数",
+        "superseded_by": "scripts/quantity_syntax.py::numeric_piece_offer",
+        "rule_doc": "references/人工复核转规则.md#同类片数促销",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "868446c20aab355414c200260a63f5ae0a56077f237082cc209403f5b13d7f80": {
       "context": {
@@ -302,7 +383,16 @@
         "cell": "H32",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NHCP02601"
+      "target_code": "NHCP02601",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "same_item_piece_gift",
+        "reason": "新增同款明确片数买赠规则，独立核对总片数",
+        "superseded_by": "scripts/quantity_syntax.py::numeric_piece_offer",
+        "rule_doc": "references/人工复核转规则.md#同类片数促销",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "2f2f8081ae310a724643ee915205e9d5a0f2cfc8f14d5af4d96ac5fe45d59101": {
       "context": {
@@ -332,7 +422,16 @@
         "cell": "H33",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NH82202"
+      "target_code": "NH82202",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "existing_rules_reproduce",
+        "reason": "既有规则已独立重现相同结论及目标",
+        "superseded_by": "scripts/verify_codes.py::audit_current_code",
+        "rule_doc": "references/人工复核转规则.md#复核清理和回溯",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "31f588548f369d58c18f2d178d9ab52c61d53ea227bded753d26870c32fefb89": {
       "context": {
@@ -362,7 +461,16 @@
         "cell": "H35",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NH822011284"
+      "target_code": "NH822011284",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "existing_rules_reproduce",
+        "reason": "既有规则已独立重现相同结论及目标",
+        "superseded_by": "scripts/verify_codes.py::audit_current_code",
+        "rule_doc": "references/人工复核转规则.md#复核清理和回溯",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "8f719f7ede7e162ff3cb32b769b3a810ea6b1e05992214d3bb4494ae4ba548b4": {
       "context": {
@@ -392,7 +500,16 @@
         "cell": "H36",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NH696030"
+      "target_code": "NH696030",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "same_item_piece_gift",
+        "reason": "新增同款明确片数买赠规则，独立核对总片数",
+        "superseded_by": "scripts/quantity_syntax.py::numeric_piece_offer",
+        "rule_doc": "references/人工复核转规则.md#同类片数促销",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "be0982bc40f6f2300543e1351bc799958b53323b004189b63b9d3c50f3943530": {
       "context": {
@@ -422,7 +539,16 @@
         "cell": "H37",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NH696030"
+      "target_code": "NH696030",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "same_item_piece_gift",
+        "reason": "新增同款明确片数买赠规则，独立核对总片数",
+        "superseded_by": "scripts/quantity_syntax.py::numeric_piece_offer",
+        "rule_doc": "references/人工复核转规则.md#同类片数促销",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "1dc469a1e51302f08ca5531d1fdd651c67616099a6530bfc5affd15feae4ac07": {
       "context": {
@@ -452,7 +578,16 @@
         "cell": "H38",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NHCP07101"
+      "target_code": "NHCP07101",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "same_item_piece_gift",
+        "reason": "新增同款明确片数买赠规则，独立核对总片数",
+        "superseded_by": "scripts/quantity_syntax.py::numeric_piece_offer",
+        "rule_doc": "references/人工复核转规则.md#同类片数促销",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "d36f2a0857ca341b8ad4aa17ece28d88a26eb4176540cde021294af5739d0a16": {
       "context": {
@@ -482,7 +617,16 @@
         "cell": "H39",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NHCP06601"
+      "target_code": "NHCP06601",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "same_item_piece_gift",
+        "reason": "新增同款明确片数买赠规则，独立核对总片数",
+        "superseded_by": "scripts/quantity_syntax.py::numeric_piece_offer",
+        "rule_doc": "references/人工复核转规则.md#同类片数促销",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "909233185e73a3b51ec00712026f1ecc481977be60381657c897fb3326e8742a": {
       "context": {
@@ -512,7 +656,16 @@
         "cell": "H40",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NHCP06701"
+      "target_code": "NHCP06701",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "same_item_piece_gift",
+        "reason": "新增同款明确片数买赠规则，独立核对总片数",
+        "superseded_by": "scripts/quantity_syntax.py::numeric_piece_offer",
+        "rule_doc": "references/人工复核转规则.md#同类片数促销",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "77e28c3b2e901c1a2484a43b1d20c428e245aa9d70b13c9975732bdc0568d918": {
       "context": {
@@ -542,7 +695,16 @@
         "cell": "H41",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NHCP06601"
+      "target_code": "NHCP06601",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "same_item_piece_gift",
+        "reason": "新增同款明确片数买赠规则，独立核对总片数",
+        "superseded_by": "scripts/quantity_syntax.py::numeric_piece_offer",
+        "rule_doc": "references/人工复核转规则.md#同类片数促销",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "0019c790d880d6cdfd9ec6d671ff397b6286b05e3ea114eb9e478cfabffac30d": {
       "context": {
@@ -572,7 +734,16 @@
         "cell": "H42",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NH65360"
+      "target_code": "NH65360",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "existing_rules_reproduce",
+        "reason": "既有规则已独立重现相同结论及目标",
+        "superseded_by": "scripts/verify_codes.py::audit_current_code",
+        "rule_doc": "references/人工复核转规则.md#复核清理和回溯",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "247e74cb6e3177d133915c11888cf45e3695aab76835ee1f7a9dc1fc3b31a3b7": {
       "context": {
@@ -602,7 +773,16 @@
         "cell": "H43",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NH385030"
+      "target_code": "NH385030",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "existing_rules_reproduce",
+        "reason": "既有规则已独立重现相同结论及目标",
+        "superseded_by": "scripts/verify_codes.py::audit_current_code",
+        "rule_doc": "references/人工复核转规则.md#复核清理和回溯",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "edaba89762a8abc133b9fa5da8184d54a6afdef34fa063c67b48013540487a7a": {
       "context": {
@@ -632,7 +812,16 @@
         "cell": "H44",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NHCP13501010"
+      "target_code": "NHCP13501010",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "existing_rules_reproduce",
+        "reason": "既有规则已独立重现相同结论及目标",
+        "superseded_by": "scripts/verify_codes.py::audit_current_code",
+        "rule_doc": "references/人工复核转规则.md#复核清理和回溯",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "c76a9f36e12160e2df7ec7b8bc122c8ba4fde19553ab90ea4c2cd02d176b3cae": {
       "context": {
@@ -662,7 +851,16 @@
         "cell": "H45",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NH696030"
+      "target_code": "NH696030",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "existing_rules_reproduce",
+        "reason": "既有规则已独立重现相同结论及目标",
+        "superseded_by": "scripts/verify_codes.py::audit_current_code",
+        "rule_doc": "references/人工复核转规则.md#复核清理和回溯",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "db5976b149262bb6ddb1bbb7702966e90f10f9bbda518875b5b7f6107d70fbd8": {
       "context": {
@@ -692,7 +890,16 @@
         "cell": "H46",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NHCP06601"
+      "target_code": "NHCP06601",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "existing_rules_reproduce",
+        "reason": "既有规则已独立重现相同结论及目标",
+        "superseded_by": "scripts/verify_codes.py::audit_current_code",
+        "rule_doc": "references/人工复核转规则.md#复核清理和回溯",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "082856324b3d6c6513e5b2b913a24e3e154bed1a1e046c71d9c9bfbc07d9c264": {
       "context": {
@@ -722,7 +929,16 @@
         "cell": "N27",
         "sha256": "3f1ba04049ae865e7055376e558fc8703fb05529c807dda631751033aba4be03"
       },
-      "target_code": "NHCP02701"
+      "target_code": "NHCP02701",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "same_item_piece_gift",
+        "reason": "新增同款明确片数买赠规则，独立核对总片数",
+        "superseded_by": "scripts/quantity_syntax.py::numeric_piece_offer",
+        "rule_doc": "references/人工复核转规则.md#同类片数促销",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "a209fcabce03603b45a74874af116a91b7d00dea804709fb6938306e58f29f2f": {
       "context": {
@@ -752,7 +968,16 @@
         "cell": "H51",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NHCP07201"
+      "target_code": "NHCP07201",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "same_item_piece_gift",
+        "reason": "新增同款明确片数买赠规则，独立核对总片数",
+        "superseded_by": "scripts/quantity_syntax.py::numeric_piece_offer",
+        "rule_doc": "references/人工复核转规则.md#同类片数促销",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "9e17b91010301a264f80a6a401b97da217ee13d8ae233d69397d029a5f7d57ad": {
       "context": {
@@ -782,7 +1007,16 @@
         "cell": "H52",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NHCP05301"
+      "target_code": "NHCP05301",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "same_item_piece_gift",
+        "reason": "新增同款明确片数买赠规则，独立核对总片数",
+        "superseded_by": "scripts/quantity_syntax.py::numeric_piece_offer",
+        "rule_doc": "references/人工复核转规则.md#同类片数促销",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "7b3d91629236cf3d97e480b100f2b96852a75842ab6c8f804ea1279e5bc78f77": {
       "context": {
@@ -812,7 +1046,16 @@
         "cell": "H53",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NHCP21001"
+      "target_code": "NHCP21001",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "same_item_piece_gift",
+        "reason": "新增同款明确片数买赠规则，独立核对总片数",
+        "superseded_by": "scripts/quantity_syntax.py::numeric_piece_offer",
+        "rule_doc": "references/人工复核转规则.md#同类片数促销",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "7c6d735e8021cd03f4f3762d62379c1ec19b96f6ac248af0b442225b505dde57": {
       "context": {
@@ -842,7 +1085,16 @@
         "cell": "H55",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NHCP02801"
+      "target_code": "NHCP02801",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "same_item_piece_gift",
+        "reason": "新增同款明确片数买赠规则，独立核对总片数",
+        "superseded_by": "scripts/quantity_syntax.py::numeric_piece_offer",
+        "rule_doc": "references/人工复核转规则.md#同类片数促销",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "263c9b8568c1de272e9f40f255c2688dfc24cc4290289bacdf757b54add6d1e5": {
       "context": {
@@ -873,7 +1125,16 @@
         "cell": "H98",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NH146201"
+      "target_code": "NH146201",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "existing_rules_reproduce",
+        "reason": "既有规则已独立重现相同结论及目标",
+        "superseded_by": "scripts/verify_codes.py::suggest_code_candidates",
+        "rule_doc": "references/人工复核转规则.md#复核清理和回溯",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "0945f7ac5d0434dac19aaa32f0ac7e97ce44bc181514ccdc09f7095e163a1ac0": {
       "context": {
@@ -904,7 +1165,16 @@
         "cell": "H99",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NH146101"
+      "target_code": "NH146101",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "existing_rules_reproduce",
+        "reason": "既有规则已独立重现相同结论及目标",
+        "superseded_by": "scripts/verify_codes.py::suggest_code_candidates",
+        "rule_doc": "references/人工复核转规则.md#复核清理和回溯",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
     },
     "0a2ca798137f55ebbdbc50e4fa37f8f4587a2089b0adcbca6b59d53c7ce8414f": {
       "context": {
@@ -935,7 +1205,28 @@
         "cell": "H100",
         "sha256": "484c440939c9018739d2909a445c81779fbd16fcc7d2e8f7d7dfec5bb7d8ee8d"
       },
-      "target_code": "NHCP10301"
+      "target_code": "NHCP10301",
+      "retirement": {
+        "retired_at": "2026-10-29",
+        "reason_code": "existing_rules_reproduce",
+        "reason": "既有规则已独立重现相同结论及目标",
+        "superseded_by": "scripts/verify_codes.py::suggest_code_candidates",
+        "rule_doc": "references/人工复核转规则.md#复核清理和回溯",
+        "rule_version": "faf86414c84e2028e224247bb489df64ea19a5f1",
+        "evaluation_base": "49c60e4d713087a71a8a6c2ff1592adc77f1285e"
+      }
+    }
+  },
+  "retirement_schema": {
+    "note": "新增字段，仅作审计；原始 basis 保留人工确认时的原话，不改写。本文件不被运行时加载。",
+    "fields": {
+      "retired_at": "从活跃复核中移出的日期",
+      "reason_code": "枚举：same_item_piece_gift / knee_part_alias / existing_rules_reproduce",
+      "reason": "移出原因原文",
+      "superseded_by": "替代它的代码或配置位置",
+      "rule_doc": "规则文档章节",
+      "rule_version": "包含替代规则的已发布、已验证快照提交完整SHA，不代表该规则首次引入提交",
+      "evaluation_base": "规则化实施前的对比基线，与替代规则版本分开保存"
     }
   }
 }
