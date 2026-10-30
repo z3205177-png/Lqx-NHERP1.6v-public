@@ -79,7 +79,9 @@ def _parse_one(text, product_kind):
         bound = 'min' if re.match(r'\s*\+',tail) else 'exact'
         measurement={'g':value,'bound':bound}
         # A naked trailing plus after a number is a bound, not an additive term.
-        if re.search(r'含箱(?:净重)?|含包装|毛重',prefix[max(0,len(prefix)-12):]):
+        if re.search(r'(?:含箱|含(?:外)?包装|带箱|含皮重|毛重)(?:净?重)?\s*[:：]?\s*$',prefix):
+            if result['gross'] and result['gross']!=measurement:
+                result['issues'].append('含包装重量存在多个声明，需确认')
             result['gross']=measurement
             continue
         product=re.match(r'\s*[*×x]\s*(\d+)\s*(包|袋|桶|兜)',tail)
@@ -238,18 +240,51 @@ def display_quantity(value):
     return f'{value:g}' if isinstance(value,(float,int)) else str(value)
 
 
-def compare_specs(a,b):
+def _comparison_spec(spec):
+    """Apply confirmed food policies to a copy; retain original parsed evidence."""
+    spec=deepcopy(spec)
+    spec['issues']=[s for s in spec['issues'] if not s.startswith(('赠品品类或净重','赠姜净重及编码'))]
+    if spec['kind']=='姜蒜组合':
+        spec['issues']=[s for s in spec['issues'] if s!='姜蒜具体组成及配比待确认']
+        if spec['packs'] and spec['packs']['unit']=='兜':
+            spec['packs']['unit']='包'
+        # This per-bag standard is confined to ginger/garlic combinations.
+        if spec['packs'] and spec['packs']['unit']=='包':
+            if spec['pack_g'] is None:
+                spec['pack_g']=250
+            if not spec['net'] and not spec['gross']:
+                spec['net']={'g':spec['pack_g']*spec['packs']['n'],'bound':'exact'}
+    return spec
+
+
+def compare_specs(a,b,*,allow_missing_erp_weight=False,policy_notes=None):
     """Return explicit conflicts and incomplete evidence separately."""
+    a,b=_comparison_spec(a),_comparison_spec(b)
+    notes=policy_notes if policy_notes is not None else []
     conflicts=[]; issues=[*a['issues'],*b['issues']]
     ak,bk=a['kind'],b['kind']
+    if ak==bk=='姜蒜组合':
+        for spec in (a,b):
+            ratios=re.findall(r'(\d+(?:\.\d+)?)\s*:\s*(\d+(?:\.\d+)?)',spec['raw'])
+            if any(Decimal(x)*4!=Decimal(y)*6 or Decimal(x)<=0 or Decimal(y)<=0 for x,y in ratios):
+                conflicts.append('姜蒜配比与已确认口径不符：应为姜6:蒜4（重量比）')
+            if spec['pack_g'] is not None and spec['pack_g']!=250:
+                conflicts.append('姜蒜每袋净重与已确认250g不符')
+            if spec['packs'] and spec['packs']['unit']=='包' and spec['net']:
+                expected={'g':250*spec['packs']['n'],'bound':'exact'}
+                if _mass_conflict(spec['net'],expected):
+                    conflicts.append('姜蒜明示总净重与250g/袋乘积不一致')
+        notes.append('姜蒜组合按250g/袋、兜=袋、姜蒜重量比6:4核对总重量和总袋数')
     if ak!=bk:
         if '大蒜' in (ak,bk) and {ak,bk}<={'大蒜','干蒜','鲜蒜'}:
             pass  # No explicit fresh/dried contradiction; quantity is still checked.
         else: conflicts.append(f'农产品品种/形态不一致：平台={ak}，ERP={bk}')
     if a['grade'] and b['grade'] and a['grade']!=b['grade']:
         conflicts.append(f'果径档位不一致：平台={a["grade"]}，ERP={b["grade"]}')
-    elif a['grade'] and not b['grade']:
+    elif a['grade'] and not b['grade'] and not (ak==bk and ak in ('蒜米','独头蒜米')):
         issues.append('ERP果径档位未明确')
+    elif a['grade'] and not b['grade']:
+        notes.append('蒜米类ERP未标果径，已按品类、重量及包装数核对')
     for key,label in [('packs','包装数量/形式'),('heads','头数'),('pack_g','每包净重')]:
         if a[key] is not None and b[key] is not None and a[key]!=b[key]:
             if key=='packs' and {a[key]['unit'],b[key]['unit']}=={'兜','包'} and a[key]['n']==b[key]['n']:
@@ -259,37 +294,49 @@ def compare_specs(a,b):
                 conflicts.append(f'{label}不一致：平台{display_quantity(a[key])}{unit}，ERP{display_quantity(b[key])}{unit}')
         elif a[key] is not None and b[key] is None:
             issues.append(f'ERP{label}未明确，不能由重量反推')
+    count_only=not a['net'] and not a['gross'] and bool(a['heads'] or (a['packs'] and a['packs']['unit']=='条'))
     if a['net'] and b['net']:
         if _mass_conflict(a['net'],b['net']):
             conflicts.append(f'商品净重不一致：平台{display_quantity(a["net"])}，ERP{display_quantity(b["net"])}')
         elif b['net']['bound']=='min':
             issues.append('ERP仅给出重量下限，不能据此认定净重相同')
     elif a['net'] or b['net']:
-        issues.append('双方商品净重依据不足，需人工核重')
+        if count_only:
+            notes.append('按头/条销售，未核重量')
+        elif allow_missing_erp_weight and a['net'] and not b['net']:
+            notes.append('本SKU已人工确认按件数和果径核对，重量未核')
+        elif not a['gross']:
+            issues.append('双方商品净重依据不足，需人工核重')
     if a['gross']:
-        issues.append('平台为含包装总重，不能与ERP商品净重直接比较，需人工核重')
-    if not a['net'] and not a['gross'] and (a['heads'] or a['packs']):
-        issues.append('按头/条/包装销售的净重依据不足，需人工核重')
-    for key in ('gift','parts'):
-        if key=='gift':
-            x,y=a.get(key),b.get(key)
-            if bool(x)!=bool(y): issues.append('赠品与ERP编码的对应关系待确认')
-            elif x and y:
-                c,i=compare_specs({**x,'gift':None,'parts':[]},{**y,'gift':None,'parts':[]})
-                conflicts.extend('赠品'+s for s in c); issues.extend('赠品'+s for s in i)
+        if not b['net'] or b['net']['bound']!='exact':
+            issues.append('含包装重量缺少ERP确定净重，需人工核重')
         else:
-            x,y=a.get(key,[]),b.get(key,[])
-            if bool(x)!=bool(y) or len(x)!=len(y):
-                issues.append('双方组成明细不完整')
-            elif x:
-                xm={p['kind']:p for p in x}; ym={p['kind']:p for p in y}
-                if len(xm)!=len(x) or len(ym)!=len(y):
-                    issues.append('重复部件组成需确认')
-                elif xm.keys()!=ym.keys(): conflicts.append('组合部件品种不一致')
-                else:
-                    for k in xm:
-                        c,i=compare_specs({**xm[k],'gift':None,'parts':[]},{**ym[k],'gift':None,'parts':[]})
-                        conflicts.extend(k+s for s in c); issues.extend(k+s for s in i)
+            gross,net=a['gross'],Decimal(str(b['net']['g']))
+            gross_g=Decimal(str(gross['g']))
+            difference=(max(Decimal(0),gross_g-net) if gross['bound']=='min' else abs(gross_g-net))
+            # One tolerance on the order total, never multiplied by package count.
+            if difference>50 or difference>net*Decimal('0.1'):
+                conflicts.append('含包装总重与ERP净重超出容差：整单差值须同时≤50g且≤ERP净重的10%')
+            else:
+                notes.append('含包装重量按整单总重核对（差值≤50g且≤ERP净重10%，+保留下限含义）')
+    if count_only:
+        notes.append('按头/条销售，未核重量')
+    elif not a['net'] and not a['gross'] and a['packs']:
+        issues.append('按包装销售的净重依据不足，需人工核重')
+    # Gifts remain in parsed evidence and ERP total/main-weight reconciliation,
+    # but do not participate in the commercial main-product comparison.
+    x,y=a.get('parts',[]),b.get('parts',[])
+    if bool(x)!=bool(y) or len(x)!=len(y):
+        issues.append('双方组成明细不完整')
+    elif x:
+        xm={p['kind']:p for p in x}; ym={p['kind']:p for p in y}
+        if len(xm)!=len(x) or len(ym)!=len(y):
+            issues.append('重复部件组成需确认')
+        elif xm.keys()!=ym.keys(): conflicts.append('组合部件品种不一致')
+        else:
+            for k in xm:
+                c,i=compare_specs({**xm[k],'gift':None,'parts':[]},{**ym[k],'gift':None,'parts':[]})
+                conflicts.extend(k+s for s in c); issues.extend(k+s for s in i)
     if not any((a['net'],a['gross'],a['packs'],a['heads'],a.get('parts'))):
         issues.append('平台缺少可核对的数量或重量规格')
     return list(dict.fromkeys(conflicts)),list(dict.fromkeys(issues))
@@ -335,11 +382,13 @@ def audit(feature, code, by_code):
                 '判定路径':'农产品规格核对；解析待确认','农产品解析JSON':json.dumps({'stale':stale},ensure_ascii=False)}
     if not a or not current or not code: return None
     conflicts=[]; issues=[stale] if stale else []
-    parsed=[]
+    parsed=[]; policy_notes=[]
     for r in current:
         b=erp_spec(r); parsed.append(b)
         if not b: issues.append('当前ERP不是可比较的食用农产品规格'); continue
-        c,i=compare_specs(a,b); conflicts.extend(c); issues.extend(i)
+        local_weight_exception=bool(fact and fact.get('allow_missing_erp_weight') and code==fact['current_code'])
+        c,i=compare_specs(a,b,allow_missing_erp_weight=local_weight_exception,policy_notes=policy_notes)
+        conflicts.extend(c); issues.extend(i)
     if len({json.dumps(b,sort_keys=True,ensure_ascii=False) for b in parsed})>1:
         issues.append('ERP同码存在不同农产品规格')
     if fact and fact.get('relation_confirmed') and code==fact['current_code']:
@@ -358,7 +407,10 @@ def audit(feature, code, by_code):
         conflicts.append('用户已确认本SKU应对应编码：'+fact['target_code'])
         state='异常（商品/规格不一致）'
     reasons=list(dict.fromkeys([*conflicts,*issues]))
-    note='；'.join(reasons) or '农产品品种、明示数量及同口径净重已核对'
+    weight_unchecked=not (fact and fact.get('relation_confirmed')) and any('未核重量' in s or '重量未核' in s for s in policy_notes)
+    note='；'.join(reasons) or ('农产品品种及明示数量已核对' if weight_unchecked else '农产品品种、明示数量及同口径净重已核对')
+    if not (fact and fact.get('relation_confirmed')):
+        note+=''.join('；'+s for s in dict.fromkeys(policy_notes))
     if any('核重' in s or '重量' in s or '净重' in s for s in issues) and '需人工核重' not in note:
         note+='；需人工核重'
     return {'核验状态':state,'核验说明':note,'匹配依据':'农产品结构化规格核对'+('；用户局部确认有效' if fact else ''),

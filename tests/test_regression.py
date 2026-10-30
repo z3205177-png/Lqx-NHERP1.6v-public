@@ -80,11 +80,11 @@ class RegressionTest(unittest.TestCase):
         result = v.classify_row("001", features, {"001": [record]}, [record])
         self.assertEqual(result["核验状态"], "编码正确")
 
-    def test_gift_does_not_auto_match_simple_total(self):
+    def test_approved_oil_remark_preserves_main_identity_and_total(self):
         self.features = v.build_features("暖贴", "艾草暖贴30片送精油")
         self.features["erp_item_id"] = "ITEM-A"
         result = v.classify_row("000123", self.features, self.index, [self.record])
-        self.assertEqual(result["核验状态"], "待人工确认")
+        self.assertEqual(result["核验状态"], "编码正确")
 
     def test_multipack_and_explicit_total_conflict(self):
         quantity, issues = v.quantity_details("5片*6盒，共20片")

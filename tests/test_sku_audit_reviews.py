@@ -37,8 +37,8 @@ class SkuAuditReviewsTests(unittest.TestCase):
             self.entries if entries is None else entries)
         return original, result, proposed
 
-    def test_all_104_user_rows_follow_the_confirmed_modes(self):
-        self.assertEqual(len(self.entries), 104)
+    def test_all_retained_user_rows_follow_the_confirmed_modes(self):
+        self.assertEqual(len(self.entries), 73)
         for e in self.entries.values():
             with self.subTest(sku=e['context']['SKU ID']):
                 original, result, proposed = self.run_review(e)

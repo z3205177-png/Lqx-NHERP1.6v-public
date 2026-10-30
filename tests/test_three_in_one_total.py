@@ -52,13 +52,13 @@ class ThreeInOneTotalTest(unittest.TestCase):
         self.assertEqual(result['规格问题'],'')
 
     def test_other_product_gift_remains_manual(self):
-        self.assertEqual(self.run_row(spec='三合一暖贴20片送精油')['核验状态'],'待人工确认')
+        self.assertEqual(self.run_row(spec='三合一暖贴20片送暖蛋')['核验状态'],'待人工确认')
 
     def test_buy_gift_sum_must_agree_with_received_total(self):
         self.assertEqual(self.run_row(spec='三合一暖贴买10送5【到手20片】')['核验状态'],'待人工确认')
 
     def test_numeric_offer_does_not_hide_an_additional_gift(self):
-        self.assertEqual(self.run_row(spec='三合一暖贴买15送5【到手20片】送精油')['核验状态'],'待人工确认')
+        self.assertEqual(self.run_row(spec='三合一暖贴买15送5【到手20片】送暖蛋')['核验状态'],'待人工确认')
 
     def test_title_offer_cannot_override_sku_quantity(self):
         record=erp_record('MIX','三合一暖贴20片',item_id='')
