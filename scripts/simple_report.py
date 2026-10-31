@@ -30,7 +30,7 @@ def prepare_rows(results):
             note = '原编码未收录' if state == '异常（ERP未找到）' else '待补录'
         else:
             note = '暂无可靠推测，待确认'
-        if any(marker in original.get('判定路径', '') for marker in ('人工SKU复核','解析待确认','需人工核重')) and state != '核对通过':
+        if any(marker in original.get('判定路径', '') for marker in ('人工SKU复核','解析待确认','需人工核重','确认失效')) and state != '核对通过':
             note = original.get('异常说明') or note
         row = {'平台':original.get('平台',''),'商品ID':original.get('商品 ID',''),'SKU ID':original.get('SKU ID',''),
             '商品名称':original.get('商品标题',''),'SKU规格':original.get('SKU',''),'原编码':original.get('原编码',''),
