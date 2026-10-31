@@ -1112,7 +1112,55 @@ def audit_current_code(current_code: str, pf: dict[str, Any], erp_by_code: dict[
     if agricultural:
         result.update(agricultural)
     current = erp_by_code.get(literal_text(current_code).strip(), [])
-    return apply_quantity_parse_guard(apply_weight_guard(result, pf, current), pf, current_code, current)
+    result = apply_weight_guard(result, pf, current)
+    result = apply_cross_category_guard(result, prepared, current_code, current)
+    return apply_quantity_parse_guard(result, pf, current_code, current)
+
+
+def apply_cross_category_guard(result, pf, current_code, current):
+    """Review the demonstrated thermal-piece / capacity-water-bottle ambiguity.
+
+    This does not fill unknown families from SEO titles, grant unit conversions,
+    or turn every missing attribute into a blocker.
+    """
+    if result['核验状态'] != '核对通过' or not current:
+        return result
+    confirmed = pf.get('confirmation')
+    if confirmed and confirmed.get('record', {}).get('code') == literal_text(current_code).strip():
+        return result
+    specific = unicodedata.normalize('NFKC', pf['quantity_text'])
+    quantity = audit_quantity(pf)
+    if (not quantity or quantity[0] <= 0 or quantity[1] != '片'
+            or pf.get('quantity_structure', {}).get('incomplete')):
+        return result
+    if '暖手' not in specific or not any(word in specific for word in ('穿戴', '草本', '暖手贴', '暖手宝贴', '蒸汽')):
+        return result
+    # A named water bottle/cover or multiple component types can be a real set.
+    if any(word in specific for word in ('热水袋', '注水', '灌水', '布套', '袋套')):
+        return result
+    if len(audit_feature_components(pf)) >= 2:
+        return result
+    evidence = []
+    for record in current:
+        feature = record['features']
+        if feature['families'] != {'热水袋'} or not feature.get('evidence', {}).get('capacity'):
+            return result
+        if len(audit_feature_components(feature)) >= 2:
+            return result
+        evidence.append({'code':record['code'], 'name':record['name'], 'source':record['source'],
+                         'source_row':record.get('source_row'),
+                         'capacity':sorted(feature['evidence']['capacity'])})
+    note = (f'跨品类疑点，待人工确认：平台SKU明示暖手热贴类线索及{quantity[0]}片；'
+            'ERP为有容量规格的热水袋：' + '；'.join(e['name'] for e in evidence)
+            + '；未建立同一商品或合法主赠组成关系，未修改原编码')
+    updated = dict(result)
+    updated.update(核验状态='待人工确认', 核验说明=note, 匹配依据='SKU明示暖手片数与ERP热水袋容量品类存在疑点',
+                   跨品类疑点JSON=json.dumps({'rule':'thermal_piece_vs_water_bottle_v1',
+                       'platform_sku':pf['quantity_text'], 'platform_quantity':quantity, 'erp':evidence,
+                       'original_algorithm_status':result['核验状态'],
+                       'original_algorithm_reason':result.get('核验说明', '')}, ensure_ascii=False))
+    updated['判定路径'] = updated.get('判定路径', '') + '；解析待确认：受限跨品类疑点'
+    return updated
 
 
 @lru_cache(maxsize=1)
@@ -1523,7 +1571,8 @@ def verify_platform_file(path: str, erp_records: list[dict[str, Any]], erp_by_co
             reviewed_suggestion = None
         result = apply_weight_guard(result, pf, current_records)
         result = apply_quantity_parse_guard(result, pf, current_code, current_records)
-        if result.get('数量解析保护JSON') or result.get('确认失效JSON'):
+        if (result.get('数量解析保护JSON') or result.get('确认失效JSON')
+                or (result.get('跨品类疑点JSON') and result['核验状态'] == '待人工确认')):
             reviewed_suggestion = sku_reviews.empty_suggestion(result['核验说明'])
         quantity_rows.append({'商品 ID':product_id, 'SKU ID':sku_id, '源行号':idx + header_row + 2,
             'platform':pf['quantity_structure'],
