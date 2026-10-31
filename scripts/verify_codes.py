@@ -1110,7 +1110,75 @@ def audit_current_code(current_code: str, pf: dict[str, Any], erp_by_code: dict[
     agricultural = agriculture.audit(pf, literal_text(current_code).strip(), erp_by_code)
     if agricultural:
         result.update(agricultural)
-    return apply_weight_guard(result, pf, erp_by_code.get(literal_text(current_code).strip(), []))
+    current = erp_by_code.get(literal_text(current_code).strip(), [])
+    return apply_quantity_parse_guard(apply_weight_guard(result, pf, current), pf, current_code, current)
+
+
+@lru_cache(maxsize=1)
+def load_quantity_parse_guards():
+    path = Path(__file__).resolve().parents[1] / 'config/quantity_parse_guards.json'
+    data = json.loads(path.read_text(encoding='utf-8'))
+    if data.get('version') != 1 or not isinstance(data.get('guards'), dict):
+        raise ValueError('数量解析灰度配置必须为version=1且guards为对象')
+    for key, entry in data['guards'].items():
+        if (key != sku_reviews.review_key(entry['context'])
+                or entry['content_fingerprint'] != sku_reviews.content_fingerprint(entry['context'])
+                or not entry.get('code') or not entry.get('erp_fingerprints')):
+            raise ValueError('数量解析灰度配置的身份或指纹无效')
+    return data['guards']
+
+
+def apply_quantity_parse_guard(result, pf, current_code, current):
+    """Fail closed only for approved, unchanged rows with an actual parsing gap."""
+    if result['核验状态'] != '核对通过':
+        return result
+    context = pf.get('context', {})
+    entry = load_quantity_parse_guards().get(sku_reviews.review_key(context))
+    if not entry or entry['code'] != literal_text(current_code):
+        return result
+    if entry['content_fingerprint'] != sku_reviews.content_fingerprint(context):
+        return result
+    if sorted(r.get('erp_fingerprint', '') for r in current) != entry['erp_fingerprints']:
+        return result
+    comparison, _ = business_specs.transform_platform(pf, literal_text(current_code), current, build_features)
+    comparison = apply_confirmed_audit_specs(comparison)
+
+    def quantities(feature):
+        found = {tuple(q) for q in feature.get('quantity_structure', {}).get('alternative_quantities', [])}
+        quantity = audit_quantity(feature)
+        if quantity:
+            found.add(tuple(quantity))
+        return found
+
+    if not quantities(comparison):
+        return result
+    platform_parts = audit_feature_components(comparison)
+    numeric_parts = {k for k, part in platform_parts.items() if quantities(part)}
+    evidence = []
+    for record in current:
+        feature = record['features']
+        # Missing declarations, incompatible units and already compared totals
+        # are outside this rollout. Components can cover a missing aggregate.
+        if quantities(feature) or feature_quantity_compare(comparison, feature) is not None:
+            return result
+        if not re.search(r'\d+\s*(?:盒|片|袋|包)', feature['quantity_text']):
+            return result
+        erp_parts = audit_feature_components(feature)
+        if numeric_parts and numeric_parts.issubset(erp_parts) and all(
+                feature_quantity_compare(platform_parts[k], erp_parts[k]) is not None for k in numeric_parts):
+            return result
+        issues = list(dict.fromkeys(feature.get('qty_issues', []) + feature.get('quantity_structure', {}).get('issues', [])))
+        evidence.append({'code':record['code'], 'name':record['name'], 'source':record['source'],
+                         'source_row':record.get('source_row'), 'issues':issues})
+    if not evidence:
+        return result
+    note = 'ERP侧数量无法解析，未完成数量比对；' + '；'.join(
+        e['name'] + '：' + '、'.join(e['issues'] or ['未获得可比较总量']) for e in evidence)
+    result = dict(result)
+    result.update(核验状态='待人工确认', 核验说明=note, 匹配依据='已确认16条数量解析灰度保护',
+                  数量解析保护JSON=json.dumps({'platform_quantity':sorted(quantities(comparison)), 'erp':evidence}, ensure_ascii=False))
+    result['判定路径'] = result.get('判定路径', '') + '；解析待确认：数量解析灰度保护'
+    return result
 
 
 def _audit_current_code(current_code: str, pf: dict[str, Any], erp_by_code: dict[str, list[dict[str, Any]]], erp_records: list[dict[str, Any]]) -> dict[str, Any]:
@@ -1447,6 +1515,9 @@ def verify_platform_file(path: str, erp_records: list[dict[str, Any]], erp_by_co
             result.update(agricultural)
             reviewed_suggestion = None
         result = apply_weight_guard(result, pf, current_records)
+        result = apply_quantity_parse_guard(result, pf, current_code, current_records)
+        if result.get('数量解析保护JSON'):
+            reviewed_suggestion = sku_reviews.empty_suggestion(result['核验说明'])
         quantity_rows.append({'商品 ID':product_id, 'SKU ID':sku_id, '源行号':idx + header_row + 2,
             'platform':pf['quantity_structure'],
             'confirmed_business_specs':json.loads(result['业务数量解析JSON']) if result.get('业务数量解析JSON') else None,
