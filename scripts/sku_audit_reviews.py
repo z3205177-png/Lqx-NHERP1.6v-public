@@ -4,6 +4,7 @@ import re
 from pathlib import Path
 
 from confirmed_mappings import digest
+from confirmation_expiry import mark_expired
 
 DEFAULT_PATH = Path(__file__).resolve().parents[1] / 'config/sku_audit_reviews.json'
 IDENTITY = ('平台', '商品 ID', 'SKU ID')
@@ -69,9 +70,7 @@ def apply_review(context, current_code, result, by_code, entries):
     updated = dict(result)
     updated['判定路径'] = result.get('判定路径', '') + '；' + MARKER
     if issue:
-        if updated['核验状态'] == '核对通过':
-            updated['核验状态'] = '待人工确认'
-        updated['核验说明'] = updated.get('核验说明', '') + '；' + issue
+        updated = mark_expired(updated, '人工复核', issue)
         return updated, empty_suggestion(issue)
     updated.update({'人工确认人': entry['reviewed_by'], '人工确认依据': entry['basis']})
     mode = entry['mode']

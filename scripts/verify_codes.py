@@ -34,6 +34,7 @@ from quantity_syntax import packaging_products, without_rates, additive_quantiti
 from quantity_syntax import quantity_prose, parenthetical_counts, apparel_component_text, TOTAL
 from quantity_syntax import layered_packaging_details, numeric_piece_offer, without_remark_gifts
 from manual_weight import apply_weight_guard
+from confirmation_expiry import mark_expired
 import agricultural_specs as agriculture
 from erp_library import resolve_erp_inputs, DEFAULT_MANIFEST
 from simple_report import write_simple_report
@@ -1129,16 +1130,22 @@ def load_quantity_parse_guards():
 
 
 def apply_quantity_parse_guard(result, pf, current_code, current):
-    """Fail closed only for approved, unchanged rows with an actual parsing gap."""
-    if result['核验状态'] != '核对通过':
-        return result
+    """Guard approved parsing gaps and expose expired bindings at the same ID."""
     context = pf.get('context', {})
     entry = load_quantity_parse_guards().get(sku_reviews.review_key(context))
-    if not entry or entry['code'] != literal_text(current_code):
+    if not entry:
         return result
+    reasons = []
+    if entry['code'] != literal_text(current_code):
+        reasons.append('当前编码变化，需重新确认')
     if entry['content_fingerprint'] != sku_reviews.content_fingerprint(context):
-        return result
+        changed = [k for k in sku_reviews.CONTENT if str(entry['context'].get(k, '')) != str(context.get(k, ''))]
+        reasons.append('平台内容变化（' + '、'.join(changed) + '），需重新确认')
     if sorted(r.get('erp_fingerprint', '') for r in current) != entry['erp_fingerprints']:
+        reasons.append('关联ERP记录缺失、重复或内容变化，需重新确认')
+    if reasons:
+        return mark_expired(result, '数量保护', '；'.join(reasons))
+    if result['核验状态'] != '核对通过':
         return result
     comparison, _ = business_specs.transform_platform(pf, literal_text(current_code), current, build_features)
     comparison = apply_confirmed_audit_specs(comparison)
@@ -1516,7 +1523,7 @@ def verify_platform_file(path: str, erp_records: list[dict[str, Any]], erp_by_co
             reviewed_suggestion = None
         result = apply_weight_guard(result, pf, current_records)
         result = apply_quantity_parse_guard(result, pf, current_code, current_records)
-        if result.get('数量解析保护JSON'):
+        if result.get('数量解析保护JSON') or result.get('确认失效JSON'):
             reviewed_suggestion = sku_reviews.empty_suggestion(result['核验说明'])
         quantity_rows.append({'商品 ID':product_id, 'SKU ID':sku_id, '源行号':idx + header_row + 2,
             'platform':pf['quantity_structure'],

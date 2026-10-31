@@ -47,14 +47,37 @@ class QuantityParseGuardTests(unittest.TestCase):
         self.assertEqual(detail['erp'][0]['source_row'], 7)
         self.assertEqual((self.result, self.pf, self.erp), original)
 
-    def test_unbound_and_changed_content_do_not_expand_rollout(self):
-        for field in ['平台', '商品 ID', 'SKU ID', '商品标题', 'SKU', 'ERP规格编码', '独立规格数量']:
+    def test_other_identity_does_not_inherit_guard(self):
+        for field in ['平台', '商品 ID', 'SKU ID']:
             with self.subTest(field=field):
                 pf = copy.deepcopy(self.pf); pf['context'][field] += 'changed'
                 self.assertEqual(self.apply(pf=pf)['核验状态'], '核对通过')
-        self.assertEqual(self.apply(code='B')['核验状态'], '核对通过')
+    def test_changed_binding_is_visible_and_never_passes(self):
+        for field in ['商品标题', 'SKU', 'ERP规格编码', '独立规格数量']:
+            with self.subTest(field=field):
+                pf = copy.deepcopy(self.pf); pf['context'][field] += 'changed'
+                result = self.apply(pf=pf)
+                self.assertEqual(result['核验状态'], '待人工确认')
+                self.assertIn(field, result['核验说明'])
+                self.assertEqual(result['确认有效性'], '已失效')
+        self.assertEqual(self.apply(code='B')['核验状态'], '待人工确认')
         changed = copy.deepcopy(self.erp); changed['erp_fingerprint'] = 'OTHER'
-        self.assertEqual(self.apply(erp=changed)['核验状态'], '核对通过')
+        self.assertEqual(self.apply(erp=changed)['核验状态'], '待人工确认')
+
+    def test_expiry_keeps_conflict_evidence_and_survives_repeated_checks(self):
+        pf = copy.deepcopy(self.pf); pf['context']['商品标题'] += '（双11）'
+        original = {**self.result, '核验状态':'异常（商品/规格不一致）', '冲突项目':'数量不一致'}
+        first = self.apply(result=original, pf=pf)
+        second = self.apply(result=first, pf=pf)
+        self.assertEqual(first, second)
+        self.assertEqual(first['核验状态'], '待人工确认')
+        self.assertEqual(first['冲突项目'], '数量不一致')
+        detail = json.loads(first['确认失效JSON'])
+        self.assertEqual(detail[0]['原算法状态'], '异常（商品/规格不一致）')
+        self.assertEqual(detail[0]['原冲突项目'], '数量不一致')
+        # A later confirmation cannot silently restore pass on an expired guard.
+        revived = self.apply(result={**first, '核验状态':'核对通过'}, pf=pf)
+        self.assertEqual(revived['核验状态'], '待人工确认')
 
     def test_file_location_and_store_label_do_not_define_scope(self):
         pf = copy.deepcopy(self.pf); pf['context']['店铺'] = '另一个本机标签'
@@ -109,6 +132,26 @@ class QuantityParseGuardTests(unittest.TestCase):
             self.assertEqual(len(pending), 2); self.assertEqual(len(rows[0]), 12)
             self.assertIn('ERP侧数量无法解析', rows[0]['问题说明'])
             self.assertEqual(p.read_bytes(), original)
+
+    def test_title_only_change_is_visible_in_default_report(self):
+        import pandas as pd
+        from simple_report import prepare_rows
+        with tempfile.TemporaryDirectory() as temp:
+            p = Path(temp) / '快手.csv'
+            item = {'商品ID':'001', 'skuID':'002', '商品标题':self.context['商品标题']+'（2026双11改版）',
+                    'sku名称':self.context['SKU'], 'sku编码':'A'}
+            pd.DataFrame([item]).to_csv(p, index=False, encoding='utf-8-sig')
+            with patch.object(v, 'load_quantity_parse_guards', return_value=self.guards):
+                result, _ = v.verify_platform_file(str(p), [self.erp], {'A':[self.erp]},
+                    platform_override='快手', confirmed_entries={}, review_entries={})
+            record = result.to_dict('records')[0]
+            self.assertEqual(record['核验状态'], '待人工确认')
+            self.assertEqual(record['原编码'], 'A')
+            self.assertEqual(record['推测商家编码'], '')
+            pending, rows = prepare_rows(result)
+            self.assertEqual(len(pending), 1); self.assertEqual(len(rows[0]), 12)
+            self.assertIn('数量保护已失效', rows[0]['问题说明'])
+            self.assertIn('商品标题', rows[0]['问题说明'])
 
 
 if __name__ == '__main__':

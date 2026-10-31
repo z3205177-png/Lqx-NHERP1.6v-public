@@ -104,6 +104,22 @@ class SkuAuditReviewsTests(unittest.TestCase):
             self.assertEqual(proposed['推测商家编码'], '')
             self.assertIn('重新确认', result['核验说明'])
 
+    def test_expired_review_is_pending_with_original_algorithm_evidence(self):
+        e = self.entry('100277872697338')
+        original, result, proposed = self.run_review(e, context={**e['context'],
+            '商品标题':e['context']['商品标题']+'（2026双11改版）'})
+        self.assertEqual(original['核验状态'], '异常（商品/规格不一致）')
+        self.assertEqual(result['核验状态'], '待人工确认')
+        detail = json.loads(result['确认失效JSON'])[0]
+        self.assertEqual(detail['原算法状态'], original['核验状态'])
+        self.assertEqual(detail['原冲突项目'], original['冲突项目'])
+        self.assertEqual(proposed['推测商家编码'], '')
+        frame = pd.DataFrame([{**result, '平台':'快手', '商品 ID':e['context']['商品 ID'],
+            'SKU ID':e['context']['SKU ID'], '商品标题':'标题已变更', 'SKU':e['context']['SKU'],
+            '原编码':e['source_code'], '异常说明':result['核验说明'], **proposed}])
+        _, rows = prepare_rows(frame)
+        self.assertIn('人工复核已失效', rows[0]['问题说明'])
+
     def test_erp_record_change_or_duplicate_invalidates_review(self):
         e = self.entry('100277872697338')
         for mutate in ('fingerprint', 'duplicate', 'missing'):
